@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cv_item_general"
         android:layout_width="match_parent"
-        android:layout_height="90dp"
-        android:orientation="vertical"
+        android:layout_height="wrap_content"
         app:cardCornerRadius="5dp"
-        app:cardElevation="3dp"
+        app:cardElevation="5dp"
         android:layout_margin="5dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -20,22 +20,17 @@
                 android:id="@+id/item_icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="9dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
                 android:contentDescription="@null"
-                app:layout_constraintBottom_toTopOf="@id/item_label"
+                android:src="@drawable/ic_micro_app_recharge"
+                app:layout_constraintBottom_toBottomOf="@id/item_text"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHeight_percent="0.28"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintWidth_percent="0.4"
-                android:src="@mipmap/ic_micro_app_recharge"
-                />
+                app:layout_constraintTop_toTopOf="parent"/>
 
             <TextView
-                android:id="@+id/item_label_tag"
+                android:id="@+id/item_labeltag"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="0dp"
@@ -51,27 +46,29 @@
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 android:paddingHorizontal="5dp"
-                android:background="@drawable/item_label_tag"
+                android:background="@drawable/background_item_labeltag"
                 />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/item_label"
+                android:id="@+id/item_text"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                app:layout_constraintWidth_percent="0.8"
-                android:layout_marginBottom="10dp"
-                android:text="Mi item"
-                android:gravity="center"
-                android:textColor="#323232"
+                android:layout_marginBottom="8dp"
                 android:alpha="0.8"
-                android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:gravity="center"
+                android:text="Mi item"
+                android:textColor="#323232"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/item_icon"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/item_icon"
+                app:layout_constraintTop_toBottomOf="@id/item_icon"
+                app:layout_constraintWidth_percent="0.8"
                 tools:text="@tools:sample/full_names" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
+
 </layout>
