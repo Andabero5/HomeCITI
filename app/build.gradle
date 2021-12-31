@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
 }
 apply plugin: 'kotlin-android'
 
@@ -32,6 +33,7 @@ android {
     }
     buildFeatures{
         viewBinding true
+        dataBinding true
     }
 }
 
@@ -51,6 +53,12 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.4.0")
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.cardview:cardview:1.0.0'
+    
+    // Picaso
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    
+    // RecyclerView
+    implementation("androidx.recyclerview:recyclerview:1.2.1")
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

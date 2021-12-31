@@ -4,10 +4,14 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/ID139/Desktop/principal/Android/HomeCITI/app/src/main/res/layout/activity_main.xml" value="0.3302083333333333" />
+        <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/drawable/background_btn_seemore.xml" value="0.11354166666666667" />
+        <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/drawable/background_item_label_tag.xml" value="0.11354166666666667" />
+        <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/drawable/background_item_labeltag.xml" value="0.14907407407407408" />
+        <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/drawable/background_item_labeltag_blue.xml" value="0.2169230769230769" />
         <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2169230769230769" />
         <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/drawable/item_label_tag.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/drawable/item_labeltag.xml" value="0.11018518518518519" />
-        <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/activity_main.xml" value="0.67" />
+        <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/item_home_general.xml" value="0.1" />
         <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/item_home_options.xml" value="0.12409420289855072" />
         <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/item_home_quickaccess.xml" value="0.18" />
@@ -18,7 +22,7 @@
     </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
