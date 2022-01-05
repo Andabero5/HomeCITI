@@ -1,22 +1,22 @@
 package com.example.homeciti.ui.adapters
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.homeciti.R
 import com.example.homeciti.data.model.Service
 import com.example.homeciti.databinding.ItemHomeQuickaccessBinding
+import com.example.homeciti.ui.view.HomeFragment
 import com.squareup.picasso.Picasso
-import org.w3c.dom.Text
 
-class ServiceAdapter(val service:List<Service>, val context: Context): RecyclerView.Adapter<ServiceAdapter.ServiceViewHolder>(){
+// anteriormente aqui traia la lista como parametro ServiceAdapter(private val service : List<Service>)
+class ServiceAdapter(val context: HomeFragment): RecyclerView.Adapter<ServiceAdapter.ServiceViewHolder>(){
 
+    // Crear mi lista de datos mutable
     private var dataList = mutableListOf<Service>()
 
+    // Funcion para settear los nuevos datos
     fun setListData(data:MutableList<Service>){
         dataList = data
     }
@@ -25,7 +25,7 @@ class ServiceAdapter(val service:List<Service>, val context: Context): RecyclerV
         parent: ViewGroup,
         viewType: Int
     ): ServiceViewHolder {
-        val inflater = LayoutInflater.from(context)
+        val inflater = LayoutInflater.from(parent.context)
         val binding = ItemHomeQuickaccessBinding.inflate(inflater,parent,false)
         //val layoutInflater = LayoutInflater.from(context).inflate(R.layout.item_home_quickaccess, parent, false)
         return ServiceViewHolder(binding)
@@ -42,13 +42,9 @@ class ServiceAdapter(val service:List<Service>, val context: Context): RecyclerV
             Int = dataList.size
 
     // Este es mi clase holder
-    //inner class ServiceViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
     inner class ServiceViewHolder(private val binding:ItemHomeQuickaccessBinding):RecyclerView.ViewHolder(binding.root){
 
-        //val item_text = itemView.findViewById<TextView>(R.id.item_label)
-        //val item_icon = itemView.findViewById<ImageView>(R.id.item_icon)
-        //val promo_icon = itemView.findViewById<TextView>(R.id.item_labeltag)
-
+        // Defino los elementos de la vista a traves del binding
         private val itemText = binding.itemLabel
         private val itemIcon = binding.itemIcon
         private val promoIcon = binding.itemLabeltag
@@ -73,10 +69,7 @@ class ServiceAdapter(val service:List<Service>, val context: Context): RecyclerV
 
                 promoIcon.text = service.promoIcon
             }
-
-
         }
     }
-
 }
 
