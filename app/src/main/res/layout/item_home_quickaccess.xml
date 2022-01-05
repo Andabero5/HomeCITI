@@ -33,7 +33,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:src="@drawable/ic_micro_app_recharge" />
+                    android:src="@drawable/ic_micro_app_recharge" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/item_labeltag"
@@ -45,12 +45,13 @@
                     android:layout_marginBottom="0dp"
                     android:background="@drawable/background_item_labeltag"
                     android:paddingHorizontal="5dp"
-                    android:text="Nuevo"
+                    tools:text="Nuevo"
                     android:textColor="@color/white"
                     android:textSize="8sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="SmallSp"
                     />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -66,7 +67,7 @@
             android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cv_item_quickaccess"></androidx.appcompat.widget.AppCompatTextView>
+            app:layout_constraintTop_toBottomOf="@+id/cv_item_quickaccess" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

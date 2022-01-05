@@ -31,6 +31,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:background="@drawable/background_btn_seemore"
+                bottom
                 android:text="Ver más"
                 android:paddingHorizontal="24dp"
                 app:layout_constraintBottom_toBottomOf="parent"

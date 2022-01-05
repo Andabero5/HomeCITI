@@ -4,5 +4,5 @@ data class Service(
     val type: String = " ",
     val icon: String = "",
     val promoIcon: String = " ",
-    val background: String = " "
+    val backgroundColor: String = " "
 )
