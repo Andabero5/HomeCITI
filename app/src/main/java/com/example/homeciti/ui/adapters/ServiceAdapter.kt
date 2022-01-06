@@ -25,7 +25,7 @@ class ServiceAdapter(val context: HomeFragment): RecyclerView.Adapter<ServiceAda
         parent: ViewGroup,
         viewType: Int
     ): ServiceViewHolder {
-        val inflater = LayoutInflater.from(parent.context)
+        val inflater = LayoutInflater.from(context.context)
         val binding = ItemHomeQuickaccessBinding.inflate(inflater,parent,false)
         //val layoutInflater = LayoutInflater.from(context).inflate(R.layout.item_home_quickaccess, parent, false)
         return ServiceViewHolder(binding)
