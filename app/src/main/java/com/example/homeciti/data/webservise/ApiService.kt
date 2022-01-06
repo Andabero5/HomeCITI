@@ -9,3 +9,4 @@ interface ApiService {
 @GET
 fun getHomeStructure(@Url url:String):Response<HomeService>
 }
+//private fun getRetrofit()

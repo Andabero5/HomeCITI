@@ -3,13 +3,12 @@ package com.example.homeciti.ui.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.graphics.toColorInt
 import androidx.recyclerview.widget.RecyclerView
-import com.example.homeciti.data.model.Service
+import com.example.homeciti.data.model.GeneralService
 import com.example.homeciti.databinding.ItemHomeGeneralBinding
 
 
-class GeneralHomeAdapter(private val service:List<Service>): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class GeneralAdapter(private val generalService:List<GeneralService>): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -19,23 +18,20 @@ class GeneralHomeAdapter(private val service:List<Service>): RecyclerView.Adapte
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when(holder){
-            is GeneralHomeViewHolder -> holder.bind(service[position])
+            is GeneralHomeViewHolder -> holder.bind(generalService[position])
         }
     }
 
-    override fun getItemCount(): Int =service.size
+    override fun getItemCount(): Int =generalService.size
 
     private inner class GeneralHomeViewHolder(private val binding:ItemHomeGeneralBinding):RecyclerView.ViewHolder(binding.root){
-        fun bind(item : Service){
+        fun bind(item : GeneralService){
+            //Glide.with(itemView.context).load(item.icon).fitCenter().into(binding.itemIcon)
             binding.itemText.text = item.type
             if (item.promoIcon.isNotEmpty()){
                 binding.itemLabeltag.text = item.promoIcon
-            }else{
-                binding.itemLabeltag.visibility = View.INVISIBLE
+                binding.itemLabeltag.visibility= View.VISIBLE
             }
-//            item.backgroundColor.let {
-//                binding.cvItemGeneral.setCardBackgroundColor(it.toColorInt())
-//            }
         }
     }
 }

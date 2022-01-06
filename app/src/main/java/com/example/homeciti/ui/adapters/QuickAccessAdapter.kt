@@ -1,15 +1,15 @@
 package com.example.homeciti.ui.adapters
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.graphics.toColorInt
 import androidx.recyclerview.widget.RecyclerView
-import com.example.homeciti.data.model.Service
-import com.example.homeciti.databinding.ItemHomeGeneralBinding
+import com.bumptech.glide.Glide
+import com.example.homeciti.data.model.QuickAccessService
 import com.example.homeciti.databinding.ItemHomeQuickaccessBinding
 
-class QuickAccessAdapter (private val service:List<Service>): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class QuickAccessAdapter (private val quickAccessService:List<QuickAccessService>): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -19,24 +19,21 @@ class QuickAccessAdapter (private val service:List<Service>): RecyclerView.Adapt
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when(holder){
-            is QuickAccessViewHolder -> holder.bind(service[position])
+            is QuickAccessViewHolder -> holder.bind(quickAccessService[position])
         }
     }
 
-    override fun getItemCount(): Int =service.size
+    override fun getItemCount(): Int = quickAccessService.size
 
     private inner class QuickAccessViewHolder(private val binding: ItemHomeQuickaccessBinding):
         RecyclerView.ViewHolder(binding.root){
-        fun bind(item : Service){
+        fun bind(item : QuickAccessService){
+            //Glide.with(itemView.context).load(item.icon).fitCenter().into(binding.itemIcon)
             binding.itemText.text = item.type
             if (item.promoIcon.isNotEmpty()){
-                binding.itemLabeltag.text = item.promoIcon
-            }else{
-                binding.itemLabeltag.visibility = View.INVISIBLE
+                binding.itemLabelTag.text = item.promoIcon
+                binding.itemLabelTag.visibility= View.VISIBLE
             }
-//            item.backgroundColor.let {
-//                binding.cvItemQuickaccess.setCardBackgroundColor(it.toColorInt())
-//            }
         }
     }
 }

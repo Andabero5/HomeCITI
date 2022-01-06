@@ -35,8 +35,8 @@
                     app:layout_constraintTop_toTopOf="parent"
                     android:src="@drawable/ic_micro_app_recharge" />
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/item_labeltag"
+                <TextView
+                    android:id="@+id/item_label_tag"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="0dp"
@@ -52,6 +52,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:ignore="SmallSp"
+                    android:visibility="invisible"
                     />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
