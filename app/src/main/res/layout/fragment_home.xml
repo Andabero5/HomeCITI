@@ -12,6 +12,7 @@
             android:layout_height="match_parent">
 
                 <LinearLayout
+                    android:id="@+id/ll_home"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
@@ -28,23 +29,7 @@
                         <include
                             android:id="@+id/ly_quickaccess"
                             layout="@layout/layout_quickaccess_home_partner"></include>
-                        <!--
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_quickaccess"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="24sp"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    tools:listitem="@layout/item_home_quickaccess">
 
-                </androidx.recyclerview.widget.RecyclerView>
-                -->
                 </LinearLayout>
-
         </androidx.core.widget.NestedScrollView>
 </FrameLayout>

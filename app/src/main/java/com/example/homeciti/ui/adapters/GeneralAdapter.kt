@@ -1,5 +1,6 @@
 package com.example.homeciti.ui.adapters
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,7 +13,7 @@ import com.example.homeciti.databinding.ItemHomeQuickaccessBinding
 import com.example.homeciti.ui.view.HomeFragment
 import com.squareup.picasso.Picasso
 
-class GeneralAdapter(val context: HomeFragment): RecyclerView.Adapter<GeneralAdapter.GeneralViewHolder>() {
+class GeneralAdapter(val context : Context): RecyclerView.Adapter<GeneralAdapter.GeneralViewHolder>() {
 
     // Crear mi lista de datos mutable
     private var dataList = mutableListOf<GeneralService>()
@@ -23,7 +24,7 @@ class GeneralAdapter(val context: HomeFragment): RecyclerView.Adapter<GeneralAda
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GeneralViewHolder {
-        val inflater = LayoutInflater.from(context.context)
+        val inflater = LayoutInflater.from(context)
         val binding = ItemHomeGeneralBinding.inflate(inflater,parent,false)
         //val layoutInflater = LayoutInflater.from(context).inflate(R.layout.item_home_quickaccess, parent, false)
         return GeneralViewHolder(binding)

@@ -1,5 +1,6 @@
 package com.example.homeciti.ui.adapters
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,7 +12,7 @@ import com.example.homeciti.ui.view.HomeFragment
 import com.squareup.picasso.Picasso
 
 // anteriormente aqui traia la lista como parametro ServiceAdapter(private val service : List<Service>)
-class ServiceAdapter(val context: HomeFragment): RecyclerView.Adapter<ServiceAdapter.ServiceViewHolder>(){
+class ServiceAdapter(val context: Context): RecyclerView.Adapter<ServiceAdapter.ServiceViewHolder>(){
 
     // Crear mi lista de datos mutable
     private var dataList = mutableListOf<Service>()
@@ -25,10 +26,10 @@ class ServiceAdapter(val context: HomeFragment): RecyclerView.Adapter<ServiceAda
         parent: ViewGroup,
         viewType: Int
     ): ServiceViewHolder {
-        val inflater = LayoutInflater.from(context.context)
+        val inflater = LayoutInflater.from(context)
         val binding = ItemHomeQuickaccessBinding.inflate(inflater,parent,false)
         //val layoutInflater = LayoutInflater.from(context).inflate(R.layout.item_home_quickaccess, parent, false)
-        return ServiceViewHolder(binding)
+        return ServiceViewHolder(binding, mListener)
     }
 
     override fun onBindViewHolder(holder: ServiceViewHolder, position: Int) {
@@ -42,7 +43,7 @@ class ServiceAdapter(val context: HomeFragment): RecyclerView.Adapter<ServiceAda
             Int = dataList.size
 
     // Este es mi clase holder
-    inner class ServiceViewHolder(private val binding:ItemHomeQuickaccessBinding):RecyclerView.ViewHolder(binding.root){
+    inner class ServiceViewHolder(private val binding:ItemHomeQuickaccessBinding, listener: onServiceClickListener):RecyclerView.ViewHolder(binding.root){
 
         // Defino los elementos de la vista a traves del binding
         private val itemText = binding.itemLabel
@@ -70,6 +71,22 @@ class ServiceAdapter(val context: HomeFragment): RecyclerView.Adapter<ServiceAda
                 promoIcon.text = service.promoIcon
             }
         }
+
+        init {
+            itemView.setOnClickListener {
+                listener.onServiceClick(adapterPosition)
+            }
+        }
+    }
+
+    private lateinit var mListener : onServiceClickListener
+
+    interface onServiceClickListener{
+        fun onServiceClick(position: Int)
+    }
+
+    fun setOnServiceClickListener(listener:onServiceClickListener){
+        mListener = listener
     }
 }
 

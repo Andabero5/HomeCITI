@@ -7,9 +7,10 @@ class ServiceProvider {
     companion object {
 
         // Crear la lista mutable de home
-        val home = mutableListOf<HomeService>(
-            HomeService("WIDGET_GENERAL", TitleObj("Que quieres hacer hoy?","#123456789"), ShowMore("Ver mas","#12345678",true),3 ,1),
-            HomeService("WIDGET_QUICK_ACCESS", TitleObj("Accesos rapidos","#123456789"), ShowMore("Ver mas","#12345678",true),4 ,2)
+        val homes = mutableListOf<HomeService>(
+            HomeService("WIDGET_GENERAL", TitleObj("Que quieres hacer hoy pues?","1D0071"), ShowMore("Ver mas pues","#12345678",true),3,2),
+            HomeService("WIDGET_QUICK_ACCESS", TitleObj("Accesos rapidos","1D0071"), ShowMore("Ver mas hagale","#12345678",true),4,1),
+            HomeService("WIDGET_BANNER",TitleObj(),ShowMore(),1,2)
         )
 
         // Crear nuestra Lista mutable de servicios generals
