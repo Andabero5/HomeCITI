@@ -22,28 +22,22 @@ class ServiceAdapter(val context: Context): RecyclerView.Adapter<ServiceAdapter.
         dataList = data
     }
 
-    override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int
-    ): ServiceViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup,viewType: Int): ServiceViewHolder {
         val inflater = LayoutInflater.from(context)
         val binding = ItemHomeQuickaccessBinding.inflate(inflater,parent,false)
         //val layoutInflater = LayoutInflater.from(context).inflate(R.layout.item_home_quickaccess, parent, false)
-        return ServiceViewHolder(binding, mListener)
+        return ServiceViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ServiceViewHolder, position: Int) {
         val service = dataList[position]
-        //holder.render(service[position])
         holder.render(service)
     }
 
-    override fun getItemCount():
-            //Int = service.size
-            Int = dataList.size
+    override fun getItemCount(): Int = dataList.size
 
     // Este es mi clase holder
-    inner class ServiceViewHolder(private val binding:ItemHomeQuickaccessBinding, listener: onServiceClickListener):RecyclerView.ViewHolder(binding.root){
+    inner class ServiceViewHolder(private val binding:ItemHomeQuickaccessBinding):RecyclerView.ViewHolder(binding.root){
 
         // Defino los elementos de la vista a traves del binding
         private val itemText = binding.itemLabel
@@ -72,21 +66,6 @@ class ServiceAdapter(val context: Context): RecyclerView.Adapter<ServiceAdapter.
             }
         }
 
-        init {
-            itemView.setOnClickListener {
-                listener.onServiceClick(adapterPosition)
-            }
-        }
-    }
-
-    private lateinit var mListener : onServiceClickListener
-
-    interface onServiceClickListener{
-        fun onServiceClick(position: Int)
-    }
-
-    fun setOnServiceClickListener(listener:onServiceClickListener){
-        mListener = listener
     }
 }
 

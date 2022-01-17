@@ -8,8 +8,21 @@
     android:background="#E2E2E2">
 
         <androidx.core.widget.NestedScrollView
+            android:id="@+id/sc_home"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include
+                    android:id="@+id/ly_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    layout="@layout/layout_header_home_partner">
+                </include>
 
                 <LinearLayout
                     android:id="@+id/ll_home"
@@ -17,19 +30,11 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                        <ListView
-                            android:id="@+id/lv_home"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"/>
-
-                        <include
-                            android:id="@+id/ly_general"
-                            layout="@layout/layout_general_home_partner"></include>
-
-                        <include
-                            android:id="@+id/ly_quickaccess"
-                            layout="@layout/layout_quickaccess_home_partner"></include>
-
+                    <!--Aquí dentro de este linear
+                    iremos pintando los layout
+                    de cada uno de los widgets
+                    -->
                 </LinearLayout>
+            </LinearLayout>
         </androidx.core.widget.NestedScrollView>
 </FrameLayout>

@@ -13,7 +13,7 @@ class GeneralViewModel:ViewModel() {
     private val repo = Repo()
 
     // funcion para devolver mi lista de datos
-    fun fetchServiceData(): LiveData<MutableList<GeneralService>> {
+    fun fetchGeneralData(): LiveData<MutableList<GeneralService>> {
         val mutableData = MutableLiveData<MutableList<GeneralService>>()
         repo.getGeneralData().observeForever{
             mutableData.value = it

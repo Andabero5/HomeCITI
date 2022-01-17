@@ -26,13 +26,11 @@ class GeneralAdapter(val context : Context): RecyclerView.Adapter<GeneralAdapter
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GeneralViewHolder {
         val inflater = LayoutInflater.from(context)
         val binding = ItemHomeGeneralBinding.inflate(inflater,parent,false)
-        //val layoutInflater = LayoutInflater.from(context).inflate(R.layout.item_home_quickaccess, parent, false)
         return GeneralViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: GeneralViewHolder, position: Int) {
         val general = dataList[position]
-        //holder.render(service[position])
         holder.render(general)
     }
 
