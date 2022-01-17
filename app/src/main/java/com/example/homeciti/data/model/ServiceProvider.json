@@ -1,0 +1,172 @@
+{
+  "home":[
+	{
+      "type": "WIDGET_GENERAL",
+	  "titleObj": {
+        "title": "¿Qué quieres hacer hoy?",
+	    "textColor": "#1D0071"
+	  },
+      "showMore": {
+	    "title": "Ver más",
+        "textColor": "#12345678",
+	    "visibility": true
+	  },
+	  "columns": 3,
+	  "order": 2
+	},
+
+	{
+      "type": "WIDGET_BANNER",
+	  "titleObj": null,
+      "showMore": null,
+	  "order": 3
+	},
+
+	{
+      "type": "WIDGET_QUICK_ACCESS",
+	  "titleObj": {
+	    "title": "Accesos rapidos",
+	    "textColor": "#1D0071"
+	  },
+      "showMore": {
+	    "title": "Ver mas",
+        "textColor": "#12345678",
+	    "visibility": true
+	  },
+	  "columns": 4,
+      "order": 1
+	}
+],
+
+"general":[
+    {
+      "type": "Enviar dinero",
+      "icon": "https:misimagenes/images/sendmoney.png",
+      "promoIcon": "",
+      "backgroundColor": "#12345678"
+    },
+  {
+    "type": "Recargar TAE",
+    "icon": "https:misimagenes/images/sendmoney.png",
+    "promoIcon": "",
+    "backgroundColor": "#12345678"
+  },
+  {
+    "type": "Pagar servicios",
+    "icon": "https:misimagenes/images/sendmoney.png",
+    "promoIcon": "",
+    "backgroundColor": "#12345678"
+  },
+  {
+    "type": "Pago en comercios",
+    "icon": "https:misimagenes/images/sendmoney.png",
+    "promoIcon": "",
+    "backgroundColor": "#12345678"
+  },
+  {
+    "type": "Tarjeta Claro Pay",
+    "icon": "https:misimagenes/images/sendmoney.png",
+    "promoIcon": "",
+    "backgroundColor": "#12345678"
+  },
+  {
+    "type": "Mi cuenta CLABE",
+    "icon": "https:misimagenes/images/sendmoney.png",
+    "promoIcon": "",
+    "backgroundColor": "#12345678"
+  },
+  {
+    "type": "Retirar dinero",
+    "icon": "https:misimagenes/images/sendmoney.png",
+    "promoIcon": "",
+    "backgroundColor": "#12345678"
+  },
+  {
+    "type": "Movimientos",
+    "icon": "https:misimagenes/images/sendmoney.png",
+    "promoIcon": "",
+    "backgroundColor": "#12345678"
+  },
+  {
+    "type": "Mi cartera",
+    "icon": "https:misimagenes/images/sendmoney.png",
+    "promoIcon": "",
+    "backgroundColor": "#12345678"
+  }
+],
+  "services":[
+    {
+      "type": "Expedia",
+      "icon": "https:misimagenes/images/sendmoney.png",
+      "promoIcon": "",
+      "backgroundColor": "#12345678"
+    },
+    {
+      "type": "Pase",
+      "icon": "https:misimagenes/images/sendmoney.png",
+      "promoIcon": "",
+      "backgroundColor": "#12345678"
+    },
+    {
+      "type": "Musica",
+      "icon": "https:misimagenes/images/sendmoney.png",
+      "promoIcon": "",
+      "backgroundColor": "#12345678"
+    },
+    {
+      "type": "Noticias",
+      "icon": "https:misimagenes/images/sendmoney.png",
+      "promoIcon": "",
+      "backgroundColor": "#12345678"
+    },
+    {
+      "type": "Telcel",
+      "icon": "https:misimagenes/images/sendmoney.png",
+      "promoIcon": "",
+      "backgroundColor": "#12345678"
+    },
+    {
+      "type": "Prestamo",
+      "icon": "https:misimagenes/images/sendmoney.png",
+      "promoIcon": "",
+      "backgroundColor": "#12345678"
+    },
+    {
+      "type": "Telmex",
+      "icon": "https:misimagenes/images/sendmoney.png",
+      "promoIcon": "",
+      "backgroundColor": "#12345678"
+    },
+    {
+      "type": "Cerca de mi",
+      "icon": "https:misimagenes/images/sendmoney.png",
+      "promoIcon": "",
+      "backgroundColor": "#12345678"
+    },
+    {
+      "type": "Promos",
+      "icon": "https:misimagenes/images/sendmoney.png",
+      "promoIcon": "",
+      "backgroundColor": "#12345678"
+    },
+    {
+      "type": "Sky",
+      "icon": "https:misimagenes/images/sendmoney.png",
+      "promoIcon": "",
+      "backgroundColor": "#12345678"
+    },
+    {
+      "type": "CFE",
+      "icon": "https:misimagenes/images/sendmoney.png",
+      "promoIcon": "",
+      "backgroundColor": "#12345678"
+    },
+    {
+      "type": "¿Que es Claro Pay?",
+      "icon": "https:misimagenes/images/sendmoney.png",
+      "promoIcon": "",
+      "backgroundColor": "#12345678"
+    }
+  ]
+}
+
