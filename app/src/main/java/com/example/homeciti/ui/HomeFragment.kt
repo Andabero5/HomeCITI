@@ -1,31 +1,25 @@
 package com.example.homeciti.ui
 
+
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
+import androidx.fragment.app.viewModels
 import com.example.homeciti.R
+import com.example.homeciti.core.Resource
+import com.example.homeciti.data.domain.HomeServiceDataSource
 import com.example.homeciti.data.model.*
 import com.example.homeciti.databinding.FragmentHomeBinding
+import com.example.homeciti.presentation.HomeViewModel
+import com.example.homeciti.presentation.HomeViewModelFactory
+import com.example.homeciti.remote.RetrofitClient
+import com.example.homeciti.remote.homeService.HomeServiceRepoImpl
 import com.example.homeciti.ui.adapters.HomeAdapter
 
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
     private lateinit var binding: FragmentHomeBinding
-    private var homeList: List<HomeService> =
-        mutableListOf(
-            HomeService(
-                "WIDGET_GENERAL",
-                TitleObj("Que quieres hacer hoy?", "#AC4832"),
-                showMore = ShowMore("ver mas", visibility = true),
-                2
-            ),
-            HomeService(
-                "WIDGET_QUICK_ACCESS",
-                TitleObj("Acceso rapido", "#AC4832"),
-                showMore = ShowMore("ver mas", visibility = true),
-                2
-            )
-        )
     private var general: List<GeneralService> = mutableListOf(
         GeneralService("sendMoney", promoIcon = "nuevo"),
         GeneralService("chargePhone"),
@@ -47,10 +41,39 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         )
     )
 
+    private val viewModel by viewModels<HomeViewModel> {
+        HomeViewModelFactory(
+            HomeServiceRepoImpl(
+                HomeServiceDataSource(RetrofitClient.webServiceHome)
+            )
+        )
+    }
+
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentHomeBinding.bind(view)
-        binding.rvHome.adapter = HomeAdapter(homeList, quickAccesses, general)
+
+        viewModel.getHomeServiceList().observe(viewLifecycleOwner,{result->
+            when (result){
+                is Resource.Loading->{
+                    binding.shimmer.startShimmer()
+                    binding.shimmer.visibility = View.VISIBLE
+                }
+                is Resource.Failure->{
+                    Log.d("resultJson", (result.error.message.toString()))
+                    binding.shimmer.stopShimmer()
+                    binding.shimmer.visibility = View.GONE
+                }
+                is Resource.Success->{
+                    Log.d("resultJson", (result.data.home.toString()))
+                    binding.shimmer.stopShimmer()
+                    binding.shimmer.visibility = View.GONE
+                    binding.rvHome.adapter = HomeAdapter(result.data.home, quickAccesses, general)
+                }
+            }
+
+        })
 
     }
 }
