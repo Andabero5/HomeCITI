@@ -1,5 +1,6 @@
 package com.example.homeciti.ui.viewmodel
 
+import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -13,9 +14,9 @@ class ServiceViewModel:ViewModel() {
     private val repo = Repo()
 
     // funcion para devolver mi lista de datos
-    fun fetchServiceData():LiveData<MutableList<Service>>{
+    fun fetchServiceData(context: Context):LiveData<MutableList<Service>>{
         val mutableData = MutableLiveData<MutableList<Service>>()
-        repo.getServiceData().observeForever{
+        repo.getServiceData(context)?.observeForever{
             mutableData.value = it
         }
 

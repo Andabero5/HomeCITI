@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="wrap_content"
-    android:layout_width="match_parent"
-    android:orientation="vertical">
+    android:layout_width="wrap_content"
+    android:orientation="horizontal">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="120dp"
         android:orientation="vertical"
         app:cardCornerRadius="5dp"
@@ -27,12 +27,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:contentDescription="@null"
-                android:scaleType="fitCenter"
+                android:scaleType="fitXY"
                 android:src="@mipmap/ic_micro_app_recharge"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/item_label_tag"

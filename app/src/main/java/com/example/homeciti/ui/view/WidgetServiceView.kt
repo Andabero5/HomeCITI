@@ -4,6 +4,7 @@ import android.content.Context
 import android.util.Log
 import android.view.View
 import android.widget.Button
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.graphics.toColorInt
@@ -13,6 +14,7 @@ import com.example.homeciti.R
 import com.example.homeciti.data.model.HomeService
 import com.example.homeciti.ui.adapters.GeneralAdapter
 import com.example.homeciti.ui.adapters.ServiceAdapter
+import com.facebook.shimmer.ShimmerFrameLayout
 
 class WidgetServiceView @JvmOverloads constructor(context: Context, var item : HomeService
     ) : ConstraintLayout(context),
@@ -20,9 +22,9 @@ class WidgetServiceView @JvmOverloads constructor(context: Context, var item : H
         private lateinit var lbl : TextView
         private lateinit var button : Button
         private lateinit var rv : RecyclerView
-
+        private lateinit var ll_service : LinearLayout
+        private lateinit var mFrameLayout : ShimmerFrameLayout
         private lateinit var adapterService : ServiceAdapter
-
 
         init {
             Log.d(TAG, "Kotlin init block called.")
@@ -30,10 +32,18 @@ class WidgetServiceView @JvmOverloads constructor(context: Context, var item : H
             subscribe()
         }
 
-        private fun subscribe() {
+        private fun subscribe(){
             lbl = findViewById(R.id.lbl_quickaccess)
             button = findViewById(R.id.btn_quickaccess_seemore)
             rv = findViewById(R.id.rv_quickaccess)
+
+            mFrameLayout = findViewById(R.id.shimmer_view_container)
+            ll_service = findViewById(R.id.ll_service)
+
+            // Lo colocamos invisible para mostrar el Shimmer
+            rv.visibility = View.INVISIBLE
+            mFrameLayout.visibility = View.VISIBLE;
+            // -------------------------------------
 
             lbl.text = item.titleObj.title
 
@@ -46,21 +56,27 @@ class WidgetServiceView @JvmOverloads constructor(context: Context, var item : H
                 button.setTextColor(item.showMore.textColor.toColorInt())
             }
 
-            // Esto es nuevo
+            // El adapter
             adapterService = ServiceAdapter(context)
             rv.layoutManager = GridLayoutManager(context,item.columns)
             rv.adapter = adapterService
 
-            serviceViewModel.fetchServiceData().observe(activity,{
+            serviceViewModel.fetchServiceData(context).observe(activity,{
                 Log.d(TAG, "Adapter.")
+                // Lo colocamos invisible para mostrar el Shimmer
+                rv.visibility = View.VISIBLE
+                // -------------------------------------
 
                 adapterService.setListData(it)
                 adapterService.notifyDataSetChanged()
+
             })
+
         }
 
         public override fun onFinishInflate() {
             super.onFinishInflate()
+            println("Dentro del onFinishInflate")
             /*
             Log.d(TAG, "onFinishInflate() called.")
             //compassNeedle = findViewById(R.id.compass_needle)

@@ -4,6 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/ID139/Desktop/principal/Android/HomeCITI/app/src/main/res/layout/activity_main.xml" value="0.3302083333333333" />
+        <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/drawable-v24/ic_add_money_partner.xml" value="0.18425925925925926" />
+        <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/drawable-v24/ic_funding.xml" value="0.2203125" />
         <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/drawable/background_btn_seemore.xml" value="0.11354166666666667" />
         <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/drawable/background_item_label_tag.xml" value="0.11354166666666667" />
         <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/drawable/background_item_labeltag.xml" value="0.14907407407407408" />
@@ -21,7 +23,7 @@
         <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/item_home_today.xml" value="0.33" />
         <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/layout_banner_home_partner.xml" value="0.24005891016200295" />
         <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/layout_general_home_partner.xml" value="0.25" />
-        <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/layout_header_home_partner.xml" value="0.25" />
+        <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/layout_header_home_partner.xml" value="0.3558139534883721" />
         <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/layout_quickaccess_home_partner.xml" value="0.33" />
       </map>
     </option>

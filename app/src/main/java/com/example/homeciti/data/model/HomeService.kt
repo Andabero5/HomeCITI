@@ -14,4 +14,7 @@ data class ShowMore(
     val visibility: Boolean = false
 )
 
-data class TitleObj(val title: String = "", val textColor: String = "")
+data class TitleObj(
+    val title: String = "",
+    val textColor: String = ""
+)

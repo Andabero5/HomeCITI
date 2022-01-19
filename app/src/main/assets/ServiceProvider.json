@@ -17,8 +17,15 @@
 
 	{
       "type": "WIDGET_BANNER",
-	  "titleObj": null,
-      "showMore": null,
+      "titleObj": {
+        "title": "Banner",
+        "textColor": "#1D0071"
+      },
+      "showMore": {
+        "title": "Ver más",
+        "textColor": "#12345678",
+        "visibility": true
+      },
 	  "order": 3
 	},
 
@@ -97,75 +104,75 @@
   "services":[
     {
       "type": "Expedia",
-      "icon": "https:misimagenes/images/sendmoney.png",
+      "icon": "https://www.nicepng.com/png/full/395-3957278_expedia-png-get-started-expedia-logo-png.png",
       "promoIcon": "",
-      "backgroundColor": "#12345678"
+      "backgroundColor": ""
     },
     {
       "type": "Pase",
-      "icon": "https:misimagenes/images/sendmoney.png",
+      "icon": "https://pbs.twimg.com/profile_images/725759818267422720/hYsLwrGg_400x400.jpg",
       "promoIcon": "",
-      "backgroundColor": "#12345678"
+      "backgroundColor": ""
     },
     {
       "type": "Musica",
-      "icon": "https:misimagenes/images/sendmoney.png",
+      "icon": "https://w7.pngwing.com/pngs/727/579/png-transparent-app-store-music-itunes-computer-icons-apple-apple-purple-violet-text-thumbnail.png",
       "promoIcon": "",
-      "backgroundColor": "#12345678"
+      "backgroundColor": ""
     },
     {
       "type": "Noticias",
-      "icon": "https:misimagenes/images/sendmoney.png",
+      "icon": "https://cdn.pixabay.com/photo/2018/10/26/09/24/news-3774160_960_720.png",
       "promoIcon": "",
-      "backgroundColor": "#12345678"
+      "backgroundColor": ""
     },
     {
       "type": "Telcel",
-      "icon": "https:misimagenes/images/sendmoney.png",
+      "icon": "https://toppng.com/uploads/preview/telcel-digital-pcs-vector-logo-free-11574029807u5xja7ooh1.png",
       "promoIcon": "",
-      "backgroundColor": "#12345678"
+      "backgroundColor": ""
     },
     {
       "type": "Prestamo",
-      "icon": "https:misimagenes/images/sendmoney.png",
+      "icon": "https://e7.pngegg.com/pngimages/711/287/png-clipart-payday-loan-money-bank-financial-services-give-money-text-service.png",
       "promoIcon": "",
-      "backgroundColor": "#12345678"
+      "backgroundColor": ""
     },
     {
       "type": "Telmex",
-      "icon": "https:misimagenes/images/sendmoney.png",
+      "icon": "https://e7.pngegg.com/pngimages/347/142/png-clipart-logo-telmex-mobile-phones-font-aol-logo-text-logo.png",
       "promoIcon": "",
-      "backgroundColor": "#12345678"
+      "backgroundColor": ""
     },
     {
       "type": "Cerca de mi",
-      "icon": "https:misimagenes/images/sendmoney.png",
+      "icon": "https://flyclipart.com/thumb2/flat-location-logo-icons-png-934757.png",
       "promoIcon": "",
-      "backgroundColor": "#12345678"
+      "backgroundColor": ""
     },
     {
       "type": "Promos",
-      "icon": "https:misimagenes/images/sendmoney.png",
-      "promoIcon": "",
-      "backgroundColor": "#12345678"
+      "icon": "https://e7.pngegg.com/pngimages/37/353/png-clipart-sales-promotion-discounts-and-allowances-computer-icons-marketing-public-relations-logo-thumbnail.png",
+      "promoIcon": "Favorite",
+      "backgroundColor": "blue"
     },
     {
       "type": "Sky",
-      "icon": "https:misimagenes/images/sendmoney.png",
+      "icon": "https://image.pngaaa.com/738/2524738-middle.png",
       "promoIcon": "",
-      "backgroundColor": "#12345678"
+      "backgroundColor": ""
     },
     {
       "type": "CFE",
-      "icon": "https:misimagenes/images/sendmoney.png",
-      "promoIcon": "",
-      "backgroundColor": "#12345678"
+      "icon": "https://cpng.pikpng.com/pngl/s/365-3652622_cfe-logo-comision-federal-de-electricidad-png-sport.png",
+      "promoIcon": "New",
+      "backgroundColor": "red"
     },
     {
       "type": "¿Que es Claro Pay?",
-      "icon": "https:misimagenes/images/sendmoney.png",
+      "icon": "https://play-lh.googleusercontent.com/5sTC1Sa7WI0SHwVK9dJo2hbq-JC-iUVW_ymmWnlinLlqZAf0yWqn_LJBC8p-scn03qk_",
       "promoIcon": "",
-      "backgroundColor": "#12345678"
+      "backgroundColor": ""
     }
   ]
 }

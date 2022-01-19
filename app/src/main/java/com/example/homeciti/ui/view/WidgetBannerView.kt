@@ -4,6 +4,7 @@ import android.content.Context
 import android.util.Log
 import android.view.View
 import android.widget.Button
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.graphics.toColorInt
@@ -35,18 +36,30 @@ class WidgetBannerView @JvmOverloads constructor(context: Context, var item : Ho
         button = findViewById(R.id.btn_banner_seemore)
         rv = findViewById(R.id.rv_banner)
 
-        // Titulo del layout
-        lbl.text = item.titleObj.title
-        lbl.setTextColor(item.titleObj.textColor.toColorInt())
-
-        // Boton del layout
-        if (item.showMore.visibility) {
-            button.visibility = View.VISIBLE
-            button.text = item.showMore.title
-            button.setTextColor(item.showMore.textColor.toColorInt())
+        if(item.titleObj==null){
+            lbl.visibility = View.INVISIBLE
         }
         else{
+            // Titulo del layout
+            lbl.text = item.titleObj.title
+
+            // por el momento texto sin color
+            //lbl.setTextColor(item.titleObj.textColor.toColorInt())
+        }
+
+        if(item.showMore==null){
             button.visibility = View.INVISIBLE
+        }
+        else{
+            // Boton del layout
+            if (item.showMore.visibility) {
+                button.text = item.showMore.title
+                // por el momento texto sin color
+                //button.setTextColor(item.showMore.textColor.toColorInt())
+            }
+            else{
+                button.visibility = View.INVISIBLE
+            }
         }
 
         // Esto es nuevo
