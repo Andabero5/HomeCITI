@@ -21,10 +21,12 @@
         <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/item_home_quickaccess.xml" value="0.24316546762589927" />
         <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/item_home_quickaccess_load.xml" value="0.22" />
         <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/item_home_today.xml" value="0.33" />
+        <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/item_shimmer.xml" value="0.16" />
         <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/layout_banner_home_partner.xml" value="0.24005891016200295" />
         <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/layout_general_home_partner.xml" value="0.25" />
         <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/layout_header_home_partner.xml" value="0.3558139534883721" />
-        <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/layout_quickaccess_home_partner.xml" value="0.33" />
+        <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/layout_quickaccess_home_partner.xml" value="0.25" />
+        <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/layout_shimmer_home_partner.xml" value="0.21" />
       </map>
     </option>
   </component>

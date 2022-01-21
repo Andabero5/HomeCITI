@@ -25,7 +25,6 @@ class HomeFragment : Fragment(R.layout.fragment_home){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentHomeBinding.bind(view)
-
         orderDataHome()
     }
 
@@ -33,6 +32,8 @@ class HomeFragment : Fragment(R.layout.fragment_home){
     private fun orderDataHome(){
         homeViewModel.fetchHomeData().observe(this,{ listHome ->
             // Arreglar lista por order
+            binding.shimmerLayoutQuick.startShimmer()
+            binding.shimmerLayoutQuick.visibility = View.VISIBLE
             val orderHome = listHome.sortedBy { it.order }.map { it }
 
             // Ciclo para recorrer cada objeto de la lista
@@ -60,6 +61,10 @@ class HomeFragment : Fragment(R.layout.fragment_home){
                     }
                 }
             }
+
+            binding.shimmerLayoutQuick.stopShimmer()
+            binding.shimmerLayoutQuick.visibility = View.GONE
+
         })
     }
 

@@ -48,57 +48,57 @@
 "general":[
     {
       "type": "Enviar dinero",
-      "icon": "https:misimagenes/images/sendmoney.png",
-      "promoIcon": "",
-      "backgroundColor": "#12345678"
+      "icon": "https://w7.pngwing.com/pngs/936/836/png-transparent-computer-icons-currency-money-bank-i-ll-send-you-the-money-thumbnail.png",
+      "promoIcon": "Nuevo",
+      "backgroundColor": "red"
     },
   {
     "type": "Recargar TAE",
-    "icon": "https:misimagenes/images/sendmoney.png",
-    "promoIcon": "",
-    "backgroundColor": "#12345678"
+    "icon": "https://pngfree.io/upload/cache/upload/imgs/homepngwing/free-png-zzwmk-f350x360.png",
+    "promoIcon": "Favorito",
+    "backgroundColor": "blue"
   },
   {
     "type": "Pagar servicios",
-    "icon": "https:misimagenes/images/sendmoney.png",
+    "icon": "https://w7.pngwing.com/pngs/160/178/png-transparent-salary-payroll-payment-management-tax-pay-human-resource-management-service-people-thumbnail.png",
     "promoIcon": "",
-    "backgroundColor": "#12345678"
+    "backgroundColor": ""
   },
   {
     "type": "Pago en comercios",
-    "icon": "https:misimagenes/images/sendmoney.png",
+    "icon": "https://w7.pngwing.com/pngs/753/261/png-transparent-mobile-payment-payment-gateway-computer-icons-payment-system-payment-gadget-electronics-service.png",
     "promoIcon": "",
-    "backgroundColor": "#12345678"
+    "backgroundColor": ""
   },
   {
     "type": "Tarjeta Claro Pay",
-    "icon": "https:misimagenes/images/sendmoney.png",
+    "icon": "https://e7.pngegg.com/pngimages/954/306/png-clipart-computer-icons-credit-card-bank-payment-card-minimal-text-payment.png",
     "promoIcon": "",
-    "backgroundColor": "#12345678"
+    "backgroundColor": ""
   },
   {
     "type": "Mi cuenta CLABE",
-    "icon": "https:misimagenes/images/sendmoney.png",
-    "promoIcon": "",
-    "backgroundColor": "#12345678"
+    "icon": "https://images-na.ssl-images-amazon.com/images/I/41jkyotpKhL.png",
+    "promoIcon": "Nuevo",
+    "backgroundColor": "red"
   },
   {
     "type": "Retirar dinero",
-    "icon": "https:misimagenes/images/sendmoney.png",
-    "promoIcon": "",
-    "backgroundColor": "#12345678"
+    "icon": "https://www.pngkit.com/png/detail/17-172892_this-page-contains-all-info-about-money-icon.png",
+    "promoIcon": "Favorito",
+    "backgroundColor": "blue"
   },
   {
     "type": "Movimientos",
-    "icon": "https:misimagenes/images/sendmoney.png",
+    "icon": "https://www.pngall.com/wp-content/uploads/1/Withdraw-PNG.png",
     "promoIcon": "",
-    "backgroundColor": "#12345678"
+    "backgroundColor": ""
   },
   {
     "type": "Mi cartera",
-    "icon": "https:misimagenes/images/sendmoney.png",
+    "icon": "https://pngimg.com/uploads/wallet/wallet_PNG77049.png",
     "promoIcon": "",
-    "backgroundColor": "#12345678"
+    "backgroundColor": ""
   }
 ],
   "services":[
@@ -164,7 +164,7 @@
     },
     {
       "type": "CFE",
-      "icon": "https://cpng.pikpng.com/pngl/s/365-3652622_cfe-logo-comision-federal-de-electricidad-png-sport.png",
+      "icon": "https://noti-notisistema.netdna-ssl.com/noticias/wp-content/media/2017/08/cfe-610x389.jpg",
       "promoIcon": "New",
       "backgroundColor": "red"
     },

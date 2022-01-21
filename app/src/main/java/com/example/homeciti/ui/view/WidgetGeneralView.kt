@@ -51,7 +51,7 @@ class WidgetGeneralView @JvmOverloads constructor(context: Context, var item : H
         rv.layoutManager = GridLayoutManager(context,item.columns)
         rv.adapter = adapterGeneral
 
-        generalViewModel.fetchGeneralData().observe(activity,{
+        generalViewModel.fetchGeneralData(context).observe(activity,{
             Log.d(TAG, "Adapter.")
 
             adapterGeneral.setListData(it)

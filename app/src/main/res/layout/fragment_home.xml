@@ -24,6 +24,20 @@
                     layout="@layout/layout_header_home_partner">
                 </include>
 
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/shimmer_layout_quick"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:visibility="visible">
+
+                    <include
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        layout="@layout/layout_shimmer_home_partner">
+                    </include>
+
+                </com.facebook.shimmer.ShimmerFrameLayout>
+
                 <LinearLayout
                     android:id="@+id/ll_home"
                     android:layout_width="match_parent"
@@ -34,6 +48,8 @@
                     iremos pintando los layout
                     de cada uno de los widgets
                     -->
+
+
                 </LinearLayout>
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>

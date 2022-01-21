@@ -5,4 +5,7 @@ data class GeneralService(
     val icon: String = "",
     val promoIcon: String = "",
     val backgroundColor: String = ""
+
 )
+
+data class GeneralServiceList(val general: List<GeneralService> = listOf())

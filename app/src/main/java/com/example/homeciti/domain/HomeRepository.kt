@@ -5,7 +5,7 @@ import java.io.IOException
 import java.nio.charset.Charset
 
 class HomeRepository {
-    fun getTutorials(context: Context): String {
+    fun getServices(context: Context): String {
         var json: String? = null
         val charset: Charset = Charsets.UTF_8
 

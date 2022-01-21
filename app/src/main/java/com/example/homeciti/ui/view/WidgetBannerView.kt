@@ -64,10 +64,8 @@ class WidgetBannerView @JvmOverloads constructor(context: Context, var item : Ho
 
         // Esto es nuevo
         adapterBanner = BannerAdapter(context)
-        GridLayoutManager(context,item.columns)
         rv.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL,false)
         rv.adapter = adapterBanner
-
         bannerViewModel.fetchBannerData().observe(activity,{
             Log.d(TAG, "Adapter.")
 

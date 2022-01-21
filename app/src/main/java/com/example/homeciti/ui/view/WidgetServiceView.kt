@@ -23,7 +23,6 @@ class WidgetServiceView @JvmOverloads constructor(context: Context, var item : H
         private lateinit var button : Button
         private lateinit var rv : RecyclerView
         private lateinit var ll_service : LinearLayout
-        private lateinit var mFrameLayout : ShimmerFrameLayout
         private lateinit var adapterService : ServiceAdapter
 
         init {
@@ -36,17 +35,13 @@ class WidgetServiceView @JvmOverloads constructor(context: Context, var item : H
             lbl = findViewById(R.id.lbl_quickaccess)
             button = findViewById(R.id.btn_quickaccess_seemore)
             rv = findViewById(R.id.rv_quickaccess)
-
-            mFrameLayout = findViewById(R.id.shimmer_view_container)
             ll_service = findViewById(R.id.ll_service)
 
             // Lo colocamos invisible para mostrar el Shimmer
             rv.visibility = View.INVISIBLE
-            mFrameLayout.visibility = View.VISIBLE;
             // -------------------------------------
 
             lbl.text = item.titleObj.title
-
             lbl.setTextColor(item.titleObj.textColor.toColorInt())
 
             // Boton del layout
@@ -64,14 +59,15 @@ class WidgetServiceView @JvmOverloads constructor(context: Context, var item : H
             serviceViewModel.fetchServiceData(context).observe(activity,{
                 Log.d(TAG, "Adapter.")
                 // Lo colocamos invisible para mostrar el Shimmer
-                rv.visibility = View.VISIBLE
-                // -------------------------------------
 
+                // -------------------------------------
+                rv.visibility = View.VISIBLE
                 adapterService.setListData(it)
                 adapterService.notifyDataSetChanged()
-
             })
 
+            // Lo colocamos visible para mostrar el recycler
+            rv.visibility = View.VISIBLE
         }
 
         public override fun onFinishInflate() {

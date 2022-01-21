@@ -6,7 +6,3 @@ data class Service(
     val promoIcon: String = "",
     val backgroundColor: String = ""
 )
-
-data class ServiceResponse(
-    val tutorials: List<Service> = listOf()
-)

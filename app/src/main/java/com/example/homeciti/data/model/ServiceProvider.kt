@@ -5,8 +5,8 @@ class ServiceProvider {
 
         // Crear la lista mutable de home
         val homes = mutableListOf(
-            HomeService("WIDGET_GENERAL", TitleObj("¿Qué quieres hacer hoy?","#1D0071"), ShowMore("Ver más","#1D0071",true),3,3),
-            HomeService("WIDGET_QUICK_ACCESS", TitleObj("Acceso rápido","#1D0071"), ShowMore("Ver más","#1D0071",true),4,1),
+            HomeService("WIDGET_GENERAL", TitleObj("¿Qué quieres hacer hoy?","#1D0071"), ShowMore("Ver más","#1D0071",true),3,1),
+            HomeService("WIDGET_QUICK_ACCESS", TitleObj("Acceso rápido","#1D0071"), ShowMore("Ver más","#1D0071",true),4,3),
             //HomeService("WIDGET_BANNER", TitleObj(), ShowMore(),1,1),
             HomeService("WIDGET_BANNER",TitleObj("Banner","#1D0071"),ShowMore("Ver más", "#1D0071", true),1,2)
         )
