@@ -47,7 +47,8 @@
                 android:textStyle="bold"
                 android:paddingHorizontal="5dp"
                 android:background="@drawable/background_item_labeltag"
-                tools:ignore="SmallSp" />
+                tools:ignore="SmallSp"
+                android:visibility="gone"/>
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/item_text"

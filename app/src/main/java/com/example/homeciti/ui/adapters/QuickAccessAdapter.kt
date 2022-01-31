@@ -28,7 +28,7 @@ class QuickAccessAdapter (private val quickAccessService:List<QuickAccessService
     private inner class QuickAccessViewHolder(private val binding: ItemHomeQuickaccessBinding):
         RecyclerView.ViewHolder(binding.root){
         fun bind(item : QuickAccessService){
-            //Glide.with(itemView.context).load(item.icon).fitCenter().into(binding.itemIcon)
+            //Glide.with(itemView.context).load(item.icon).centerCrop().into(binding.itemIcon)
             binding.itemText.text = item.type
             if (item.promoIcon.isNotEmpty()){
                 binding.itemLabelTag.text = item.promoIcon

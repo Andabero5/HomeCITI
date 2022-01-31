@@ -10,25 +10,25 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClient {
-    val webServiceHome by lazy {
+    val webServiceHome: WebServiceHome by lazy {
         Retrofit.Builder().baseUrl(Constants.BASE_HOME_SERVICE_URL)
             .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create())).build()
             .create(WebServiceHome::class.java)
 
     }
-    val webServiceGeneral by lazy {
+    val webServiceGeneral: WebServiceGeneral by lazy {
         Retrofit.Builder().baseUrl(Constants.BASE_GENERAL_SERVICE_URL)
             .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create())).build()
             .create(WebServiceGeneral::class.java)
 
     }
-    val webServiceBanner by lazy {
+    val webServiceBanner: WebServiceBanner by lazy {
         Retrofit.Builder().baseUrl(Constants.BASE_BANNER_SERVICE_API)
             .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create())).build()
             .create(WebServiceBanner::class.java)
 
     }
-    val webServiceQuickAccess by lazy {
+    val webServiceQuickAccess: WebServiceQuickAccess by lazy {
         Retrofit.Builder().baseUrl(Constants.BASE_QUICK_ACCESS_SERVICE_API)
             .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create())).build()
             .create(WebServiceQuickAccess::class.java)

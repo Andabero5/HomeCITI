@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.homeciti.data.model.GeneralService
 import com.example.homeciti.databinding.ItemHomeGeneralBinding
 
@@ -31,6 +32,9 @@ class GeneralAdapter(private val generalService:List<GeneralService>): RecyclerV
             if (item.promoIcon.isNotEmpty()){
                 binding.itemLabeltag.text = item.promoIcon
                 binding.itemLabeltag.visibility= View.VISIBLE
+            }
+            else{
+                binding.itemLabeltag.visibility = View.GONE
             }
         }
     }

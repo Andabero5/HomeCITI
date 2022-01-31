@@ -5,9 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingTop="20dp"
-    android:paddingBottom="20dp">
-
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp">
     <com.facebook.shimmer.ShimmerFrameLayout
         android:id="@+id/shimmer"
         android:layout_width="match_parent"
@@ -16,59 +15,64 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
-        <include layout="@layout/layout_service_shimmer" />
+        <include layout="@layout/layout_shimmer_home" />
 
     </com.facebook.shimmer.ShimmerFrameLayout>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/rv_banner">
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/lbl_general"
+            android:id="@+id/lbl_banner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            tools:text="Qué quieres hacer hoy?"
+            tools:text="Banner"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="gone"/>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_general_see_more"
+            android:id="@+id/btn_banner_seemore"
             android:layout_width="wrap_content"
-            android:layout_height="35dp"
-            android:layout_marginEnd="8dp"
+            android:layout_height="wrap_content"
+            tools:text="ver más"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
             android:background="@drawable/background_btn_seemore"
-            tools:text="Ver más"
-            android:paddingHorizontal="24dp"
+            android:textAllCaps="false"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:visibility="visible"/>
+            android:visibility="gone"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_general"
+        android:id="@+id/rv_banner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
-        android:overScrollMode="never"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cl_header"
-        tools:spanCount="3"
-        tools:itemCount="6"
-        tools:listitem="@layout/item_home_general">
+        tools:listitem="@layout/item_home_general"
+        android:orientation="horizontal">
+
+
     </androidx.recyclerview.widget.RecyclerView>
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
