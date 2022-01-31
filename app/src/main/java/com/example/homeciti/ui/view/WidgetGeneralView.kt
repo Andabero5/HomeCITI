@@ -23,7 +23,6 @@ class WidgetGeneralView @JvmOverloads constructor(context: Context, var item : H
 
     private lateinit var adapterGeneral : GeneralAdapter
 
-
     init {
         Log.d(TAG, "Kotlin init block called.")
         View.inflate(context, R.layout.layout_general_home_partner, this)
@@ -36,7 +35,6 @@ class WidgetGeneralView @JvmOverloads constructor(context: Context, var item : H
         rv = findViewById(R.id.rv_general)
 
         lbl.text = item.titleObj.title
-
         lbl.setTextColor(item.titleObj.textColor.toColorInt())
 
         // Boton del layout

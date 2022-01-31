@@ -4,25 +4,27 @@ import android.content.Context
 import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.example.homeciti.core.Constants
 import com.example.homeciti.data.model.*
 import com.example.homeciti.data.model.ServiceProvider.Companion.banners
-import com.example.homeciti.data.model.ServiceProvider.Companion.generals
 import com.example.homeciti.data.model.ServiceProvider.Companion.homes
-import com.example.homeciti.data.model.ServiceProvider.Companion.services
 import com.example.homeciti.data.webservice.GeneralApiService
-import com.example.homeciti.data.webservice.HomeApiService
-import com.example.homeciti.data.webservice.RetrofitHelper
-import com.example.homeciti.data.webservice.RetrofitHelper.getRetrofit
+import com.example.homeciti.remote.RetrofitClient
+import com.example.homeciti.remote.generalService.GeneralServiceRepoImpl
+import com.example.homeciti.domain.GeneralServiceDataSource
 import com.example.homeciti.domain.HomeRepository
-import com.google.gson.Gson
-import com.google.gson.JsonObject
-import kotlinx.coroutines.*
-import org.json.JSONArray
+import com.example.homeciti.remote.generalService.GeneralApiInterface
+import com.google.gson.GsonBuilder
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import org.json.JSONException
 import org.json.JSONObject
-import retrofit2.create
-import java.io.IOException
-import java.nio.charset.Charset
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 class Repo {
 
@@ -47,16 +49,67 @@ class Repo {
     }
 
     // Funcion devolver la lista de objetos de tipo general
-    fun getGeneralData(context : Context): MutableLiveData<MutableList<GeneralService>> {
+    fun getGeneralData(context : Context): LiveData<MutableList<GeneralService>>?{
         val mutableDataGeneral = MutableLiveData<MutableList<GeneralService>>()
         val listData = mutableListOf<GeneralService>()
 
+        val apiInterface = GeneralApiInterface.create().getGenerals()
+        println("MI API INTERFACE -------------------------")
+        println(apiInterface)
+
+        //apiInterface.enqueue( Callback<List<Movie>>())
+        apiInterface.enqueue( object : Callback<String> {
+            override fun onResponse(call: Call<String>?, response: Response<String>?) {
+
+                if(response?.body() != null){
+                    val r = response.body()
+                    println("ESTE ES EL VALOR DE R")
+                    println(r)
+                    r?.let { generals ->
+
+                        try {
+                            val obj = JSONObject(generals)
+                            val generalArray = obj.getJSONArray("general")
+
+                            println("GENERAL ARRAY ES ")
+                            println(generalArray)
+                            for (i in 0 until generalArray.length()){
+                                val document = generalArray.getJSONObject(i)
+
+                                val txtTitle = document.getString("type")
+                                val imgIcon = document.getString("icon")
+                                val txtLabel = document.getString("promoIcon")
+                                val bgColor = document.getString("backgroundColor")
+
+                                val general = GeneralService(txtTitle,imgIcon,txtLabel, bgColor)
+                                listData.add(general)
+                            }
+
+                            mutableDataGeneral.value = listData
+
+                        } catch (e: JSONException) {
+                            //exception
+                            e.printStackTrace()
+                        }
+
+                    }
+                }
+
+            }
+
+            override fun onFailure(call: Call<String>?, t: Throwable?) {
+                println("ERROR")
+            }
+
+        })
+
+
         // consumir archivo
+        /*
         val repository = HomeRepository().getServices(context)
 
         try {
 
-            // En caso de convertir
             //val outputJson: String = Gson().toJson(iter)
             val obj = JSONObject(repository)
             val generalArray = obj.getJSONArray("general")
@@ -79,47 +132,10 @@ class Repo {
             //exception
             e.printStackTrace()
         }
-        return mutableDataGeneral
-        /*
-        CoroutineScope(Dispatchers.IO).launch {
-
-            val call = getRetrofit().create(GeneralApiService::class.java).getGeneralServices()
-            val iter = call.body()
-            println("CALL")
-            println(call)
-            println("PUPY")
-            println(iter)
-
-                try {
-
-                    for (document in iter!!.general) {
-                        println("MI DOCUMENT ES")
-                        println(document)
-                        val txtTitle = document.type
-                        val imgIcon = document.icon
-                        val txtLabel = document.promoIcon
-                        val bgColor = document.backgroundColor
-
-                        val general = GeneralService(txtTitle, imgIcon, txtLabel, bgColor)
-                        listData.add(general)
-                    }
-
-                    println("LISTA EN TRY")
-                    println(listData)
-
-                } catch (e: JSONException) {
-                    //exception
-                    e.printStackTrace()
-                }
-
-            Thread{
-                println("LISTA EN GLOBAL SCOPE")
-                println(listData)
-                mutableDataGeneral.postValue(listData)
-            }
-        }
 
          */
+        return mutableDataGeneral
+
 
         //mutableDataGeneral.value = listData
         //return mutableDataGeneral
@@ -161,56 +177,7 @@ class Repo {
         }
 
         return mutableDataService
-        /*
 
-        CoroutineScope(Dispatchers.IO).launch {
-            // consumir archivo
-            //val repository = HomeRepository().getTutorials(context)
-            val retrofit = getRetrofit().create(HomeApiService::class.java).getAllServices()
-            val servi = retrofit.body()
-
-            if(retrofit.isSuccessful){
-
-                // Llamada correcta
-                try {
-                    //val obj = JSONObject(servi)
-                    //val servicesArray = servi.getJSONArray("services")
-                    val servicesArray = servi
-                    println("Imprimir el servicesArray")
-                    println(servicesArray)
-
-                    for (i in 0 until servicesArray.length()){
-                        val document = servicesArray.getJSONObject(i)
-
-                        val txtTitle = document.getString("type")
-                        val imgIcon = document.getString("icon")
-                        val txtLabel = document.getString("promoIcon")
-                        val bgColor = document.getString("backgroundColor")
-
-                        val service = Service(txtTitle,imgIcon,txtLabel, bgColor)
-                        println("MI SERVICE ES:")
-                        println(service)
-                        listData.add(service)
-                    }
-
-                } catch (e: JSONException) {
-                    //exception
-                    e.printStackTrace()
-                }
-
-
-
-            }else{
-                // Llamada incorrecta
-                    showError(context)
-                println("Error")
-            }
-        }
-        mutableDataService.value = listData
-        return mutableDataService
-
-
-         */
 
         /*
         INTENTO ANTERIOR

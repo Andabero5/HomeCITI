@@ -15,7 +15,6 @@ class BannerAdapter(val context : Context): RecyclerView.Adapter<BannerAdapter.B
     // Crear mi lista de datos mutable
     private var dataList = mutableListOf<BannerService>()
 
-    // Funcion para settear los nuevos datos
     fun setListData(data:MutableList<BannerService>){
         dataList = data
     }
@@ -31,7 +30,9 @@ class BannerAdapter(val context : Context): RecyclerView.Adapter<BannerAdapter.B
         holder.render(banner)
     }
 
-    override fun getItemCount(): Int = dataList.size
+    override fun getItemCount(): Int{
+        return dataList.size
+    }
 
     inner class BannerViewHolder(private val binding: ItemHomeBannerBinding):RecyclerView.ViewHolder(binding.root) {
 

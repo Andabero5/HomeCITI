@@ -12,7 +12,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="753dec4a-6ec9-4967-ad18-6582449f3ad3" name="Default Changelist" comment="MVVM con Widgets, visualizando completo su mutablelist, consume el JSON local y pinta el recycler de Quick_access">
+    <list default="true" id="753dec4a-6ec9-4967-ad18-6582449f3ad3" name="Default Changelist" comment="MVVM con Widgets, JSON local y falta corregir el skeleton Shimmer">
       <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
@@ -20,50 +20,21 @@
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_activity_activity_1_2_4_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_activity_activity_1_2_4_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_arch_core_core_runtime_2_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_arch_core_core_runtime_2_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_cursoradapter_cursoradapter_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_cursoradapter_cursoradapter_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_customview_customview_1_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_customview_customview_1_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_documentfile_documentfile_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_documentfile_documentfile_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_dynamicanimation_dynamicanimation_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_dynamicanimation_dynamicanimation_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_interpolator_interpolator_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_interpolator_interpolator_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_legacy_legacy_support_core_utils_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_legacy_legacy_support_core_utils_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_savedstate_2_3_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_savedstate_2_3_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_loader_loader_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_loader_loader_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_localbroadcastmanager_localbroadcastmanager_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_localbroadcastmanager_localbroadcastmanager_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_common_ktx_2_3_5_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_common_ktx_2_3_5_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_fragment_ktx_2_3_5_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_fragment_ktx_2_3_5_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_runtime_ktx_2_3_5_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_runtime_ktx_2_3_5_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_ui_ktx_2_3_5_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_ui_ktx_2_3_5_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_print_print_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_print_print_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_core_1_4_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_core_1_4_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_espresso_espresso_core_3_4_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_espresso_espresso_core_3_4_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_espresso_espresso_idling_resource_3_4_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_espresso_espresso_idling_resource_3_4_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_ext_junit_1_1_3_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_ext_junit_1_1_3_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_monitor_1_4_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_monitor_1_4_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_runner_1_4_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_runner_1_4_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_services_storage_1_4_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_services_storage_1_4_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_1_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_1_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_animated_1_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_animated_1_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_versionedparcelable_versionedparcelable_1_1_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_versionedparcelable_versionedparcelable_1_1_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_viewpager_viewpager_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_viewpager_viewpager_1_0_0_aar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/ServiceProvider.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/ServiceProvider.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/data/Repo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/data/Repo.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/data/model/GeneralService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/data/model/GeneralService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/data/model/Service.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/data/model/Service.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/data/model/ServiceProvider.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/data/model/ServiceProvider.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/data/webservice/HomeApiService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/data/webservice/HomeApiService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/data/webservice/RetrofitHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/data/webservice/RetrofitHelper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/data/webservice/GeneralApiService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/data/webservice/GeneralApiService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/data/webservice/RetrofitHelper.kt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/domain/HomeRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/domain/HomeRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/view/HomeFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/view/HomeFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/adapters/BannerAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/adapters/BannerAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/adapters/ServiceAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/adapters/ServiceAdapter.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/view/WidgetBannerView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/view/WidgetBannerView.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/view/WidgetGeneralView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/view/WidgetGeneralView.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/view/WidgetServiceView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/view/WidgetServiceView.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/viewmodel/GeneralViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/viewmodel/GeneralViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/layout_quickaccess_home_partner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_quickaccess_home_partner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/layout_banner_home_partner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_banner_home_partner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,13 +78,13 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="resourceFile" />
         <option value="navigationResourceFile" />
         <option value="Class" />
-        <option value="Kotlin Object" />
-        <option value="Kotlin Class" />
-        <option value="Kotlin Interface" />
         <option value="layoutResourceFile" />
+        <option value="resourceFile" />
+        <option value="Kotlin Class" />
+        <option value="Kotlin Object" />
+        <option value="Kotlin Interface" />
       </list>
     </option>
   </component>
@@ -143,6 +114,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android-custom-viewC:/Users/otato/Documents/ProyectoPrueba/AndroidCitiPrueba/caches/modules-2/files-2.1/androidx.recyclerview/recyclerview/1.2.1/f0f93e67af3f7417bdd560d5142f6dec4fe629c3/recyclerview-1.2.1-sources.jar!/androidx/recyclerview/widget/RecyclerView.java_RecyclerView_DIMENSIONS" value="1080&#10;1920" />
     <property name="android-custom-viewC:/Users/otato/Documents/ProyectoPrueba/AndroidCitiPrueba/caches/modules-2/files-2.1/androidx.recyclerview/recyclerview/1.2.1/f0f93e67af3f7417bdd560d5142f6dec4fe629c3/recyclerview-1.2.1-sources.jar!/androidx/recyclerview/widget/RecyclerView.java_SELECTED" value="RecyclerView" />
+    <property name="android-custom-viewC:/Users/otato/Documents/ProyectoPrueba/AndroidCitiPrueba/caches/modules-2/files-2.1/androidx.viewpager2/viewpager2/1.0.0/3c3569044e6969f1ee5c3aa03b08e6717a2d782f/viewpager2-1.0.0-sources.jar!/androidx/viewpager2/widget/ViewPager2.java_SELECTED" value="ViewPager2" />
     <property name="android-custom-viewC:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/java/com/example/homeciti/ui/view/WidgetGeneralView.kt_SELECTED" value="WidgetGeneralView" />
     <property name="android-custom-viewC:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/java/com/example/homeciti/ui/view/WidgetGeneralView.kt_WidgetGeneralView_DIMENSIONS" value="1080&#10;1920" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/assets" />
@@ -159,7 +131,11 @@
       <recent name="C:\Users\otato\Documents\homeciti_prueba\HomeCITI\app\src\main\java\com\example\homeciti\data\model" />
       <recent name="C:\Users\otato\Documents\homeciti_prueba\HomeCITI\app\src\main\res\drawable" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\otato\Documents\homeciti_prueba\HomeCITI\app\src\main\java\com\example\homeciti\remote" />
+    </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.example.homeciti.core" />
       <recent name="com.example.homeciti.data.model" />
       <recent name="com.example.homeciti.ui.adapters" />
       <recent name="com.example.homeciti.ui.view" />
@@ -300,7 +276,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642550553542</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="MVVM con Widgets, JSON local y falta corregir el skeleton Shimmer">
+      <created>1642805460602</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1642805460602</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -324,6 +307,7 @@
     <MESSAGE value="MVVM con WidgetGeneralView" />
     <MESSAGE value="MVVM con Widgets, visualizando completo su mutablelist" />
     <MESSAGE value="MVVM con Widgets, visualizando completo su mutablelist, consume el JSON local y pinta el recycler de Quick_access" />
-    <option name="LAST_COMMIT_MESSAGE" value="MVVM con Widgets, visualizando completo su mutablelist, consume el JSON local y pinta el recycler de Quick_access" />
+    <MESSAGE value="MVVM con Widgets, JSON local y falta corregir el skeleton Shimmer" />
+    <option name="LAST_COMMIT_MESSAGE" value="MVVM con Widgets, JSON local y falta corregir el skeleton Shimmer" />
   </component>
 </project>

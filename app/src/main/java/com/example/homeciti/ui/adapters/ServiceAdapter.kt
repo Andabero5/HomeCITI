@@ -56,6 +56,7 @@ class ServiceAdapter(val context: Context): RecyclerView.Adapter<ServiceAdapter.
                 promoIcon.visibility = View.VISIBLE
 
                 if (service.backgroundColor == "red") {
+
                     promoIcon.setBackgroundResource(R.drawable.background_item_labeltag)
                 }
                 else if(service.backgroundColor == "blue") {

@@ -4,16 +4,13 @@ import android.content.Context
 import android.util.Log
 import android.view.View
 import android.widget.Button
-import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.core.graphics.toColorInt
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.*
 import com.example.homeciti.R
 import com.example.homeciti.data.model.HomeService
 import com.example.homeciti.ui.adapters.BannerAdapter
+import me.relex.circleindicator.CircleIndicator2
 
 class WidgetBannerView @JvmOverloads constructor(context: Context, var item : HomeService
 ) : ConstraintLayout(context),
@@ -21,9 +18,9 @@ class WidgetBannerView @JvmOverloads constructor(context: Context, var item : Ho
     private lateinit var lbl : TextView
     private lateinit var button : Button
     private lateinit var rv : RecyclerView
+    private lateinit var indicator2 : CircleIndicator2
 
     private lateinit var adapterBanner : BannerAdapter
-
 
     init {
         Log.d(TAG, "Kotlin init block called.")
@@ -35,6 +32,8 @@ class WidgetBannerView @JvmOverloads constructor(context: Context, var item : Ho
         lbl = findViewById(R.id.lbl_banner)
         button = findViewById(R.id.btn_banner_seemore)
         rv = findViewById(R.id.rv_banner)
+
+        indicator2 = findViewById(R.id.ci_banner)
 
         if(item.titleObj==null){
             lbl.visibility = View.INVISIBLE
@@ -66,12 +65,25 @@ class WidgetBannerView @JvmOverloads constructor(context: Context, var item : Ho
         adapterBanner = BannerAdapter(context)
         rv.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL,false)
         rv.adapter = adapterBanner
+
         bannerViewModel.fetchBannerData().observe(activity,{
             Log.d(TAG, "Adapter.")
 
             adapterBanner.setListData(it)
             adapterBanner.notifyDataSetChanged()
+
+            indicatorBanner(adapterBanner.itemCount)
         })
+    }
+
+    fun indicatorBanner(totalItems : Int){
+        // al recycler
+        var snapHelper = PagerSnapHelper()
+        snapHelper.attachToRecyclerView(rv)
+
+        indicator2.attachToRecyclerView(rv,snapHelper)
+        indicator2.createIndicators(totalItems,0)
+        indicator2.animatePageSelected(2)
     }
 
     public override fun onFinishInflate() {

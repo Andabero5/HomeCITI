@@ -43,7 +43,7 @@ class ServiceProvider {
         val banners = mutableListOf(
             BannerService("https://img.freepik.com/psd-gratis/portada-facebook-muebles-plantilla-banner-web_237398-331.jpg?size=626&ext=jpg","New","red"),
             BannerService("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTg9RsCUqU65wQCUS92rwdigFiQcCHmOB_i0Q&usqp=CAU","Favorite","blue"),
-            BannerService("https://www.guiaspracticas.com/wp-content/uploads/image/banner.jpg","",""),
+            BannerService("https://www.guiaspracticas.com/wp-content/uploads/image/banner.jpg","","")
         )
     }
 }
