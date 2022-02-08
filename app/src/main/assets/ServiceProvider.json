@@ -50,13 +50,13 @@
       "type": "Enviar dinero",
       "icon": "https://w7.pngwing.com/pngs/936/836/png-transparent-computer-icons-currency-money-bank-i-ll-send-you-the-money-thumbnail.png",
       "promoIcon": "Nuevo",
-      "backgroundColor": "red"
+      "backgroundColor": "#e03333"
     },
   {
     "type": "Recargar TAE",
     "icon": "https://pngfree.io/upload/cache/upload/imgs/homepngwing/free-png-zzwmk-f350x360.png",
     "promoIcon": "Favorito",
-    "backgroundColor": "blue"
+    "backgroundColor": "#0012B5"
   },
   {
     "type": "Pagar servicios",
@@ -80,13 +80,13 @@
     "type": "Mi cuenta CLABE",
     "icon": "https://images-na.ssl-images-amazon.com/images/I/41jkyotpKhL.png",
     "promoIcon": "Nuevo",
-    "backgroundColor": "red"
+    "backgroundColor": "#e03333"
   },
   {
     "type": "Retirar dinero",
     "icon": "https://www.pngkit.com/png/detail/17-172892_this-page-contains-all-info-about-money-icon.png",
     "promoIcon": "Favorito",
-    "backgroundColor": "blue"
+    "backgroundColor": "#0012B5"
   },
   {
     "type": "Movimientos",
@@ -106,73 +106,73 @@
       "type": "Expedia",
       "icon": "https://www.nicepng.com/png/full/395-3957278_expedia-png-get-started-expedia-logo-png.png",
       "promoIcon": "",
-      "backgroundColor": ""
+      "backgroundColor": "#0012B5"
     },
     {
       "type": "Pase",
       "icon": "https://pbs.twimg.com/profile_images/725759818267422720/hYsLwrGg_400x400.jpg",
       "promoIcon": "",
-      "backgroundColor": ""
+      "backgroundColor": "#0012B5"
     },
     {
       "type": "Musica",
       "icon": "https://w7.pngwing.com/pngs/727/579/png-transparent-app-store-music-itunes-computer-icons-apple-apple-purple-violet-text-thumbnail.png",
       "promoIcon": "",
-      "backgroundColor": ""
+      "backgroundColor": "#0012B5"
     },
     {
       "type": "Noticias",
       "icon": "https://cdn.pixabay.com/photo/2018/10/26/09/24/news-3774160_960_720.png",
       "promoIcon": "",
-      "backgroundColor": ""
+      "backgroundColor": "#0012B5"
     },
     {
       "type": "Telcel",
       "icon": "https://toppng.com/uploads/preview/telcel-digital-pcs-vector-logo-free-11574029807u5xja7ooh1.png",
       "promoIcon": "",
-      "backgroundColor": ""
+      "backgroundColor": "#0012B5"
     },
     {
       "type": "Prestamo",
       "icon": "https://e7.pngegg.com/pngimages/711/287/png-clipart-payday-loan-money-bank-financial-services-give-money-text-service.png",
       "promoIcon": "",
-      "backgroundColor": ""
+      "backgroundColor": "#0012B5"
     },
     {
       "type": "Telmex",
       "icon": "https://e7.pngegg.com/pngimages/347/142/png-clipart-logo-telmex-mobile-phones-font-aol-logo-text-logo.png",
       "promoIcon": "",
-      "backgroundColor": ""
+      "backgroundColor": "#0012B5"
     },
     {
       "type": "Cerca de mi",
       "icon": "https://flyclipart.com/thumb2/flat-location-logo-icons-png-934757.png",
       "promoIcon": "",
-      "backgroundColor": ""
+      "backgroundColor": "#0012B5"
     },
     {
       "type": "Promos",
       "icon": "https://e7.pngegg.com/pngimages/37/353/png-clipart-sales-promotion-discounts-and-allowances-computer-icons-marketing-public-relations-logo-thumbnail.png",
       "promoIcon": "Favorite",
-      "backgroundColor": "blue"
+      "backgroundColor": "#0012B5"
     },
     {
       "type": "Sky",
       "icon": "https://image.pngaaa.com/738/2524738-middle.png",
-      "promoIcon": "",
-      "backgroundColor": ""
+      "promoIcon": "New",
+      "backgroundColor": "#0012B5"
     },
     {
       "type": "CFE",
       "icon": "https://noti-notisistema.netdna-ssl.com/noticias/wp-content/media/2017/08/cfe-610x389.jpg",
       "promoIcon": "New",
-      "backgroundColor": "red"
+      "backgroundColor": "#e03333"
     },
     {
       "type": "¿Que es Claro Pay?",
       "icon": "https://play-lh.googleusercontent.com/5sTC1Sa7WI0SHwVK9dJo2hbq-JC-iUVW_ymmWnlinLlqZAf0yWqn_LJBC8p-scn03qk_",
       "promoIcon": "",
-      "backgroundColor": ""
+      "backgroundColor": "#0012B5"
     }
   ]
 }

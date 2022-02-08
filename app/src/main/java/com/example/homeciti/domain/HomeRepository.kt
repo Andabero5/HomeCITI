@@ -6,7 +6,7 @@ import java.nio.charset.Charset
 
 class HomeRepository {
     fun getServices(context: Context): String {
-        var json: String? = null
+        val json: String?
         val charset: Charset = Charsets.UTF_8
 
         try {

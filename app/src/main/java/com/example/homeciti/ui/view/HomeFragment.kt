@@ -11,7 +11,7 @@ import com.example.homeciti.databinding.FragmentHomeBinding
 import com.example.homeciti.ui.viewmodel.BannerViewModel
 import com.example.homeciti.ui.viewmodel.GeneralViewModel
 import com.example.homeciti.ui.viewmodel.HomeViewModel
-import com.example.homeciti.ui.viewmodel.ServiceViewModel
+import com.example.homeciti.ui.viewmodel.QuickAccessViewModel
 
 class HomeFragment : Fragment(R.layout.fragment_home){
 
@@ -50,7 +50,7 @@ class HomeFragment : Fragment(R.layout.fragment_home){
 
                         }
                         "WIDGET_QUICK_ACCESS" -> {
-                            widgetView = WidgetServiceView(ctx, item)
+                            widgetView = WidgetQuickAccessView(ctx, item)
                             binding.llHome.addView(widgetView)
 
                         }
@@ -72,7 +72,7 @@ class HomeFragment : Fragment(R.layout.fragment_home){
 
 interface MyViewModelAccessor {
     var generalViewModel: GeneralViewModel
-    var serviceViewModel: ServiceViewModel
+    var quickAccessViewModel: QuickAccessViewModel
     var bannerViewModel: BannerViewModel
 
     val activity: FragmentActivity
@@ -87,7 +87,7 @@ class MyViewModelInjector(val context: Context) : MyViewModelAccessor {
         }
     }
     override var generalViewModel = ViewModelProvider(activity)[GeneralViewModel::class.java]
-    override var serviceViewModel = ViewModelProvider(activity)[ServiceViewModel::class.java]
+    override var quickAccessViewModel = ViewModelProvider(activity)[QuickAccessViewModel::class.java]
     override var bannerViewModel = ViewModelProvider(activity)[BannerViewModel::class.java]
 
 }

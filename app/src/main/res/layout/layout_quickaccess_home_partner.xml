@@ -8,13 +8,6 @@
     android:paddingTop="8dp"
     android:paddingBottom="8dp">
 
-    <LinearLayout
-        android:id="@+id/ll_service"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        tools:ignore="MissingConstraints">
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl_header"
         android:layout_width="match_parent"
@@ -32,7 +25,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
-            android:text="@string/lbl_widget"
+            android:text="Mi texto"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -54,8 +47,6 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_quickaccess"
         android:layout_width="match_parent"
@@ -70,7 +61,5 @@
         tools:listitem="@layout/item_home_quickaccess">
 
     </androidx.recyclerview.widget.RecyclerView>
-
-    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

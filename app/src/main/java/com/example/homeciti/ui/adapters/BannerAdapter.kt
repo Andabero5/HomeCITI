@@ -1,11 +1,12 @@
 package com.example.homeciti.ui.adapters
 
 import android.content.Context
+import android.graphics.drawable.GradientDrawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.graphics.toColorInt
 import androidx.recyclerview.widget.RecyclerView
-import com.example.homeciti.R
 import com.example.homeciti.data.model.BannerService
 import com.example.homeciti.databinding.ItemHomeBannerBinding
 import com.squareup.picasso.Picasso
@@ -34,7 +35,7 @@ class BannerAdapter(val context : Context): RecyclerView.Adapter<BannerAdapter.B
         return dataList.size
     }
 
-    inner class BannerViewHolder(private val binding: ItemHomeBannerBinding):RecyclerView.ViewHolder(binding.root) {
+    inner class BannerViewHolder(binding: ItemHomeBannerBinding):RecyclerView.ViewHolder(binding.root) {
 
         // Defino los elementos de la vista a traves del binding
         private val itemIcon = binding.itemIcon
@@ -50,12 +51,8 @@ class BannerAdapter(val context : Context): RecyclerView.Adapter<BannerAdapter.B
             } else{
                 promoIcon.visibility = View.VISIBLE
 
-                if (banner.backgroundColor == "red") {
-                    promoIcon.setBackgroundResource(R.drawable.background_item_labeltag)
-                }
-                else if(banner.backgroundColor == "blue") {
-                    promoIcon.setBackgroundResource(R.drawable.background_item_labeltag_blue)
-                }
+                val drawable: GradientDrawable =  promoIcon.background as GradientDrawable
+                drawable.setColor(banner.backgroundColor.toColorInt())
 
                 promoIcon.text = banner.promoIcon
             }

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="wrap_content"
     android:layout_width="match_parent"
     android:orientation="vertical"
@@ -38,7 +37,7 @@
                     android:scaleType="fitCenter"
                     />
 
-                <androidx.appcompat.widget.AppCompatTextView
+                <TextView
                     android:id="@+id/item_labeltag"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -46,13 +45,15 @@
                     android:layout_marginTop="0dp"
                     android:layout_marginEnd="0dp"
                     android:layout_marginBottom="0dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
                     android:paddingHorizontal="5dp"
                     android:text="Nuevo"
                     android:textColor="@color/white"
                     android:textSize="8sp"
                     android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
+                    android:background="@drawable/item_label_tag"
+
                     />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -64,7 +65,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:text="Mi texto"
+        android:text="Mi item"
         android:textAlignment="center"
         android:textSize="10sp"
         android:textStyle="bold"

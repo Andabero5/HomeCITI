@@ -15,11 +15,12 @@ import me.relex.circleindicator.CircleIndicator2
 class WidgetBannerView @JvmOverloads constructor(context: Context, var item : HomeService
 ) : ConstraintLayout(context),
     MyViewModelAccessor by MyViewModelInjector(context){
-    private lateinit var lbl : TextView
-    private lateinit var button : Button
-    private lateinit var rv : RecyclerView
-    private lateinit var indicator2 : CircleIndicator2
 
+    private lateinit var lbl_widget : TextView
+    private lateinit var btn_widget : Button
+    private lateinit var rv_widget : RecyclerView
+    private lateinit var indicator2 : CircleIndicator2
+    private lateinit var constraint_header : ConstraintLayout
     private lateinit var adapterBanner : BannerAdapter
 
     init {
@@ -29,82 +30,54 @@ class WidgetBannerView @JvmOverloads constructor(context: Context, var item : Ho
     }
 
     private fun subscribe() {
-        lbl = findViewById(R.id.lbl_banner)
-        button = findViewById(R.id.btn_banner_seemore)
-        rv = findViewById(R.id.rv_banner)
-
+        lbl_widget = findViewById(R.id.lbl_banner)
+        btn_widget = findViewById(R.id.btn_banner_seemore)
+        rv_widget = findViewById(R.id.rv_banner)
         indicator2 = findViewById(R.id.ci_banner)
+        constraint_header = findViewById(R.id.cl_header)
 
+        // Configuracion del titulo label (lbl)
         if(item.titleObj==null){
-            lbl.visibility = View.INVISIBLE
-        }
-        else{
-            // Titulo del layout
-            lbl.text = item.titleObj.title
-
-            // por el momento texto sin color
-            //lbl.setTextColor(item.titleObj.textColor.toColorInt())
+            lbl_widget.visibility = View.GONE
+        } else{
+            lbl_widget.text = item.titleObj.title
         }
 
+        // Configuracion del boton showmore (btn)
         if(item.showMore==null){
-            button.visibility = View.INVISIBLE
+            btn_widget.visibility = View.GONE
+        }
+        else if (item.showMore.visibility) {
+            btn_widget.text = item.showMore.title
         }
         else{
-            // Boton del layout
-            if (item.showMore.visibility) {
-                button.text = item.showMore.title
-                // por el momento texto sin color
-                //button.setTextColor(item.showMore.textColor.toColorInt())
-            }
-            else{
-                button.visibility = View.INVISIBLE
-            }
+            btn_widget.visibility = View.GONE
         }
 
-        // Esto es nuevo
+
         adapterBanner = BannerAdapter(context)
-        rv.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL,false)
-        rv.adapter = adapterBanner
+        rv_widget.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL,false)
+        rv_widget.adapter = adapterBanner
 
         bannerViewModel.fetchBannerData().observe(activity,{
             Log.d(TAG, "Adapter.")
-
             adapterBanner.setListData(it)
             adapterBanner.notifyDataSetChanged()
-
             indicatorBanner(adapterBanner.itemCount)
         })
     }
 
     fun indicatorBanner(totalItems : Int){
-        // al recycler
         var snapHelper = PagerSnapHelper()
-        snapHelper.attachToRecyclerView(rv)
+        snapHelper.attachToRecyclerView(rv_widget)
 
-        indicator2.attachToRecyclerView(rv,snapHelper)
-        indicator2.createIndicators(totalItems,0)
-        indicator2.animatePageSelected(2)
+        // Visualizar el indicador de punto de items en el recycler
+        if(totalItems>1){
+            indicator2.attachToRecyclerView(rv_widget,snapHelper)
+            indicator2.createIndicators(totalItems,0)
+            indicator2.animatePageSelected(2)
+        }
     }
-
-    public override fun onFinishInflate() {
-        super.onFinishInflate()
-        /*
-        Log.d(TAG, "onFinishInflate() called.")
-        //compassNeedle = findViewById(R.id.compass_needle)
-        lbl = findViewById(R.id.item_label)
-        button = findViewById(R.id.btn_general_seemore)
-        rv = findViewById(R.id.rv_general)
-
-        adapterGeneral = GeneralAdapter(context)
-        rv.layoutManager = GridLayoutManager(context,item.columns)
-        rv.adapter = adapterGeneral
-
-        subscribe()
-
-         */
-    }
-
-    /** more code here **/
 
     companion object {
         private const val TAG = "Widget_View_Kotlin"
