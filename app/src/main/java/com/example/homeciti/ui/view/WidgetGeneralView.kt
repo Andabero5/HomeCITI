@@ -17,40 +17,52 @@ import com.example.homeciti.ui.adapters.GeneralAdapter
 class WidgetGeneralView @JvmOverloads constructor(context: Context, var item : HomeService
     ) : ConstraintLayout(context),
     MyViewModelAccessor by MyViewModelInjector(context){
-        private lateinit var lbl_widget : TextView
-        private lateinit var btn_widget : Button
-        private lateinit var rv_widget : RecyclerView
+        private lateinit var lblWidget : TextView
+        private lateinit var btnWidget : Button
+        private lateinit var rvWidget : RecyclerView
 
         private lateinit var adapterGeneral : GeneralAdapter
 
         init {
-            Log.d(TAG, "Kotlin init block called.")
+            Log.d(TAG, "Kotlin init block called WidgetGeneralView.")
             View.inflate(context, R.layout.layout_general_home_partner, this)
             subscribe()
         }
 
         private fun subscribe() {
-            lbl_widget = findViewById(R.id.lbl_general)
-            btn_widget = findViewById(R.id.btn_general_seemore)
-            rv_widget = findViewById(R.id.rv_general)
+            lblWidget = findViewById(R.id.lbl_general)
+            btnWidget = findViewById(R.id.btn_general_seemore)
+            rvWidget = findViewById(R.id.rv_general)
 
-            lbl_widget.text = item.titleObj.title
-            lbl_widget.setTextColor(item.titleObj.textColor.toColorInt())
+            // Titulo label (lbl)
+            item.titleObj.let { titleObj ->
+                // Titulo
+                lblWidget.text = titleObj.title
 
-            // Boton del layout
-            if (item.showMore.visibility) {
-                btn_widget.visibility = View.VISIBLE
-                btn_widget.text = item.showMore.title
-                btn_widget.setTextColor(item.showMore.textColor.toColorInt())
+                // Color
+                if(titleObj.textColor.isNotEmpty()) lblWidget.setTextColor(titleObj.textColor.toColorInt())
             }
 
-            // Esto es nuevo
+            // Configuracion del boton showMore (btn)
+            item.showMore.let { showMore ->
+                if (showMore.visibility){
+
+                    // Titulo
+                    btnWidget.text = showMore.title
+                    btnWidget.visibility = View.VISIBLE
+
+                    // Color
+                    if(showMore.textColor.isNotEmpty()) btnWidget.setTextColor(showMore.textColor.toColorInt())
+                } else btnWidget.visibility = View.GONE
+            }
+
+            // RecyclerView
             adapterGeneral = GeneralAdapter(context)
-            rv_widget.layoutManager = GridLayoutManager(context,item.columns)
-            rv_widget.adapter = adapterGeneral
+            rvWidget.layoutManager = GridLayoutManager(context,item.columns)
+            rvWidget.adapter = adapterGeneral
 
             generalViewModel.fetchGeneralData(context).observe(activity,{
-                Log.d(TAG, "Adapter.")
+                Log.d(TAG, "Adapter General.")
 
                 adapterGeneral.setListData(it)
                 adapterGeneral.notifyDataSetChanged()
@@ -60,6 +72,6 @@ class WidgetGeneralView @JvmOverloads constructor(context: Context, var item : H
         /** more code here **/
 
         companion object {
-            private const val TAG = "Widget_View_Kotlin"
+            private const val TAG = "WidgetGeneral_View"
         }
 }

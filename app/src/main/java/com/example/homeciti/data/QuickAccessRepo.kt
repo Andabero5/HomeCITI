@@ -8,13 +8,12 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class QuickAccessRepo {
+
     // Funcion devolver la lista de objetos de tipo service de quickaccess
     fun getServiceData(): MutableLiveData<MutableList<QuickAccessService>>? {
 
-        // crear listas que se van a completar con la info consumida
         val mutableDataService = MutableLiveData<MutableList<QuickAccessService>>()
         val listData = mutableListOf<QuickAccessService>()
-
         val serviceApiInterface = ServiceApiInterface.create().getServices()
 
         serviceApiInterface.enqueue( object : Callback<MutableList<QuickAccessService>> {
@@ -22,9 +21,7 @@ class QuickAccessRepo {
                 call: Call<MutableList<QuickAccessService>>,
                 response: Response<MutableList<QuickAccessService>>
             ) {
-
                 var serviceArray = response.body()
-
                 serviceArray?.let { services ->
 
                     for (document in services){
@@ -44,12 +41,10 @@ class QuickAccessRepo {
             }
 
             override fun onFailure(call: Call<MutableList<QuickAccessService>>, t: Throwable) {
-                println("VACIO")
+                println("Error")
             }
         })
 
         return mutableDataService
-
     }
-
 }

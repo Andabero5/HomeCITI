@@ -9,8 +9,8 @@ class BannerRepo {
 
     fun getBannerData(): LiveData<MutableList<BannerService>> {
         val mutableDataBanner = MutableLiveData<MutableList<BannerService>>()
-
         val listData = mutableListOf<BannerService>()
+
         for (document in ServiceProvider.banners){
             val imgIcon = document.icon
             val txtLabel = document.promoIcon

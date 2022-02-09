@@ -11,9 +11,9 @@ class GeneralRepo {
 
     // Funcion devolver la lista de objetos de tipo general
     fun getGeneralData(): MutableLiveData<MutableList<GeneralService>>?{
+
         val mutableDataGeneral = MutableLiveData<MutableList<GeneralService>>()
         val listData = mutableListOf<GeneralService>()
-
         val apiInterface= GeneralApiInterface.create().getGenerals()
 
         apiInterface.enqueue( object : Callback<MutableList<GeneralService>> {
@@ -21,9 +21,7 @@ class GeneralRepo {
                 call: Call<MutableList<GeneralService>>,
                 response: Response<MutableList<GeneralService>>
             ) {
-
                 val generalArray = response.body()
-
                 generalArray?.let { generals ->
 
                     for (document in generals){
@@ -43,11 +41,10 @@ class GeneralRepo {
             }
 
             override fun onFailure(call: Call<MutableList<GeneralService>>, t: Throwable) {
-                println("VACIO")
+                println("Error")
             }
         })
 
         return mutableDataGeneral
     }
-
 }

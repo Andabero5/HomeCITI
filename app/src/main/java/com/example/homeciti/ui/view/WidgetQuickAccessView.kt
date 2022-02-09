@@ -16,51 +16,63 @@ import com.example.homeciti.ui.adapters.QuickAccessAdapter
 class WidgetQuickAccessView @JvmOverloads constructor(context: Context, var item : HomeService
     ) : ConstraintLayout(context),
     MyViewModelAccessor by MyViewModelInjector(context){
-        private lateinit var lbl_widget : TextView
-        private lateinit var btn_widget : Button
-        private lateinit var rv_widget : RecyclerView
+        private lateinit var lblWidget : TextView
+        private lateinit var btnWidget : Button
+        private lateinit var rvWidget : RecyclerView
 
         private lateinit var adapterQuickAccess : QuickAccessAdapter
 
         init {
-            Log.d(TAG, "Kotlin init block called.")
+            Log.d(TAG, "Kotlin init Quick Access block called.")
             View.inflate(context, R.layout.layout_quickaccess_home_partner, this)
             subscribe()
         }
 
         private fun subscribe(){
-            lbl_widget = findViewById(R.id.lbl_quickaccess)
-            btn_widget = findViewById(R.id.btn_quickaccess_seemore)
-            rv_widget = findViewById(R.id.rv_quickaccess)
+            lblWidget = findViewById(R.id.lbl_quickaccess)
+            btnWidget = findViewById(R.id.btn_quickaccess_seemore)
+            rvWidget = findViewById(R.id.rv_quickaccess)
 
             // Lo colocamos invisible para mostrar el Shimmer
-            rv_widget.visibility = View.INVISIBLE
-            // -------------------------------------
+            rvWidget.visibility = View.INVISIBLE
 
-            lbl_widget.text = item.titleObj.title
-            lbl_widget.setTextColor(item.titleObj.textColor.toColorInt())
+            // Configuracion del titulo label (lbl)
+            item.titleObj.let { titleObj ->
 
-            // Boton del layout
-            if (item.showMore.visibility) {
-                btn_widget.visibility = View.VISIBLE
-                btn_widget.text = item.showMore.title
-                btn_widget.setTextColor(item.showMore.textColor.toColorInt())
+                // Titulo
+                lblWidget.text = titleObj.title
+
+                // Color
+                if(titleObj.textColor.isNotEmpty()) lblWidget.setTextColor(titleObj.textColor.toColorInt())
             }
 
-            // El adapter
+            // Configuracion del boton showMore (btn)
+            item.showMore.let { showMore ->
+                if (showMore.visibility){
+
+                    // Titulo
+                    btnWidget.text = showMore.title
+                    btnWidget.visibility = View.VISIBLE
+
+                    // Color
+                    if(showMore.textColor.isNotEmpty()) btnWidget.setTextColor(showMore.textColor.toColorInt())
+                } else btnWidget.visibility = View.GONE
+            }
+
+            // recycler
             adapterQuickAccess = QuickAccessAdapter(context)
-            rv_widget.layoutManager = GridLayoutManager(context,item.columns)
-            rv_widget.adapter = adapterQuickAccess
+            rvWidget.layoutManager = GridLayoutManager(context,item.columns)
+            rvWidget.adapter = adapterQuickAccess
 
             quickAccessViewModel.fetchServiceData(context).observe(activity,{
-                Log.d(TAG, "Adapter.")
+                Log.d(TAG, "Adapter QuickAccess")
 
                 adapterQuickAccess.setListData(it)
                 adapterQuickAccess.notifyDataSetChanged()
             })
 
             // Lo colocamos visible para mostrar el recycler
-            rv_widget.visibility = View.VISIBLE
+            rvWidget.visibility = View.VISIBLE
         }
 
         /** more code here **/

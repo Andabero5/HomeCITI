@@ -12,46 +12,19 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="753dec4a-6ec9-4967-ad18-6582449f3ad3" name="Default Changelist" comment="MVVM con Widgets, JSON local y falta corregir el skeleton Shimmer">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/adapters/QuickAccessAdapter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/view/WidgetQuickAccessView.kt" afterDir="false" />
+    <list default="true" id="753dec4a-6ec9-4967-ad18-6582449f3ad3" name="Default Changelist" comment="MVVM con Widgets terminado con consumo de JSON por URL">
       <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/ServiceProvider.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/ServiceProvider.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/core/Constants.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/core/Constants.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/data/Repo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/data/Repo.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/data/model/GeneralService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/data/model/GeneralService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/data/model/Service.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/data/model/QuickAccessService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/data/BannerRepo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/data/BannerRepo.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/data/GeneralRepo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/data/GeneralRepo.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/data/QuickAccessRepo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/data/QuickAccessRepo.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/data/model/ServiceProvider.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/data/model/ServiceProvider.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/data/webservice/GeneralApiService.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/data/webservice/HomeApiService.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/domain/GeneralServiceDataSource.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/domain/HomeRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/domain/HomeRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/remote/RetrofitClient.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/remote/generalService/GeneralApiInterface.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/remote/generalService/GeneralServiceRepo.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/remote/generalService/GeneralServiceRepoImpl.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/remote/generalService/WebServiceGeneral.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/adapters/BannerAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/adapters/BannerAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/adapters/GeneralAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/adapters/GeneralAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/adapters/ServiceAdapter.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/view/HomeFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/view/HomeFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/view/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/view/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/domain/HomeRepository.kt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/view/WidgetBannerView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/view/WidgetBannerView.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/view/WidgetGeneralView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/view/WidgetGeneralView.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/view/WidgetServiceView.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/viewmodel/BannerViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/viewmodel/BannerViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/viewmodel/GeneralViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/viewmodel/GeneralViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/viewmodel/ServiceViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/viewmodel/QuickAccessViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_home_quickaccess.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_home_quickaccess.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/layout_banner_home_partner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_banner_home_partner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/layout_quickaccess_home_partner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_quickaccess_home_partner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/view/WidgetQuickAccessView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/view/WidgetQuickAccessView.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -307,7 +280,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643653306183</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="MVVM con Widgets terminado con consumo de JSON por URL">
+      <created>1644350099015</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1644350099015</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -332,6 +312,7 @@
     <MESSAGE value="MVVM con Widgets, visualizando completo su mutablelist" />
     <MESSAGE value="MVVM con Widgets, visualizando completo su mutablelist, consume el JSON local y pinta el recycler de Quick_access" />
     <MESSAGE value="MVVM con Widgets, JSON local y falta corregir el skeleton Shimmer" />
-    <option name="LAST_COMMIT_MESSAGE" value="MVVM con Widgets, JSON local y falta corregir el skeleton Shimmer" />
+    <MESSAGE value="MVVM con Widgets terminado con consumo de JSON por URL" />
+    <option name="LAST_COMMIT_MESSAGE" value="MVVM con Widgets terminado con consumo de JSON por URL" />
   </component>
 </project>

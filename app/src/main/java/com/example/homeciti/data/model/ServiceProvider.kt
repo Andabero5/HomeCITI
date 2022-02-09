@@ -12,6 +12,7 @@ class ServiceProvider {
         )
 
         // Crear nuestra Lista mutable de servicios generals
+        /*
         val generals = mutableListOf(
             GeneralService("Send money","https://w7.pngwing.com/pngs/936/836/png-transparent-computer-icons-currency-money-bank-i-ll-send-you-the-money-thumbnail.png", "", ""),
             GeneralService("Charge phone", "https://pngfree.io/upload/cache/upload/imgs/homepngwing/free-png-zzwmk-f350x360.png", "New", "red"),
@@ -39,6 +40,8 @@ class ServiceProvider {
             QuickAccessService("CFE","https://cpng.pikpng.com/pngl/s/365-3652622_cfe-logo-comision-federal-de-electricidad-png-sport.png","New","red"),
             QuickAccessService("¿Que es Claro Pay?","https://play-lh.googleusercontent.com/5sTC1Sa7WI0SHwVK9dJo2hbq-JC-iUVW_ymmWnlinLlqZAf0yWqn_LJBC8p-scn03qk_","",""),
         )
+
+         */
 
         val banners = mutableListOf(
             BannerService("https://img.freepik.com/psd-gratis/portada-facebook-muebles-plantilla-banner-web_237398-331.jpg?size=626&ext=jpg","New","#e03333"),
