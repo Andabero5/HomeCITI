@@ -14,7 +14,7 @@ class QuickAccessRepo {
 
         val mutableDataService = MutableLiveData<MutableList<QuickAccessService>>()
         val listData = mutableListOf<QuickAccessService>()
-        val serviceApiInterface = ServiceApiInterface.create().getServices()
+        val serviceApiInterface = ServiceApiInterface.create().getQuickAccess()
 
         serviceApiInterface.enqueue( object : Callback<MutableList<QuickAccessService>> {
             override fun onResponse(

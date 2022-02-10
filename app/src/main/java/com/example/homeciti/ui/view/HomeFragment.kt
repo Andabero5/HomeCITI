@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.homeciti.R
+import com.example.homeciti.data.model.HomeService
 import com.example.homeciti.databinding.FragmentHomeBinding
 import com.example.homeciti.ui.viewmodel.BannerViewModel
 import com.example.homeciti.ui.viewmodel.GeneralViewModel
@@ -37,7 +38,7 @@ class HomeFragment : Fragment(R.layout.fragment_home){
             val orderHome = listHome.sortedBy { it.order }.map { it }
 
             // Ciclo para recorrer cada objeto de la lista
-            for (item in orderHome){
+            for (item: HomeService in orderHome){
 
                 // Crear el recyclerview a partir de la lista de objetos
                 var widgetView : View
@@ -47,7 +48,6 @@ class HomeFragment : Fragment(R.layout.fragment_home){
                         "WIDGET_GENERAL" -> {
                             widgetView = WidgetGeneralView(ctx, item)
                             binding.llHome.addView(widgetView)
-
                         }
                         "WIDGET_QUICK_ACCESS" -> {
                             widgetView = WidgetQuickAccessView(ctx, item)
@@ -67,7 +67,6 @@ class HomeFragment : Fragment(R.layout.fragment_home){
 
         })
     }
-
 }
 
 interface MyViewModelAccessor {

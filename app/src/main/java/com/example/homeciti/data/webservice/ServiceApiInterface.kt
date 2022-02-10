@@ -10,7 +10,7 @@ import retrofit2.http.GET
 interface ServiceApiInterface {
 
     @GET(Constants.COMPLEMENT_QUICKACCESS_SERVICE_URL)
-    fun getServices() : Call<MutableList<QuickAccessService>>
+    fun getQuickAccess() : Call<MutableList<QuickAccessService>>
 
     companion object {
 

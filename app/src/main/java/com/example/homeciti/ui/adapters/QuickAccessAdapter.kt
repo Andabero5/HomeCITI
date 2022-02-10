@@ -47,13 +47,7 @@ class QuickAccessAdapter(val context : Context): RecyclerView.Adapter<QuickAcces
             Picasso.get().load(quickAccessService.icon).into(itemIcon)
             itemText.text = quickAccessService.type
 
-            /*
-            service.promoIcon?.let {
-                  self.view.visibility = if (it.isEmpty) View.GONE else View.VISIBLE
-            }
-             */
-
-            if (quickAccessService.promoIcon == ""){
+            if (quickAccessService.promoIcon.isNullOrEmpty()){
                 promoIcon.visibility = View.INVISIBLE
             } else{
                 promoIcon.visibility = View.VISIBLE

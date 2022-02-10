@@ -6,7 +6,6 @@ import androidx.lifecycle.ViewModel
 import com.example.homeciti.data.BannerRepo
 import com.example.homeciti.data.model.BannerService
 
-
 class BannerViewModel:ViewModel() {
 
     // instanciar el repo

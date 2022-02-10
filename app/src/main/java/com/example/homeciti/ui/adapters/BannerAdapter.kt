@@ -46,7 +46,7 @@ class BannerAdapter(val context : Context): RecyclerView.Adapter<BannerAdapter.B
 
             Picasso.get().load(banner.icon).into(itemIcon)
 
-            if (banner.promoIcon == ""){
+            if (banner.promoIcon.isNullOrEmpty()){
                 promoIcon.visibility = View.INVISIBLE
             } else{
                 promoIcon.visibility = View.VISIBLE

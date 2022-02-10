@@ -64,7 +64,7 @@ class WidgetQuickAccessView @JvmOverloads constructor(context: Context, var item
             rvWidget.layoutManager = GridLayoutManager(context,item.columns)
             rvWidget.adapter = adapterQuickAccess
 
-            quickAccessViewModel.fetchServiceData(context).observe(activity,{
+            quickAccessViewModel.fetchQuickAccessData().observe(activity,{
                 Log.d(TAG, "Adapter QuickAccess")
 
                 adapterQuickAccess.setListData(it)

@@ -1,7 +1,6 @@
 package com.example.homeciti.ui.view
 
 import android.content.Context
-import android.util.AttributeSet
 import android.util.Log
 import android.view.View
 import android.widget.Button
@@ -61,7 +60,7 @@ class WidgetGeneralView @JvmOverloads constructor(context: Context, var item : H
             rvWidget.layoutManager = GridLayoutManager(context,item.columns)
             rvWidget.adapter = adapterGeneral
 
-            generalViewModel.fetchGeneralData(context).observe(activity,{
+            generalViewModel.fetchGeneralData().observe(activity,{
                 Log.d(TAG, "Adapter General.")
 
                 adapterGeneral.setListData(it)

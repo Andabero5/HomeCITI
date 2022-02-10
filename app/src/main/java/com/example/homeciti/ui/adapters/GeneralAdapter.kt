@@ -47,9 +47,9 @@ class GeneralAdapter(val context : Context): RecyclerView.Adapter<GeneralAdapter
             Picasso.get().load(general.icon).into(itemIcon)
             itemText.text = general.type
 
-            if (general.promoIcon == ""){
+            if(general.promoIcon.isNullOrEmpty()){
                 promoIcon.visibility = View.INVISIBLE
-            } else{
+            }else{
                 promoIcon.visibility = View.VISIBLE
 
                 val drawable: GradientDrawable =  promoIcon.background as GradientDrawable
