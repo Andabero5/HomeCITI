@@ -10,6 +10,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.example.homeciti.core.Resource
 import com.example.homeciti.data.model.*
@@ -73,7 +74,7 @@ class HomeAdapter(
                 (holder as QuickAccessViewHolder).bind(homeList[position])
             }
             "WIDGET_BANNER" -> {
-                //(holder as QuickAccessViewHolder).bind(homeList[position])
+                (holder as BannerViewHolder).bind(homeList[position])
             }
         }
     }
@@ -151,7 +152,15 @@ class HomeAdapter(
                         //bind recyclerView
                         binding.rvBanner.layoutManager =
                             LinearLayoutManager(itemView.context, LinearLayoutManager.HORIZONTAL, false)
-                        binding.rvBanner.adapter = BannerAdapter(result.data.bannerList)
+
+                        val pagerSnapHelper=PagerSnapHelper()
+                        pagerSnapHelper.attachToRecyclerView(binding.rvBanner)
+                        if(result.data.banner.size !=1){
+                            binding.ciBanner.attachToRecyclerView(binding.rvBanner, pagerSnapHelper)
+                            binding.ciBanner.createIndicators(result.data.banner.size,0)
+                            binding.ciBanner.animatePageSelected(2)
+                        }
+                        binding.rvBanner.adapter = BannerAdapter(result.data.banner)
                     }
                     is Resource.Failure -> {
                         Log.d("resultJson", (result.error.message.toString()))
@@ -186,6 +195,7 @@ class HomeAdapter(
                     is Resource.Success -> {
                         binding.shimmer.visibility = View.GONE
                         binding.shimmer.stopShimmer()
+
                         //bind recyclerView
                         binding.rvQuickAccess.layoutManager =
                             GridLayoutManager(itemView.context, item.columns)

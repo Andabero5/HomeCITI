@@ -1,7 +1,10 @@
 package com.example.homeciti.ui.adapters
 
+import android.graphics.drawable.GradientDrawable
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import androidx.core.graphics.toColorInt
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.homeciti.data.model.BannerService
@@ -26,8 +29,13 @@ class BannerAdapter (private val bannerService:List<BannerService>): RecyclerVie
     private inner class BannerViewHolder(private val binding: ItemHomeBannerBinding):
         RecyclerView.ViewHolder(binding.root){
         fun bind(item : BannerService){
-            Glide.with(itemView.context).load(item.icon).centerCrop().into(binding.itemIcon)
-
+            Glide.with(itemView.context).load(item.icon).fitCenter().into(binding.itemIcon)
+            if (item.promoIcon.isNotEmpty()){
+                binding.itemLabelTag.text = item.promoIcon
+                val drawable: GradientDrawable =  binding.itemLabelTag.background as GradientDrawable
+                drawable.setColor(item.backgroundColor.toColorInt())
+                binding.itemLabelTag.visibility= View.VISIBLE
+            }
         }
     }
 }

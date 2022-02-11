@@ -6,12 +6,14 @@
         <entry key="..\:/Users/ID139/Desktop/principal/Android/HomeCITI/app/src/main/res/drawable/background_btn_seemore.xml" value="0.5729166666666666" />
         <entry key="..\:/Users/ID139/Desktop/principal/Android/HomeCITI/app/src/main/res/drawable/background_item_labeltag.xml" value="0.5729166666666666" />
         <entry key="..\:/Users/ID139/Desktop/principal/Android/HomeCITI/app/src/main/res/drawable/ic_launcher_background.xml" value="0.5729166666666666" />
+        <entry key="..\:/Users/ID139/Desktop/principal/Android/HomeCITI/app/src/main/res/drawable/indicator_banner_selected.xml" value="0.229" />
+        <entry key="..\:/Users/ID139/Desktop/principal/Android/HomeCITI/app/src/main/res/drawable/indicator_banner_unselected.xml" value="0.229" />
         <entry key="..\:/Users/ID139/Desktop/principal/Android/HomeCITI/app/src/main/res/drawable/item_label_tag.xml" value="0.5729166666666666" />
         <entry key="..\:/Users/ID139/Desktop/principal/Android/HomeCITI/app/src/main/res/layout/activity_main.xml" value="0.3302083333333333" />
         <entry key="..\:/Users/ID139/Desktop/principal/Android/HomeCITI/app/src/main/res/layout/fragment_home.xml" value="0.33" />
         <entry key="..\:/Users/ID139/Desktop/principal/Android/HomeCITI/app/src/main/res/layout/ite_shimmer.xml" value="0.553125" />
         <entry key="..\:/Users/ID139/Desktop/principal/Android/HomeCITI/app/src/main/res/layout/item_home_banner.xml" value="0.259375" />
-        <entry key="..\:/Users/ID139/Desktop/principal/Android/HomeCITI/app/src/main/res/layout/item_home_general.xml" value="0.67" />
+        <entry key="..\:/Users/ID139/Desktop/principal/Android/HomeCITI/app/src/main/res/layout/item_home_general.xml" value="0.33" />
         <entry key="..\:/Users/ID139/Desktop/principal/Android/HomeCITI/app/src/main/res/layout/item_home_quickaccess.xml" value="0.41007194244604317" />
         <entry key="..\:/Users/ID139/Desktop/principal/Android/HomeCITI/app/src/main/res/layout/item_shimmer.xml" value="0.328125" />
         <entry key="..\:/Users/ID139/Desktop/principal/Android/HomeCITI/app/src/main/res/layout/layout_banner_home_partner.xml" value="0.3307291666666667" />
