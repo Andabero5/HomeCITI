@@ -10,6 +10,7 @@ import androidx.core.graphics.toColorInt
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.homeciti.R
+import com.example.homeciti.core.Constants
 import com.example.homeciti.data.model.HomeService
 import com.example.homeciti.ui.adapters.GeneralAdapter
 
@@ -34,25 +35,41 @@ class WidgetGeneralView @JvmOverloads constructor(context: Context, var item : H
             rvWidget = findViewById(R.id.rv_general)
 
             // Titulo label (lbl)
-            item.titleObj.let { titleObj ->
-                // Titulo
-                lblWidget.text = titleObj.title
+            item.header.let { titleObj ->
+                if(titleObj.visibility){
 
-                // Color
-                if(titleObj.textColor.isNotEmpty()) lblWidget.setTextColor(titleObj.textColor.toColorInt())
+                    // Titulo
+                    lblWidget.visibility = View.VISIBLE
+                    lblWidget.text = titleObj.title
+
+                    // Color
+                    if (!(titleObj.textColor.isNullOrEmpty())) {
+                        try {
+                            lblWidget.setTextColor(titleObj.textColor.toColorInt())
+                        } catch (e: Exception) {
+                            lblWidget.setTextColor(Constants.COLOR_DEFAULT.toColorInt())
+                        }
+                    } else lblWidget.setTextColor(Constants.COLOR_DEFAULT.toColorInt())
+                }else lblWidget.visibility = View.GONE
             }
 
             // Configuracion del boton showMore (btn)
-            item.showMore.let { showMore ->
+            item.btnConfig.let { showMore ->
                 if (showMore.visibility){
 
                     // Titulo
-                    btnWidget.text = showMore.title
                     btnWidget.visibility = View.VISIBLE
+                    btnWidget.text = showMore.title
 
                     // Color
-                    if(showMore.textColor.isNotEmpty()) btnWidget.setTextColor(showMore.textColor.toColorInt())
-                } else btnWidget.visibility = View.GONE
+                    if(!(showMore.textColor.isNullOrEmpty())){
+                        try {
+                            btnWidget.setTextColor(showMore.textColor.toColorInt())
+                        }catch (e: Exception){
+                            btnWidget.setTextColor(Constants.COLOR_DEFAULT.toColorInt())
+                        }
+                    }else btnWidget.setTextColor(Constants.COLOR_DEFAULT.toColorInt())
+                }else btnWidget.visibility = View.GONE
             }
 
             // RecyclerView

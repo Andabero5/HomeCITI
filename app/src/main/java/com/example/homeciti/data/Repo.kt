@@ -13,12 +13,12 @@ class Repo {
 
         for (document in homes){
             val txtType = document.type
-            val titleObj = document.titleObj
-            val showMore = document.showMore
+            val txtHeader = document.header
+            val btnConfig = document.btnConfig
             val intOrder = document.order
             val intColumns = document.columns
 
-            val home = HomeService(txtType,titleObj, showMore, intColumns, intOrder)
+            val home = HomeService(txtType, intOrder, txtHeader, btnConfig, intColumns)
             listData.add(home)
         }
 

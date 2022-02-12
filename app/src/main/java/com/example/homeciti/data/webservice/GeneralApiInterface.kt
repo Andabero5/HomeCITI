@@ -10,7 +10,7 @@ import retrofit2.http.GET
 interface GeneralApiInterface {
 
     @GET(Constants.COMPLEMENT_GENERAL_SERVICE_URL)
-    fun getGenerals() : Call<MutableList<GeneralService>>
+    fun getGenerals() : Call<GeneralService>
 
     companion object {
 

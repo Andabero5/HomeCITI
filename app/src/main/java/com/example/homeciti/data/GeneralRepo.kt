@@ -3,9 +3,12 @@ package com.example.homeciti.data
 import androidx.lifecycle.MutableLiveData
 import com.example.homeciti.data.model.GeneralService
 import com.example.homeciti.data.webservice.GeneralApiInterface
+import com.google.gson.JsonObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import retrofit2.Retrofit
+import java.util.*
 
 class GeneralRepo {
 
@@ -14,16 +17,28 @@ class GeneralRepo {
 
         val mutableDataGeneral = MutableLiveData<MutableList<GeneralService>>()
         val listData = mutableListOf<GeneralService>()
+
         val apiInterface= GeneralApiInterface.create().getGenerals()
 
-        apiInterface.enqueue( object : Callback<MutableList<GeneralService>> {
+        println("API INTERFACE")
+        println(apiInterface)
+
+        apiInterface.enqueue( object : Callback<GeneralService> {
             override fun onResponse(
-                call: Call<MutableList<GeneralService>>,
-                response: Response<MutableList<GeneralService>>
+                call: Call<GeneralService>,
+                response: Response<GeneralService>
             ) {
                 val generalArray = response.body()
+                println("ESTE ES MI RESPONSE")
+                println(response)
+
+                println("ESTE ES MI BODY")
+                println(generalArray)
                 generalArray?.let { generals ->
 
+                    println("Entra al .let")
+
+                    /*
                     for (document in generals){
 
                         val txtTitle = document.type
@@ -37,11 +52,13 @@ class GeneralRepo {
 
                     mutableDataGeneral.value = listData
 
+                     */
+
                 }
             }
 
-            override fun onFailure(call: Call<MutableList<GeneralService>>, t: Throwable) {
-                println("Error")
+            override fun onFailure(call: Call<GeneralService>, t: Throwable) {
+                println("Error General Repo")
             }
         })
 
