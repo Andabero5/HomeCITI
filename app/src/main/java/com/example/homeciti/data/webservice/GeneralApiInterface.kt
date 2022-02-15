@@ -1,7 +1,7 @@
 package com.example.homeciti.data.webservice
 
 import com.example.homeciti.core.Constants
-import com.example.homeciti.data.model.GeneralService
+import com.example.homeciti.data.model.GeneralList
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -10,7 +10,7 @@ import retrofit2.http.GET
 interface GeneralApiInterface {
 
     @GET(Constants.COMPLEMENT_GENERAL_SERVICE_URL)
-    fun getGenerals() : Call<GeneralService>
+    fun getGenerals() : Call<GeneralList>
 
     companion object {
 

@@ -1,16 +1,23 @@
 package com.example.homeciti.data
 
 import androidx.lifecycle.MutableLiveData
+import com.example.homeciti.data.model.GeneralList
 import com.example.homeciti.data.model.GeneralService
 import com.example.homeciti.data.webservice.GeneralApiInterface
-import com.google.gson.JsonObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
-import java.util.*
+import retrofit2.converter.gson.GsonConverterFactory
 
 class GeneralRepo {
+
+    private fun getRetrofit(): Retrofit {
+        return Retrofit.Builder()
+            .baseUrl("http://192.168.1.4:3000/ClaroPay-WS/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+    }
 
     // Funcion devolver la lista de objetos de tipo general
     fun getGeneralData(): MutableLiveData<MutableList<GeneralService>>?{
@@ -20,26 +27,16 @@ class GeneralRepo {
 
         val apiInterface= GeneralApiInterface.create().getGenerals()
 
-        println("API INTERFACE")
-        println(apiInterface)
-
-        apiInterface.enqueue( object : Callback<GeneralService> {
+        apiInterface.enqueue( object : Callback<GeneralList> {
             override fun onResponse(
-                call: Call<GeneralService>,
-                response: Response<GeneralService>
+                call: Call<GeneralList>,
+                response: Response<GeneralList>
             ) {
                 val generalArray = response.body()
-                println("ESTE ES MI RESPONSE")
-                println(response)
 
-                println("ESTE ES MI BODY")
-                println(generalArray)
                 generalArray?.let { generals ->
 
-                    println("Entra al .let")
-
-                    /*
-                    for (document in generals){
+                    for (document in generals.data){
 
                         val txtTitle = document.type
                         val imgIcon = document.icon
@@ -52,13 +49,11 @@ class GeneralRepo {
 
                     mutableDataGeneral.value = listData
 
-                     */
-
                 }
             }
 
-            override fun onFailure(call: Call<GeneralService>, t: Throwable) {
-                println("Error General Repo")
+            override fun onFailure(call: Call<GeneralList>, t: Throwable) {
+                println("Error Call General Repo - JSON")
             }
         })
 

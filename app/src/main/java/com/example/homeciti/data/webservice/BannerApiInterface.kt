@@ -1,6 +1,7 @@
 package com.example.homeciti.data.webservice
 
 import com.example.homeciti.core.Constants
+import com.example.homeciti.data.model.BannerList
 import com.example.homeciti.data.model.BannerService
 import retrofit2.Call
 import retrofit2.Retrofit
@@ -10,7 +11,7 @@ import retrofit2.http.GET
 interface BannerApiInterface {
 
     @GET(Constants.COMPLEMENT_BANNER_SERVICE_URL)
-    fun getBanners() : Call<MutableList<BannerService>>
+    fun getBanners() : Call<BannerList>
 
     companion object {
 

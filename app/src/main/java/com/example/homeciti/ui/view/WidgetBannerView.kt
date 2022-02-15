@@ -38,44 +38,59 @@ class WidgetBannerView @JvmOverloads constructor(context: Context, var item : Ho
         indicator2 = findViewById(R.id.ci_banner)
         constraintHeader = findViewById(R.id.cl_header)
 
-        // Configuracion del titulo label (lbl)
-        item.header.let { titleObj ->
+        if(item.header==null){
+            lblWidget.visibility = View.GONE
+        }else{
+            // Configuracion del titulo label (lbl)
+            item.header.let { titleObj ->
 
-            if (titleObj.visibility) {
+                if (titleObj != null) {
+                    if (titleObj.visibility) {
 
-                // Titulo
-                lblWidget.visibility = View.VISIBLE
-                lblWidget.text = titleObj.title
+                        // Titulo
+                        lblWidget.visibility = View.VISIBLE
+                        lblWidget.text = titleObj.title
 
-                // Color
-                if (!(titleObj.textColor.isNullOrEmpty())) {
-                    try {
-                        lblWidget.setTextColor(titleObj.textColor.toColorInt())
-                    } catch (e: Exception) {
-                        lblWidget.setTextColor(Constants.COLOR_DEFAULT.toColorInt())
-                    }
-                } else lblWidget.setTextColor(Constants.COLOR_DEFAULT.toColorInt())
+                        // Color
+                        if (!(titleObj.textColor.isNullOrEmpty())) {
+                            try {
+                                lblWidget.setTextColor(titleObj.textColor.toColorInt())
+                            } catch (e: Exception) {
+                                lblWidget.setTextColor(Constants.COLOR_DEFAULT.toColorInt())
+                            }
+                        } else lblWidget.setTextColor(Constants.COLOR_DEFAULT.toColorInt())
 
-            } else lblWidget.visibility = View.GONE
+                    } else lblWidget.visibility = View.GONE
+                }
+            }
         }
 
-        // Configuracion del boton showMore (btn)
-        item.btnConfig.let { showMore ->
-            if (showMore.visibility){
 
-                // Titulo
-                btnWidget.text = showMore.title
+        if(item.btnConfig == null){
+            btnWidget.visibility = View.GONE
+        }else{
+            // Configuracion del boton showMore (btn)
+            item.btnConfig.let { showMore ->
+                if (showMore != null) {
+                    if (showMore.visibility){
 
-                // Color
-                if(!(showMore.textColor.isNullOrEmpty())){
-                    try {
-                        btnWidget.setTextColor(showMore.textColor.toColorInt())
-                    }catch (e: Exception){
-                        btnWidget.setTextColor(Constants.COLOR_DEFAULT.toColorInt())
-                    }
-                } else btnWidget.setTextColor(Constants.COLOR_DEFAULT.toColorInt())
-            } else btnWidget.visibility = View.GONE
+                        // Titulo
+                        btnWidget.text = showMore.title
+
+                        // Color
+                        if(!(showMore.textColor.isNullOrEmpty())){
+                            try {
+                                btnWidget.setTextColor(showMore.textColor.toColorInt())
+                            }catch (e: Exception){
+                                btnWidget.setTextColor(Constants.COLOR_DEFAULT.toColorInt())
+                            }
+                        } else btnWidget.setTextColor(Constants.COLOR_DEFAULT.toColorInt())
+                    } else btnWidget.visibility = View.GONE
+                }
+            }
         }
+
+
 
         // RecyclerView
         adapterBanner = BannerAdapter(context)

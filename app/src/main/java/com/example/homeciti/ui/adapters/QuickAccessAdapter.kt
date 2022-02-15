@@ -1,6 +1,7 @@
 package com.example.homeciti.ui.adapters
 
 import android.content.Context
+import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
 import android.view.LayoutInflater
 import android.view.View
@@ -42,20 +43,54 @@ class QuickAccessAdapter(val context : Context): RecyclerView.Adapter<QuickAcces
         private val promoIcon = binding.itemLabeltag
 
         // Metodo para bindear la vista
-        fun render(quickAccessService: QuickAccessService){
+        fun render(quickAccess: QuickAccessService){
 
-            Picasso.get().load(quickAccessService.icon).into(itemIcon)
-            itemText.text = quickAccessService.type
+            Picasso.get().load(quickAccess.icon).into(itemIcon)
+            itemText.text = quickAccess.type
 
-            if (quickAccessService.promoIcon.isNullOrEmpty()){
+            /*
+            // TEXTO Y BACKGROUND SON INDEPENDIENTES
+            if(!(quickAccess.promoIcon.isNullOrEmpty())){
+                promoIcon.text = quickAccess.promoIcon
+            }
+
+            if(!(quickAccess.backgroundColor.isNullOrEmpty())){
+                val drawable: GradientDrawable =  promoIcon.background as GradientDrawable
+                drawable.setColor(quickAccess.backgroundColor.toColorInt())
+                //general.backgroundColor?.let { drawable.setColor(it.toColorInt()) }
+            }else{
+                promoIcon.setBackgroundColor(Color.TRANSPARENT)
+            }
+
+             */
+
+            /*
+            // EL BACKGROUND DEPENDE DE SI HAY TEXTO
+
+            if (quickAccess.promoIcon.isNullOrEmpty()){
                 promoIcon.visibility = View.INVISIBLE
             } else{
                 promoIcon.visibility = View.VISIBLE
 
                 val drawable: GradientDrawable =  promoIcon.background as GradientDrawable
-                drawable.setColor(quickAccessService.backgroundColor.toColorInt())
+                drawable.setColor(quickAccess.backgroundColor.toColorInt())
 
-                promoIcon.text = quickAccessService.promoIcon
+                promoIcon.text = quickAccess.promoIcon
+            }
+
+             */
+            // EL BACKGROUND DEPENDE DEL TEXTO Y EN CASO DE NO HABER BACKGROUND DEFINIDO
+            // BACKGROUND POR DEFECTO
+
+            if (quickAccess.promoIcon.isNullOrEmpty()){
+                promoIcon.visibility = View.INVISIBLE
+            } else{
+                promoIcon.visibility = View.VISIBLE
+
+                promoIcon.text = quickAccess.promoIcon
+
+                val drawable: GradientDrawable =  promoIcon.background as GradientDrawable
+                quickAccess.backgroundColor?.let { drawable.setColor(it.toColorInt()) }
             }
         }
     }

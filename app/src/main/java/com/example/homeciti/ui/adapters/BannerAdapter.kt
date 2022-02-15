@@ -1,6 +1,7 @@
 package com.example.homeciti.ui.adapters
 
 import android.content.Context
+import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
 import android.view.LayoutInflater
 import android.view.View
@@ -46,16 +47,58 @@ class BannerAdapter(val context : Context): RecyclerView.Adapter<BannerAdapter.B
 
             Picasso.get().load(banner.icon).into(itemIcon)
 
+
+
+            /*
+            // EL BACKGROUND DEPENDE DEL TEXTO Y EN CASO DE NO HABER BACKGROUND DEFINIDO
+            // BACKGROUND NO EXISTE
             if (banner.promoIcon.isNullOrEmpty()){
                 promoIcon.visibility = View.INVISIBLE
             } else{
                 promoIcon.visibility = View.VISIBLE
 
-                val drawable: GradientDrawable =  promoIcon.background as GradientDrawable
-                drawable.setColor(banner.backgroundColor.toColorInt())
+                if(!(banner.backgroundColor.isNullOrEmpty())){
+                    val drawable: GradientDrawable =  promoIcon.background as GradientDrawable
+                    drawable.setColor(banner.backgroundColor.toColorInt())
+                    //general.backgroundColor?.let { drawable.setColor(it.toColorInt()) }
+                }else{
+                    promoIcon.setBackgroundColor(Color.TRANSPARENT)
+                }
 
                 promoIcon.text = banner.promoIcon
             }
+
+             */
+
+
+            // EL BACKGROUND DEPENDE DEL TEXTO Y EN CASO DE NO HABER BACKGROUND DEFINIDO
+            // BACKGROUND POR DEFECTO
+
+            if (banner.promoIcon.isNullOrEmpty()){
+                promoIcon.visibility = View.INVISIBLE
+            } else{
+                promoIcon.visibility = View.VISIBLE
+
+                promoIcon.text = banner.promoIcon
+
+                val drawable: GradientDrawable =  promoIcon.background as GradientDrawable
+                banner.backgroundColor?.let { drawable.setColor(it.toColorInt()) }
+            }
+
+            /*
+            // TEXTO Y BACKGROUND SON INDEPENDIENTES
+            if(!(banner.promoIcon.isNullOrEmpty())){
+                promoIcon.text = banner.promoIcon
+            }
+
+            if(!(banner.backgroundColor.isNullOrEmpty())){
+                val drawable: GradientDrawable =  promoIcon.background as GradientDrawable
+                drawable.setColor(banner.backgroundColor.toColorInt())
+                //general.backgroundColor?.let { drawable.setColor(it.toColorInt()) }
+            }else{
+                promoIcon.setBackgroundColor(Color.TRANSPARENT)
+            }
+             */
         }
     }
 }

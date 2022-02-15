@@ -48,9 +48,9 @@
                 app:layout_constraintWidth_percent="0.4"
                 android:text="Nuevo"
                 android:textSize="8sp"
-                android:textColor="@color/white"
                 android:textStyle="bold"
-                android:paddingHorizontal="5dp"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="3dp"
                 android:background="@drawable/item_label_tag"
                 />
         </androidx.constraintlayout.widget.ConstraintLayout>

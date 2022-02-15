@@ -1,6 +1,7 @@
 package com.example.homeciti.ui.adapters
 
 import android.content.Context
+import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
 import android.view.LayoutInflater
 import android.view.View
@@ -47,15 +48,18 @@ class GeneralAdapter(val context : Context): RecyclerView.Adapter<GeneralAdapter
             Picasso.get().load(general.icon).into(itemIcon)
             itemText.text = general.type
 
-            if(general.promoIcon.isNullOrEmpty()){
+            // EL BACKGROUND DEPENDE DEL TEXTO Y EN CASO DE NO HABER BACKGROUND DEFINIDO
+            // BACKGROUND POR DEFECTO
+
+            if (general.promoIcon.isNullOrEmpty()){
                 promoIcon.visibility = View.INVISIBLE
-            }else{
+            } else{
                 promoIcon.visibility = View.VISIBLE
 
-                val drawable: GradientDrawable =  promoIcon.background as GradientDrawable
-                drawable.setColor(general.backgroundColor.toColorInt())
-
                 promoIcon.text = general.promoIcon
+
+                val drawable: GradientDrawable =  promoIcon.background as GradientDrawable
+                general.backgroundColor?.let { drawable.setColor(it.toColorInt()) }
             }
         }
     }

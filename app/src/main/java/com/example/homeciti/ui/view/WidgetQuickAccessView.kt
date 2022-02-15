@@ -39,41 +39,45 @@ class WidgetQuickAccessView @JvmOverloads constructor(context: Context, var item
 
             // Configuracion del titulo label (lbl)
             item.header.let { titleObj ->
-                if (titleObj.visibility){
+                if (titleObj != null) {
+                    if (titleObj.visibility){
 
-                    // Titulo
-                    lblWidget.visibility = View.VISIBLE
-                    lblWidget.text = titleObj.title
+                        // Titulo
+                        lblWidget.visibility = View.VISIBLE
+                        lblWidget.text = titleObj.title
 
-                    // Color
-                    if (!(titleObj.textColor.isNullOrEmpty())) {
-                        try {
-                            lblWidget.setTextColor(titleObj.textColor.toColorInt())
-                        } catch (e: Exception) {
-                            lblWidget.setTextColor(Constants.COLOR_DEFAULT.toColorInt())
-                        }
-                    } else lblWidget.setTextColor(Constants.COLOR_DEFAULT.toColorInt())
+                        // Color
+                        if (!(titleObj.textColor.isNullOrEmpty())) {
+                            try {
+                                lblWidget.setTextColor(titleObj.textColor.toColorInt())
+                            } catch (e: Exception) {
+                                lblWidget.setTextColor(Constants.COLOR_DEFAULT.toColorInt())
+                            }
+                        } else lblWidget.setTextColor(Constants.COLOR_DEFAULT.toColorInt())
 
-                } else lblWidget.visibility = View.GONE
+                    } else lblWidget.visibility = View.GONE
+                }
             }
 
             // Configuracion del boton showMore (btn)
             item.btnConfig.let { showMore ->
-                if (showMore.visibility){
+                if (showMore != null) {
+                    if (showMore.visibility){
 
-                    // Titulo
-                    btnWidget.text = showMore.title
-                    btnWidget.visibility = View.VISIBLE
+                        // Titulo
+                        btnWidget.text = showMore.title
+                        btnWidget.visibility = View.VISIBLE
 
-                    // Color
-                    if(!(showMore.textColor.isNullOrEmpty())){
-                        try {
-                            btnWidget.setTextColor(showMore.textColor.toColorInt())
-                        }catch (e: Exception){
-                            btnWidget.setTextColor(Constants.COLOR_DEFAULT.toColorInt())
-                        }
-                    } else btnWidget.setTextColor(Constants.COLOR_DEFAULT.toColorInt())
-                } else btnWidget.visibility = View.GONE
+                        // Color
+                        if(!(showMore.textColor.isNullOrEmpty())){
+                            try {
+                                btnWidget.setTextColor(showMore.textColor.toColorInt())
+                            }catch (e: Exception){
+                                btnWidget.setTextColor(Constants.COLOR_DEFAULT.toColorInt())
+                            }
+                        } else btnWidget.setTextColor(Constants.COLOR_DEFAULT.toColorInt())
+                    } else btnWidget.visibility = View.GONE
+                }
             }
 
             // recycler

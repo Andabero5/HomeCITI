@@ -2,8 +2,12 @@ package com.example.homeciti.data
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.homeciti.data.model.BannerService
-import com.example.homeciti.data.model.ServiceProvider
+import com.example.homeciti.data.model.*
+import com.example.homeciti.data.webservice.BannerApiInterface
+import com.example.homeciti.data.webservice.GeneralApiInterface
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class BannerRepo {
 
@@ -11,6 +15,7 @@ class BannerRepo {
         val mutableDataBanner = MutableLiveData<MutableList<BannerService>>()
         val listData = mutableListOf<BannerService>()
 
+        /*
         for (document in ServiceProvider.banners){
             val imgIcon = document.icon
             val txtLabel = document.promoIcon
@@ -20,7 +25,38 @@ class BannerRepo {
             listData.add(banner)
         }
 
-        mutableDataBanner.value = listData
+         */
+
+        val apiInterface= BannerApiInterface.create().getBanners()
+
+        apiInterface.enqueue( object : Callback<BannerList> {
+            override fun onResponse(
+                call: Call<BannerList>,
+                response: Response<BannerList>
+            ) {
+                val bannerArray = response.body()
+
+                bannerArray?.let { banners ->
+
+                    for (document in banners.data){
+                        val imgIcon = document.icon
+                        val txtLabel = document.promoIcon
+                        val bgColor = document.backgroundColor
+
+                        val banner = BannerService(imgIcon,txtLabel, bgColor)
+                        listData.add(banner)
+                    }
+
+                    mutableDataBanner.value = listData
+
+                }
+            }
+
+            override fun onFailure(call: Call<BannerList>, t: Throwable) {
+                println("Error Call Banner Repo - JSON")
+            }
+        })
+
         return mutableDataBanner
     }
 }

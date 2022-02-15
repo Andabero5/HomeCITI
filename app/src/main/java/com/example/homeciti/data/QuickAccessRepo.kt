@@ -1,6 +1,7 @@
 package com.example.homeciti.data
 
 import androidx.lifecycle.MutableLiveData
+import com.example.homeciti.data.model.QuickAccessList
 import com.example.homeciti.data.model.QuickAccessService
 import com.example.homeciti.data.webservice.ServiceApiInterface
 import retrofit2.Call
@@ -16,14 +17,26 @@ class QuickAccessRepo {
         val listData = mutableListOf<QuickAccessService>()
         val serviceApiInterface = ServiceApiInterface.create().getQuickAccess()
 
-        serviceApiInterface.enqueue( object : Callback<MutableList<QuickAccessService>> {
+        serviceApiInterface.enqueue( object : Callback<QuickAccessList> {
             override fun onResponse(
-                call: Call<MutableList<QuickAccessService>>,
-                response: Response<MutableList<QuickAccessService>>
+                call: Call<QuickAccessList>,
+                response: Response<QuickAccessList>
             ) {
                 var serviceArray = response.body()
                 serviceArray?.let { services ->
 
+                    for (document in services.data){
+
+                        val txtTitle = document.type
+                        val imgIcon = document.icon
+                        val txtLabel = document.promoIcon
+                        val bgColor = document.backgroundColor
+
+                        val service = QuickAccessService(txtTitle,imgIcon,txtLabel, bgColor)
+                        listData.add(service)
+                    }
+
+                    /*
                     for (document in services){
 
                         val txtTitle = document.type
@@ -35,13 +48,15 @@ class QuickAccessRepo {
                         listData.add(service)
                     }
 
+                     */
+
                     mutableDataService.value = listData
 
                 }
             }
 
-            override fun onFailure(call: Call<MutableList<QuickAccessService>>, t: Throwable) {
-                println("Error")
+            override fun onFailure(call: Call<QuickAccessList>, t: Throwable) {
+                println("Error QuickAccess to call Repo")
             }
         })
 

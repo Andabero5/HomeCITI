@@ -6,3 +6,10 @@ data class QuickAccessService(
     val promoIcon: String = "",
     val backgroundColor: String = ""
 )
+
+data class QuickAccessList (
+    val responseCode: String = "",
+    val responseMessage: String = "",
+    val responseSubject: String = "",
+    val data: MutableList<QuickAccessService> = mutableListOf(),
+)
