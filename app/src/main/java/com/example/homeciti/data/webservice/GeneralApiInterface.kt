@@ -6,15 +6,18 @@ import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 interface GeneralApiInterface {
 
     @GET(Constants.COMPLEMENT_GENERAL_SERVICE_URL)
-    fun getGenerals() : Call<GeneralList>
+    fun getGenerals(@Query("id") type:String) : Call<GeneralList>
+
+    //fun getGenerals() : Call<GeneralList>
 
     companion object {
 
-        var BASE_URL = Constants.BASE_GENERAL_SERVICE_URL
+        private var BASE_URL = Constants.BASE_GENERAL_SERVICE_URL
         fun create() : GeneralApiInterface {
 
             val retrofit = Retrofit.Builder()

@@ -6,15 +6,18 @@ import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 interface ServiceApiInterface {
 
     @GET(Constants.COMPLEMENT_QUICKACCESS_SERVICE_URL)
-    fun getQuickAccess() : Call<QuickAccessList>
+    fun getQuickAccess(@Query("category") type:String) : Call<QuickAccessList>
+
+    //fun getQuickAccess() : Call<QuickAccessList>
 
     companion object {
 
-        var BASE_URL = Constants.BASE_QUICKACCESS_SERVICE_URL
+        private var BASE_URL = Constants.BASE_QUICKACCESS_SERVICE_URL
         fun create() : ServiceApiInterface {
 
             val retrofit = Retrofit.Builder()

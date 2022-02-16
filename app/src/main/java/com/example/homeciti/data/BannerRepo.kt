@@ -2,9 +2,9 @@ package com.example.homeciti.data
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.example.homeciti.core.Constants
 import com.example.homeciti.data.model.*
 import com.example.homeciti.data.webservice.BannerApiInterface
-import com.example.homeciti.data.webservice.GeneralApiInterface
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -27,7 +27,7 @@ class BannerRepo {
 
          */
 
-        val apiInterface= BannerApiInterface.create().getBanners()
+        val apiInterface= BannerApiInterface.create().getBanners(Constants.BANNER_SERVICE_QUERY)
 
         apiInterface.enqueue( object : Callback<BannerList> {
             override fun onResponse(

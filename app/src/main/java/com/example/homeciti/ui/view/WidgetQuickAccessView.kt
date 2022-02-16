@@ -37,9 +37,13 @@ class WidgetQuickAccessView @JvmOverloads constructor(context: Context, var item
             // Lo colocamos invisible para mostrar el Shimmer
             rvWidget.visibility = View.INVISIBLE
 
-            // Configuracion del titulo label (lbl)
-            item.header.let { titleObj ->
-                if (titleObj != null) {
+            // Titulo del widget
+            if(item.header == null){
+                lblWidget.visibility = View.GONE
+            }else{
+                // Configuracion del titulo label (lbl)
+                item.header?.let { titleObj ->
+
                     if (titleObj.visibility){
 
                         // Titulo
@@ -51,9 +55,9 @@ class WidgetQuickAccessView @JvmOverloads constructor(context: Context, var item
                             try {
                                 lblWidget.setTextColor(titleObj.textColor.toColorInt())
                             } catch (e: Exception) {
-                                lblWidget.setTextColor(Constants.COLOR_DEFAULT.toColorInt())
+                                lblWidget.setTextColor(Constants.COLOR_DEFAULT_TEXT.toColorInt())
                             }
-                        } else lblWidget.setTextColor(Constants.COLOR_DEFAULT.toColorInt())
+                        } else lblWidget.setTextColor(Constants.COLOR_DEFAULT_TEXT.toColorInt())
 
                     } else lblWidget.visibility = View.GONE
                 }
@@ -73,9 +77,9 @@ class WidgetQuickAccessView @JvmOverloads constructor(context: Context, var item
                             try {
                                 btnWidget.setTextColor(showMore.textColor.toColorInt())
                             }catch (e: Exception){
-                                btnWidget.setTextColor(Constants.COLOR_DEFAULT.toColorInt())
+                                btnWidget.setTextColor(Constants.COLOR_DEFAULT_TEXT.toColorInt())
                             }
-                        } else btnWidget.setTextColor(Constants.COLOR_DEFAULT.toColorInt())
+                        } else btnWidget.setTextColor(Constants.COLOR_DEFAULT_TEXT.toColorInt())
                     } else btnWidget.visibility = View.GONE
                 }
             }

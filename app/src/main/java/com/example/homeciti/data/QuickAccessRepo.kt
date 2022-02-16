@@ -1,6 +1,7 @@
 package com.example.homeciti.data
 
 import androidx.lifecycle.MutableLiveData
+import com.example.homeciti.core.Constants
 import com.example.homeciti.data.model.QuickAccessList
 import com.example.homeciti.data.model.QuickAccessService
 import com.example.homeciti.data.webservice.ServiceApiInterface
@@ -11,18 +12,18 @@ import retrofit2.Response
 class QuickAccessRepo {
 
     // Funcion devolver la lista de objetos de tipo service de quickaccess
-    fun getServiceData(): MutableLiveData<MutableList<QuickAccessService>>? {
+    fun getServiceData(): MutableLiveData<MutableList<QuickAccessService>> {
 
         val mutableDataService = MutableLiveData<MutableList<QuickAccessService>>()
         val listData = mutableListOf<QuickAccessService>()
-        val serviceApiInterface = ServiceApiInterface.create().getQuickAccess()
+        val serviceApiInterface = ServiceApiInterface.create().getQuickAccess(Constants.QUICKACCESS_SERVICE_QUERY)
 
         serviceApiInterface.enqueue( object : Callback<QuickAccessList> {
             override fun onResponse(
                 call: Call<QuickAccessList>,
                 response: Response<QuickAccessList>
             ) {
-                var serviceArray = response.body()
+                val serviceArray = response.body()
                 serviceArray?.let { services ->
 
                     for (document in services.data){

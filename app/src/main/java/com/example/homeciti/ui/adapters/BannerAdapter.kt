@@ -1,13 +1,13 @@
 package com.example.homeciti.ui.adapters
 
 import android.content.Context
-import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.graphics.toColorInt
 import androidx.recyclerview.widget.RecyclerView
+import com.example.homeciti.core.Constants
 import com.example.homeciti.data.model.BannerService
 import com.example.homeciti.databinding.ItemHomeBannerBinding
 import com.squareup.picasso.Picasso
@@ -47,8 +47,6 @@ class BannerAdapter(val context : Context): RecyclerView.Adapter<BannerAdapter.B
 
             Picasso.get().load(banner.icon).into(itemIcon)
 
-
-
             /*
             // EL BACKGROUND DEPENDE DEL TEXTO Y EN CASO DE NO HABER BACKGROUND DEFINIDO
             // BACKGROUND NO EXISTE
@@ -68,7 +66,7 @@ class BannerAdapter(val context : Context): RecyclerView.Adapter<BannerAdapter.B
                 promoIcon.text = banner.promoIcon
             }
 
-             */
+            */
 
 
             // EL BACKGROUND DEPENDE DEL TEXTO Y EN CASO DE NO HABER BACKGROUND DEFINIDO
@@ -79,10 +77,20 @@ class BannerAdapter(val context : Context): RecyclerView.Adapter<BannerAdapter.B
             } else{
                 promoIcon.visibility = View.VISIBLE
 
+                // Texto
                 promoIcon.text = banner.promoIcon
 
+                // Color
                 val drawable: GradientDrawable =  promoIcon.background as GradientDrawable
-                banner.backgroundColor?.let { drawable.setColor(it.toColorInt()) }
+
+                if (!banner.backgroundColor.isNullOrEmpty()) {
+                    try {
+                        drawable.setColor(banner.backgroundColor.toColorInt())
+                    } catch (e: Exception) {
+                        drawable.setColor(Constants.COLOR_DEFAULT_BACKGROUND.toColorInt())
+                    }
+                } else drawable.setColor(Constants.COLOR_DEFAULT_BACKGROUND.toColorInt())
+
             }
 
             /*

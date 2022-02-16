@@ -1,13 +1,13 @@
 package com.example.homeciti.ui.adapters
 
 import android.content.Context
-import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.graphics.toColorInt
 import androidx.recyclerview.widget.RecyclerView
+import com.example.homeciti.core.Constants
 import com.example.homeciti.data.model.GeneralService
 import com.example.homeciti.databinding.ItemHomeGeneralBinding
 import com.squareup.picasso.Picasso
@@ -56,10 +56,18 @@ class GeneralAdapter(val context : Context): RecyclerView.Adapter<GeneralAdapter
             } else{
                 promoIcon.visibility = View.VISIBLE
 
+                // Texto
                 promoIcon.text = general.promoIcon
 
+                // Color
                 val drawable: GradientDrawable =  promoIcon.background as GradientDrawable
-                general.backgroundColor?.let { drawable.setColor(it.toColorInt()) }
+                if (!general.backgroundColor.isNullOrEmpty()) {
+                    try {
+                        drawable.setColor(general.backgroundColor.toColorInt())
+                    } catch (e: Exception) {
+                        drawable.setColor(Constants.COLOR_DEFAULT_BACKGROUND.toColorInt())
+                    }
+                } else drawable.setColor(Constants.COLOR_DEFAULT_BACKGROUND.toColorInt())
             }
         }
     }

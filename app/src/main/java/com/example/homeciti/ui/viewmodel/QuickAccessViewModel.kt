@@ -14,7 +14,7 @@ class QuickAccessViewModel:ViewModel() {
     // funcion para devolver mi lista de datos
     fun fetchQuickAccessData():LiveData<MutableList<QuickAccessService>>{
         val mutableData = MutableLiveData<MutableList<QuickAccessService>>()
-        repo.getServiceData()?.observeForever{
+        repo.getServiceData().observeForever{
             mutableData.value = it
         }
 

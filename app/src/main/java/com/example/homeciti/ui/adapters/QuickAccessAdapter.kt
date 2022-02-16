@@ -1,13 +1,13 @@
 package com.example.homeciti.ui.adapters
 
 import android.content.Context
-import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.graphics.toColorInt
 import androidx.recyclerview.widget.RecyclerView
+import com.example.homeciti.core.Constants
 import com.example.homeciti.data.model.QuickAccessService
 import com.example.homeciti.databinding.ItemHomeQuickaccessBinding
 import com.squareup.picasso.Picasso
@@ -87,10 +87,19 @@ class QuickAccessAdapter(val context : Context): RecyclerView.Adapter<QuickAcces
             } else{
                 promoIcon.visibility = View.VISIBLE
 
+                // Texto
                 promoIcon.text = quickAccess.promoIcon
 
+                // Color
                 val drawable: GradientDrawable =  promoIcon.background as GradientDrawable
-                quickAccess.backgroundColor?.let { drawable.setColor(it.toColorInt()) }
+                if (!quickAccess.backgroundColor.isNullOrEmpty()) {
+                    try {
+                        drawable.setColor(quickAccess.backgroundColor.toColorInt())
+                    } catch (e: Exception) {
+                        drawable.setColor(Constants.COLOR_DEFAULT_BACKGROUND.toColorInt())
+                    }
+                } else drawable.setColor(Constants.COLOR_DEFAULT_BACKGROUND.toColorInt())
+
             }
         }
     }

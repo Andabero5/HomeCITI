@@ -17,81 +17,87 @@ import com.example.homeciti.ui.adapters.GeneralAdapter
 class WidgetGeneralView @JvmOverloads constructor(context: Context, var item : HomeService
     ) : ConstraintLayout(context),
     MyViewModelAccessor by MyViewModelInjector(context){
-        private lateinit var lblWidget : TextView
-        private lateinit var btnWidget : Button
-        private lateinit var rvWidget : RecyclerView
+    private lateinit var lblWidget : TextView
+    private lateinit var btnWidget : Button
+    private lateinit var rvWidget : RecyclerView
 
-        private lateinit var adapterGeneral : GeneralAdapter
+    private lateinit var adapterGeneral : GeneralAdapter
 
-        init {
-            Log.d(TAG, "Kotlin init block called WidgetGeneralView.")
-            View.inflate(context, R.layout.layout_general_home_partner, this)
-            subscribe()
-        }
-
-        private fun subscribe() {
-            lblWidget = findViewById(R.id.lbl_general)
-            btnWidget = findViewById(R.id.btn_general_seemore)
-            rvWidget = findViewById(R.id.rv_general)
-
-            // Titulo label (lbl)
-            item.header.let { titleObj ->
-                if (titleObj != null) {
-                    if(titleObj.visibility){
-
-                        // Titulo
-                        lblWidget.visibility = View.VISIBLE
-                        lblWidget.text = titleObj.title
-
-                        // Color
-                        if (!(titleObj.textColor.isNullOrEmpty())) {
-                            try {
-                                lblWidget.setTextColor(titleObj.textColor.toColorInt())
-                            } catch (e: Exception) {
-                                lblWidget.setTextColor(Constants.COLOR_DEFAULT.toColorInt())
-                            }
-                        } else lblWidget.setTextColor(Constants.COLOR_DEFAULT.toColorInt())
-                    }else lblWidget.visibility = View.GONE
-                }
-            }
-
-            // Configuracion del boton showMore (btn)
-            item.btnConfig.let { showMore ->
-                if (showMore != null) {
-                    if (showMore.visibility){
-
-                        // Titulo
-                        btnWidget.visibility = View.VISIBLE
-                        btnWidget.text = showMore.title
-
-                        // Color
-                        if(!(showMore.textColor.isNullOrEmpty())){
-                            try {
-                                btnWidget.setTextColor(showMore.textColor.toColorInt())
-                            }catch (e: Exception){
-                                btnWidget.setTextColor(Constants.COLOR_DEFAULT.toColorInt())
-                            }
-                        }else btnWidget.setTextColor(Constants.COLOR_DEFAULT.toColorInt())
-                    }else btnWidget.visibility = View.GONE
-                }
-            }
-
-            // RecyclerView
-            adapterGeneral = GeneralAdapter(context)
-            rvWidget.layoutManager = GridLayoutManager(context,item.columns)
-            rvWidget.adapter = adapterGeneral
-
-            generalViewModel.fetchGeneralData().observe(activity,{
-                Log.d(TAG, "Adapter General.")
-
-                adapterGeneral.setListData(it)
-                adapterGeneral.notifyDataSetChanged()
-            })
+    init {
+        Log.d(TAG, "Kotlin init block called WidgetGeneralView.")
+        View.inflate(context, R.layout.layout_general_home_partner, this)
+        subscribe()
     }
 
-        /** more code here **/
+    private fun subscribe() {
+        lblWidget = findViewById(R.id.lbl_general)
+        btnWidget = findViewById(R.id.btn_general_seemore)
+        rvWidget = findViewById(R.id.rv_general)
 
-        companion object {
-            private const val TAG = "WidgetGeneral_View"
+        // Titulo del widget
+        if(item.header == null){
+            lblWidget.visibility = View.GONE
+        }else{
+            // Configuracion del titulo label (lbl)
+            item.header?.let { titleObj ->
+
+                if(titleObj.visibility){
+
+                    // Titulo
+                    lblWidget.visibility = View.VISIBLE
+                    lblWidget.text = titleObj.title
+
+                    // Color
+                    if (!(titleObj.textColor.isNullOrEmpty())) {
+                        try {
+                            lblWidget.setTextColor(titleObj.textColor.toColorInt())
+                        } catch (e: Exception) {
+                            lblWidget.setTextColor(Constants.COLOR_DEFAULT_TEXT.toColorInt())
+                        }
+                    } else lblWidget.setTextColor(Constants.COLOR_DEFAULT_TEXT.toColorInt())
+                }else lblWidget.visibility = View.GONE
+            }
         }
+
+        // Configuracion del boton showMore del widget(btn)
+        if(item.btnConfig == null){
+            btnWidget.visibility = View.GONE
+        }else{
+            item.btnConfig?.let { showMore ->
+                if (showMore.visibility){
+
+                    // Titulo
+                    btnWidget.visibility = View.VISIBLE
+                    btnWidget.text = showMore.title
+
+                    // Color
+                    if(!(showMore.textColor.isNullOrEmpty())){
+                        try {
+                            btnWidget.setTextColor(showMore.textColor.toColorInt())
+                        }catch (e: Exception){
+                            btnWidget.setTextColor(Constants.COLOR_DEFAULT_TEXT.toColorInt())
+                        }
+                    }else btnWidget.setTextColor(Constants.COLOR_DEFAULT_TEXT.toColorInt())
+                }else btnWidget.visibility = View.GONE
+            }
+        }
+
+        // RecyclerView
+        adapterGeneral = GeneralAdapter(context)
+        rvWidget.layoutManager = GridLayoutManager(context,item.columns)
+        rvWidget.adapter = adapterGeneral
+
+        generalViewModel.fetchGeneralData().observe(activity,{
+            Log.d(TAG, "Adapter General.")
+
+            adapterGeneral.setListData(it)
+            adapterGeneral.notifyDataSetChanged()
+        })
+    }
+
+    /** more code here **/
+
+    companion object {
+        private const val TAG = "WidgetGeneral_View"
+    }
 }

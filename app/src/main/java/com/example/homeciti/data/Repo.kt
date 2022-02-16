@@ -2,8 +2,6 @@ package com.example.homeciti.data
 
 import androidx.lifecycle.MutableLiveData
 import com.example.homeciti.data.model.*
-import com.example.homeciti.data.model.ServiceProvider.Companion.homes
-import com.example.homeciti.data.webservice.GeneralApiInterface
 import com.example.homeciti.data.webservice.HomeApiInterface
 import retrofit2.Call
 import retrofit2.Callback

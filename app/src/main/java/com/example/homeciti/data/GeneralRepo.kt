@@ -1,31 +1,23 @@
 package com.example.homeciti.data
 
 import androidx.lifecycle.MutableLiveData
+import com.example.homeciti.core.Constants
 import com.example.homeciti.data.model.GeneralList
 import com.example.homeciti.data.model.GeneralService
 import com.example.homeciti.data.webservice.GeneralApiInterface
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 
 class GeneralRepo {
 
-    private fun getRetrofit(): Retrofit {
-        return Retrofit.Builder()
-            .baseUrl("http://192.168.1.4:3000/ClaroPay-WS/")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-    }
-
     // Funcion devolver la lista de objetos de tipo general
-    fun getGeneralData(): MutableLiveData<MutableList<GeneralService>>?{
+    fun getGeneralData(): MutableLiveData<MutableList<GeneralService>> {
 
         val mutableDataGeneral = MutableLiveData<MutableList<GeneralService>>()
         val listData = mutableListOf<GeneralService>()
 
-        val apiInterface= GeneralApiInterface.create().getGenerals()
+        val apiInterface= GeneralApiInterface.create().getGenerals(Constants.GENERAL_SERVICE_QUERY)
 
         apiInterface.enqueue( object : Callback<GeneralList> {
             override fun onResponse(
