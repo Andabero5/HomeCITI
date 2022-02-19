@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:paddingTop="10dp"
     android:paddingBottom="10dp">
 
@@ -25,6 +26,7 @@
             app:layout_constraintEnd_toStartOf="@+id/btn_general_see_more"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_general_see_more"
@@ -54,57 +56,14 @@
         android:baselineAligned="false"
         android:layout_marginHorizontal="8dp">
 
-
         <include
-            layout="@layout/item_shimmer_general"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-
-        <include
-            layout="@layout/item_shimmer_general"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"/>
-
-        <include
-            layout="@layout/item_shimmer_general"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/second_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/first_layout"
-        android:baselineAligned="false"
-        android:layout_marginHorizontal="8dp">
-
-
-        <include
-            layout="@layout/item_shimmer_general"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-
-        <include
-            layout="@layout/item_shimmer_general"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-
-        <include
-            layout="@layout/item_shimmer_general"
+            layout="@layout/item_shimmer_banner"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
 
     </LinearLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -38,6 +38,9 @@ class WidgetBannerView @JvmOverloads constructor(context: Context, var item : Ho
         indicator2 = findViewById(R.id.ci_banner)
         constraintHeader = findViewById(R.id.cl_header)
 
+        // Lo colocamos invisible para mostrar el Shimmer
+        rvWidget.visibility = View.INVISIBLE
+
         // Titulo del widget
         if(item.header == null){
             lblWidget.visibility = View.GONE
@@ -99,6 +102,9 @@ class WidgetBannerView @JvmOverloads constructor(context: Context, var item : Ho
             adapterBanner.notifyDataSetChanged()
             indicatorBanner(adapterBanner.itemCount)
         })
+
+        // Lo colocamos visible para mostrar el recycler
+        rvWidget.visibility = View.VISIBLE
     }
 
     private fun indicatorBanner(totalItems : Int){

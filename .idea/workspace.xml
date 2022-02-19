@@ -12,36 +12,28 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="753dec4a-6ec9-4967-ad18-6582449f3ad3" name="Default Changelist" comment="Consumiendo json del servidor local y colores por defecto. Falta corregir la constante de get">
+    <list default="true" id="753dec4a-6ec9-4967-ad18-6582449f3ad3" name="Default Changelist" comment="Consumiendo json del servidor local y colores por defecto. Etiquetas listas">
       <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/core/Constants.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/core/Constants.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/data/BannerRepo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/data/BannerRepo.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/data/GeneralRepo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/data/GeneralRepo.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/data/QuickAccessRepo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/data/QuickAccessRepo.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/data/Repo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/data/Repo.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/data/model/GeneralService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/data/model/GeneralService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/data/model/QuickAccessService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/data/model/QuickAccessService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/data/webservice/BannerApiInterface.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/data/webservice/BannerApiInterface.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/data/webservice/GeneralApiInterface.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/data/webservice/GeneralApiInterface.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/data/webservice/ServiceApiInterface.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/data/webservice/ServiceApiInterface.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/adapters/BannerAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/adapters/BannerAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/adapters/GeneralAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/adapters/GeneralAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/adapters/QuickAccessAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/adapters/QuickAccessAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/view/HomeFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/view/HomeFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/view/WidgetBannerView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/view/WidgetBannerView.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/view/WidgetGeneralView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/view/WidgetGeneralView.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/view/WidgetQuickAccessView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/view/WidgetQuickAccessView.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/viewmodel/GeneralViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/viewmodel/GeneralViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/viewmodel/QuickAccessViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/homeciti/ui/viewmodel/QuickAccessViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_home_quickaccess.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_home_quickaccess.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_home_quickaccess_load.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_shimmer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_shimmer_general.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/layout_shimmer_home_partner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_shimmer_home_partner.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\otato\.android\avd\Nexus_6_API_26.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[ESU4C19420003089]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -80,11 +72,11 @@
       <list>
         <option value="navigationResourceFile" />
         <option value="Class" />
-        <option value="layoutResourceFile" />
         <option value="resourceFile" />
         <option value="Kotlin Interface" />
         <option value="Kotlin Object" />
         <option value="Kotlin Class" />
+        <option value="layoutResourceFile" />
       </list>
     </option>
   </component>
@@ -117,7 +109,7 @@
     <property name="android-custom-viewC:/Users/otato/Documents/ProyectoPrueba/AndroidCitiPrueba/caches/modules-2/files-2.1/androidx.viewpager2/viewpager2/1.0.0/3c3569044e6969f1ee5c3aa03b08e6717a2d782f/viewpager2-1.0.0-sources.jar!/androidx/viewpager2/widget/ViewPager2.java_SELECTED" value="ViewPager2" />
     <property name="android-custom-viewC:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/java/com/example/homeciti/ui/view/WidgetGeneralView.kt_SELECTED" value="WidgetGeneralView" />
     <property name="android-custom-viewC:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/java/com/example/homeciti/ui/view/WidgetGeneralView.kt_WidgetGeneralView_DIMENSIONS" value="1080&#10;1920" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/assets" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/layout" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -125,9 +117,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\otato\Documents\homeciti_prueba\HomeCITI\app\src\main\res\layout" />
       <recent name="C:\Users\otato\Documents\homeciti_prueba\HomeCITI\app\src\main\assets" />
       <recent name="C:\Users\otato\Documents\homeciti_prueba\HomeCITI\app\src\main\res\drawable-v24" />
-      <recent name="C:\Users\otato\Documents\homeciti_prueba\HomeCITI\app\src\main\res\layout" />
       <recent name="C:\Users\otato\Documents\homeciti_prueba\HomeCITI\app\src\main\java\com\example\homeciti\data\model" />
       <recent name="C:\Users\otato\Documents\homeciti_prueba\HomeCITI\app\src\main\res\drawable" />
     </key>
@@ -325,7 +317,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644963850596</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Consumiendo json del servidor local y colores por defecto. Etiquetas listas">
+      <created>1645050594356</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1645050594356</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -354,7 +353,8 @@
     <MESSAGE value="MVVM con Widgets terminado con consumo de JSON por URL y .let con color arreglado" />
     <MESSAGE value="Verificacion de color al pintar texto y boton. Falta consumir json por servidor" />
     <MESSAGE value="Consumiendo json del servidor local y colores por defecto. Falta corregir la constante de get" />
-    <option name="LAST_COMMIT_MESSAGE" value="Consumiendo json del servidor local y colores por defecto. Falta corregir la constante de get" />
+    <MESSAGE value="Consumiendo json del servidor local y colores por defecto. Etiquetas listas" />
+    <option name="LAST_COMMIT_MESSAGE" value="Consumiendo json del servidor local y colores por defecto. Etiquetas listas" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

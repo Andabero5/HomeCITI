@@ -34,6 +34,9 @@ class WidgetGeneralView @JvmOverloads constructor(context: Context, var item : H
         btnWidget = findViewById(R.id.btn_general_seemore)
         rvWidget = findViewById(R.id.rv_general)
 
+        // Lo colocamos invisible para mostrar el Shimmer
+        rvWidget.visibility = View.INVISIBLE
+
         // Titulo del widget
         if(item.header == null){
             lblWidget.visibility = View.GONE
@@ -93,6 +96,9 @@ class WidgetGeneralView @JvmOverloads constructor(context: Context, var item : H
             adapterGeneral.setListData(it)
             adapterGeneral.notifyDataSetChanged()
         })
+
+        // Lo colocamos visible para mostrar el recycler
+        rvWidget.visibility = View.VISIBLE
     }
 
     /** more code here **/

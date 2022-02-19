@@ -32,9 +32,17 @@ class HomeFragment : Fragment(R.layout.fragment_home){
     // Funcion de organizar los datos que hay en el home para mostrar los layout
     private fun orderDataHome(){
         homeViewModel.fetchHomeData().observe(this,{ listHome ->
-            // Arreglar lista por order
+
+            // Correr skeleton shimmer
             binding.shimmerLayoutQuick.startShimmer()
+            binding.shimmerLayoutGeneral.startShimmer()
+            binding.shimmerLayoutBanner.startShimmer()
+
             binding.shimmerLayoutQuick.visibility = View.VISIBLE
+            binding.shimmerLayoutGeneral.visibility = View.VISIBLE
+            binding.shimmerLayoutBanner.visibility = View.VISIBLE
+
+            // Arreglar lista por order
             val orderHome = listHome.sortedBy { it.order }.map { it }
 
             // Ciclo para recorrer cada objeto de la lista
@@ -47,24 +55,25 @@ class HomeFragment : Fragment(R.layout.fragment_home){
                     when (item.type){
                         "WIDGET_GENERAL" -> {
                             widgetView = WidgetGeneralView(ctx, item)
+                            binding.shimmerLayoutGeneral.stopShimmer()
+                            binding.shimmerLayoutGeneral.visibility = View.GONE
                             binding.llHome.addView(widgetView)
                         }
                         "WIDGET_QUICK_ACCESS" -> {
                             widgetView = WidgetQuickAccessView(ctx, item)
+                            binding.shimmerLayoutQuick.stopShimmer()
+                            binding.shimmerLayoutQuick.visibility = View.GONE
                             binding.llHome.addView(widgetView)
-
                         }
                         "WIDGET_BANNER" -> {
                             widgetView = WidgetBannerView(ctx, item)
+                            binding.shimmerLayoutBanner.stopShimmer()
+                            binding.shimmerLayoutBanner.visibility = View.GONE
                             binding.llHome.addView(widgetView)
                         }
                     }
                 }
             }
-
-            binding.shimmerLayoutQuick.stopShimmer()
-            binding.shimmerLayoutQuick.visibility = View.GONE
-
         })
     }
 }
