@@ -22,7 +22,7 @@ class HomeFragment : Fragment(R.layout.fragment_home){
     // Declaracion del viewmodel
     private val homeViewModel by lazy { ViewModelProvider(this)[HomeViewModel::class.java] }
 
-    // Metodo cuando la vista este creadad
+    // Metodo cuando la vista este creada
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentHomeBinding.bind(view)

@@ -12,30 +12,34 @@ import retrofit2.Response
 class QuickAccessRepo {
 
     // Funcion devolver la lista de objetos de tipo service de quickaccess
-    fun getServiceData(): MutableLiveData<MutableList<QuickAccessService>> {
+    fun getServiceData(): MutableLiveData<MutableList<QuickAccessService>>? {
 
-        val mutableDataService = MutableLiveData<MutableList<QuickAccessService>>()
-        val listData = mutableListOf<QuickAccessService>()
-        val serviceApiInterface = ServiceApiInterface.create().getQuickAccess(Constants.QUICKACCESS_SERVICE_QUERY)
+        var mutableDataService = MutableLiveData<MutableList<QuickAccessService>>()
+
+        var serviceApiInterface = ServiceApiInterface.create().getQuickAccess(Constants.QUICKACCESS_SERVICE_QUERY)
 
         serviceApiInterface.enqueue( object : Callback<QuickAccessList> {
             override fun onResponse(
                 call: Call<QuickAccessList>,
                 response: Response<QuickAccessList>
             ) {
+                val listData = mutableListOf<QuickAccessService>()
                 val serviceArray = response.body()
                 serviceArray?.let { services ->
 
-                    for (document in services.data){
+                    services.data?.let {
+                        for (document in it){
 
-                        val txtTitle = document.type
-                        val imgIcon = document.icon
-                        val txtLabel = document.promoIcon
-                        val bgColor = document.backgroundColor
+                            val txtTitle = document.type
+                            val imgIcon = document.icon
+                            val txtLabel = document.promoIcon
+                            val bgColor = document.backgroundColor
 
-                        val service = QuickAccessService(txtTitle,imgIcon,txtLabel, bgColor)
-                        listData.add(service)
+                            val service = QuickAccessService(txtTitle,imgIcon,txtLabel, bgColor)
+                            listData.add(service)
+                        }
                     }
+
 
                     /*
                     for (document in services){
@@ -57,7 +61,9 @@ class QuickAccessRepo {
             }
 
             override fun onFailure(call: Call<QuickAccessList>, t: Throwable) {
+                println("------------ERROR-------------")
                 println("Error QuickAccess to call Repo")
+                mutableDataService.value = mutableListOf()
             }
         })
 

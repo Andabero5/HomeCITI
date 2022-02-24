@@ -14,7 +14,7 @@ class GeneralRepo {
     // Funcion devolver la lista de objetos de tipo general
     fun getGeneralData(): MutableLiveData<MutableList<GeneralService>> {
 
-        val mutableDataGeneral = MutableLiveData<MutableList<GeneralService>>()
+        var mutableDataGeneral = MutableLiveData<MutableList<GeneralService>>()
         val listData = mutableListOf<GeneralService>()
 
         val apiInterface= GeneralApiInterface.create().getGenerals(Constants.GENERAL_SERVICE_QUERY)
@@ -46,6 +46,7 @@ class GeneralRepo {
 
             override fun onFailure(call: Call<GeneralList>, t: Throwable) {
                 println("Error Call General Repo - JSON")
+
             }
         })
 

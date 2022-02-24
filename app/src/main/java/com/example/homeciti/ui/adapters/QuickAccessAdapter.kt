@@ -29,8 +29,8 @@ class QuickAccessAdapter(val context : Context): RecyclerView.Adapter<QuickAcces
     }
 
     override fun onBindViewHolder(holder: ServiceViewHolder, position: Int) {
-        val service = dataList[position]
-        holder.render(service)
+        val quickaccess = dataList[position]
+        holder.render(quickaccess)
     }
 
     override fun getItemCount(): Int = dataList.size

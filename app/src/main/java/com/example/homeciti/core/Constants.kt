@@ -1,5 +1,7 @@
 package com.example.homeciti.core
 
+import com.example.homeciti.BuildConfig
+
 object Constants {
     // base url
     const val BASE_HOME_SERVICE_URL = "http://192.168.1.4:3000/ClaroPay-WS/"
