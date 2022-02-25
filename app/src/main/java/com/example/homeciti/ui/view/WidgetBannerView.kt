@@ -25,6 +25,9 @@ class WidgetBannerView @JvmOverloads constructor(context: Context, var item : Ho
     private lateinit var constraintHeader : ConstraintLayout
     private lateinit var adapterBanner : BannerAdapter
 
+    private lateinit var clUpdate: ConstraintLayout
+    private lateinit var btnUpdate: Button
+    private lateinit var lblUpdate: TextView
     init {
         Log.d(TAG, "Kotlin init block called WidgetBannerView.")
         View.inflate(context, R.layout.layout_banner_home_partner, this)
@@ -38,13 +41,17 @@ class WidgetBannerView @JvmOverloads constructor(context: Context, var item : Ho
         indicator2 = findViewById(R.id.ci_banner)
         constraintHeader = findViewById(R.id.cl_header)
 
+        clUpdate = findViewById(R.id.cl_uploadRecyclerBanner)
+        btnUpdate = findViewById(R.id.btn_retryUploadBanner)
+        lblUpdate = findViewById(R.id.txt_uploadStatusBanner)
+
         // Lo colocamos invisible para mostrar el Shimmer
         rvWidget.visibility = View.INVISIBLE
 
         // Titulo del widget
-        if(item.header == null){
+        if (item.header == null) {
             lblWidget.visibility = View.GONE
-        }else{
+        } else {
             // Configuracion del titulo label (lbl)
             item.header?.let { titleObj ->
 
@@ -68,22 +75,22 @@ class WidgetBannerView @JvmOverloads constructor(context: Context, var item : Ho
         }
 
         // Boton del widget
-        if(item.btnConfig == null){
+        if (item.btnConfig == null) {
             btnWidget.visibility = View.GONE
-        }else{
+        } else {
             // Configuracion del boton showMore (btn)
             item.btnConfig?.let { showMore ->
-                if (showMore.visibility){
+                if (showMore.visibility) {
 
                     // Titulo
                     btnWidget.text = showMore.title
                     btnWidget.visibility = View.VISIBLE
 
                     // Color
-                    if(!showMore.textColor.isNullOrEmpty()){
+                    if (!showMore.textColor.isNullOrEmpty()) {
                         try {
                             btnWidget.setTextColor(showMore.textColor.toColorInt())
-                        }catch (e: Exception){
+                        } catch (e: Exception) {
                             btnWidget.setTextColor(Constants.COLOR_DEFAULT_TEXT.toColorInt())
                         }
                     } else btnWidget.setTextColor(Constants.COLOR_DEFAULT_TEXT.toColorInt())
@@ -93,19 +100,27 @@ class WidgetBannerView @JvmOverloads constructor(context: Context, var item : Ho
 
         // RecyclerView
         adapterBanner = BannerAdapter(context)
-        rvWidget.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL,false)
+        rvWidget.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         rvWidget.adapter = adapterBanner
-
-        bannerViewModel.fetchBannerData().observe(activity,{
-            Log.d(TAG, "Adapter Banner.")
-            adapterBanner.setListData(it)
-            adapterBanner.notifyDataSetChanged()
-            indicatorBanner(adapterBanner.itemCount)
-        })
-
-        // Lo colocamos visible para mostrar el recycler
-        rvWidget.visibility = View.VISIBLE
+        loadRecycle()
     }
+    private fun loadRecycle() {
+        bannerViewModel.fetchBannerData().observe(activity) {list->
+            Log.d(TAG, "Adapter Banner.")
+            if (list.isNullOrEmpty()) {
+                clUpdate.visibility = View.VISIBLE
+                rvWidget.visibility = View.GONE
+                btnUpdate.setOnClickListener { loadRecycle() }
+            }else{
+                adapterBanner.setListData(list)
+                adapterBanner.notifyDataSetChanged()
+                indicatorBanner(adapterBanner.itemCount)
+                rvWidget.visibility = View.VISIBLE
+            }
+        }
+    }
+
+
 
     private fun indicatorBanner(totalItems : Int){
         val snapHelper = PagerSnapHelper()

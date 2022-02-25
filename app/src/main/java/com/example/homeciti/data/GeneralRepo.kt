@@ -1,5 +1,6 @@
 package com.example.homeciti.data
 
+import androidx.annotation.Nullable
 import androidx.lifecycle.MutableLiveData
 import com.example.homeciti.core.Constants
 import com.example.homeciti.data.model.GeneralList
@@ -45,7 +46,7 @@ class GeneralRepo {
             }
 
             override fun onFailure(call: Call<GeneralList>, t: Throwable) {
-                println("Error Call General Repo - JSON")
+                mutableDataGeneral.value = mutableListOf()
 
             }
         })

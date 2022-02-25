@@ -53,7 +53,7 @@ class BannerRepo {
             }
 
             override fun onFailure(call: Call<BannerList>, t: Throwable) {
-                println("Error Call Banner Repo - JSON")
+                mutableDataBanner.value = mutableListOf()
             }
         })
 

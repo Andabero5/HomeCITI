@@ -14,7 +14,7 @@ import com.example.homeciti.ui.viewmodel.GeneralViewModel
 import com.example.homeciti.ui.viewmodel.HomeViewModel
 import com.example.homeciti.ui.viewmodel.QuickAccessViewModel
 
-class HomeFragment : Fragment(R.layout.fragment_home){
+class HomeFragment : Fragment(R.layout.fragment_home) {
 
     // Declarar mi binding asociado al fragment
     private lateinit var binding: FragmentHomeBinding
@@ -30,8 +30,8 @@ class HomeFragment : Fragment(R.layout.fragment_home){
     }
 
     // Funcion de organizar los datos que hay en el home para mostrar los layout
-    private fun orderDataHome(){
-        homeViewModel.fetchHomeData().observe(this,{ listHome ->
+    private fun orderDataHome() {
+        homeViewModel.fetchHomeData().observe(viewLifecycleOwner) { listHome ->
 
             // Correr skeleton shimmer
             binding.shimmerLayoutQuick.startShimmer()
@@ -46,13 +46,13 @@ class HomeFragment : Fragment(R.layout.fragment_home){
             val orderHome = listHome.sortedBy { it.order }.map { it }
 
             // Ciclo para recorrer cada objeto de la lista
-            for (item: HomeService in orderHome){
+            for (item: HomeService in orderHome) {
 
                 // Crear el recyclerview a partir de la lista de objetos
-                var widgetView : View
+                var widgetView: View
 
                 context?.let { ctx ->
-                    when (item.type){
+                    when (item.type) {
                         "WIDGET_GENERAL" -> {
                             widgetView = WidgetGeneralView(ctx, item)
                             binding.shimmerLayoutGeneral.stopShimmer()
@@ -74,7 +74,7 @@ class HomeFragment : Fragment(R.layout.fragment_home){
                     }
                 }
             }
-        })
+        }
     }
 }
 
@@ -95,7 +95,8 @@ class MyViewModelInjector(val context: Context) : MyViewModelAccessor {
         }
     }
     override var generalViewModel = ViewModelProvider(activity)[GeneralViewModel::class.java]
-    override var quickAccessViewModel = ViewModelProvider(activity)[QuickAccessViewModel::class.java]
+    override var quickAccessViewModel =
+        ViewModelProvider(activity)[QuickAccessViewModel::class.java]
     override var bannerViewModel = ViewModelProvider(activity)[BannerViewModel::class.java]
 
 }
