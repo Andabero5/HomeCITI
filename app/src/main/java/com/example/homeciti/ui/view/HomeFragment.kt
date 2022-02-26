@@ -3,6 +3,7 @@ package com.example.homeciti.ui.view
 import android.content.Context
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModelProvider
@@ -26,50 +27,68 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentHomeBinding.bind(view)
-        orderDataHome()
+        loadDataHome()
+    }
+
+    private fun orderList(listHome: MutableList<HomeService>): List<HomeService> {
+        return listHome.sortedBy { it.order }.map { it }
     }
 
     // Funcion de organizar los datos que hay en el home para mostrar los layout
-    private fun orderDataHome() {
+    private fun loadDataHome() {
         homeViewModel.fetchHomeData().observe(viewLifecycleOwner) { listHome ->
 
-            // Correr skeleton shimmer
-            binding.shimmerLayoutQuick.startShimmer()
-            binding.shimmerLayoutGeneral.startShimmer()
-            binding.shimmerLayoutBanner.startShimmer()
+            if (listHome.isNullOrEmpty()) {
+                binding.clUploadHome.visibility = View.VISIBLE
 
-            binding.shimmerLayoutQuick.visibility = View.VISIBLE
-            binding.shimmerLayoutGeneral.visibility = View.VISIBLE
-            binding.shimmerLayoutBanner.visibility = View.VISIBLE
+                // Correr skeleton shimmer
+                //binding.shimmerLayoutQuick.visibility = View.GONE
+                //binding.shimmerLayoutGeneral.visibility = View.GONE
+                //binding.shimmerLayoutBanner.visibility = View.GONE
 
-            // Arreglar lista por order
-            val orderHome = listHome.sortedBy { it.order }.map { it }
+                //binding.shimmerLayoutQuick.stopShimmer()
+                //binding.shimmerLayoutGeneral.stopShimmer()
+                //binding.shimmerLayoutBanner.stopShimmer()
 
-            // Ciclo para recorrer cada objeto de la lista
-            for (item: HomeService in orderHome) {
+                binding.btnRetryUploadHome.setOnClickListener {
+                    Toast.makeText(context, "Clicked method Home", Toast.LENGTH_SHORT).show()
+                    loadDataHome()
+                }
 
-                // Crear el recyclerview a partir de la lista de objetos
-                var widgetView: View
+            } else {
+                binding.clUploadHome.visibility = View.GONE
+                //binding.shimmerLayoutGeneral.visibility = View.VISIBLE
+                //binding.shimmerLayoutGeneral.startShimmer()
 
-                context?.let { ctx ->
-                    when (item.type) {
-                        "WIDGET_GENERAL" -> {
-                            widgetView = WidgetGeneralView(ctx, item)
-                            binding.shimmerLayoutGeneral.stopShimmer()
-                            binding.shimmerLayoutGeneral.visibility = View.GONE
-                            binding.llHome.addView(widgetView)
-                        }
-                        "WIDGET_QUICK_ACCESS" -> {
-                            widgetView = WidgetQuickAccessView(ctx, item)
-                            binding.shimmerLayoutQuick.stopShimmer()
-                            binding.shimmerLayoutQuick.visibility = View.GONE
-                            binding.llHome.addView(widgetView)
-                        }
-                        "WIDGET_BANNER" -> {
-                            widgetView = WidgetBannerView(ctx, item)
-                            binding.shimmerLayoutBanner.stopShimmer()
-                            binding.shimmerLayoutBanner.visibility = View.GONE
-                            binding.llHome.addView(widgetView)
+                // Arreglar lista por order
+                val orderHome = orderList(listHome)
+
+                // Ciclo para recorrer cada objeto de la lista
+                for (item: HomeService in orderHome) {
+
+                    // Crear el recyclerview a partir de la lista de objetos
+                    var widgetView: View
+
+                    context?.let { ctx ->
+                        when (item.type) {
+                            "WIDGET_GENERAL" -> {
+                                widgetView = WidgetGeneralView(ctx, item)
+                                //binding.shimmerLayoutGeneral.stopShimmer()
+                                //binding.shimmerLayoutGeneral.visibility = View.GONE
+                                binding.llHome.addView(widgetView)
+                            }
+                            "WIDGET_QUICK_ACCESS" -> {
+                                widgetView = WidgetQuickAccessView(ctx, item)
+                                //binding.shimmerLayoutQuick.stopShimmer()
+                                //binding.shimmerLayoutQuick.visibility = View.GONE
+                                binding.llHome.addView(widgetView)
+                            }
+                            "WIDGET_BANNER" -> {
+                                widgetView = WidgetBannerView(ctx, item)
+                                //binding.shimmerLayoutBanner.stopShimmer()
+                                //binding.shimmerLayoutBanner.visibility = View.GONE
+                                binding.llHome.addView(widgetView)
+                            }
                         }
                     }
                 }
@@ -95,8 +114,7 @@ class MyViewModelInjector(val context: Context) : MyViewModelAccessor {
         }
     }
     override var generalViewModel = ViewModelProvider(activity)[GeneralViewModel::class.java]
-    override var quickAccessViewModel =
-        ViewModelProvider(activity)[QuickAccessViewModel::class.java]
+    override var quickAccessViewModel = ViewModelProvider(activity)[QuickAccessViewModel::class.java]
     override var bannerViewModel = ViewModelProvider(activity)[BannerViewModel::class.java]
 
 }

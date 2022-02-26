@@ -12,9 +12,9 @@ class BannerViewModel:ViewModel() {
     private val repo = BannerRepo()
 
     // funcion para devolver mi lista de datos
-    fun fetchBannerData(): LiveData<MutableList<BannerService>> {
+    fun fetchBannerData(): LiveData<MutableList<BannerService>>? {
         val mutableData = MutableLiveData<MutableList<BannerService>>()
-        repo.getBannerData().observeForever{
+        repo.getBannerData()?.observeForever{
             mutableData.value = it
         }
 

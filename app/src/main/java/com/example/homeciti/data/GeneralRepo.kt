@@ -1,6 +1,5 @@
 package com.example.homeciti.data
 
-import androidx.annotation.Nullable
 import androidx.lifecycle.MutableLiveData
 import com.example.homeciti.core.Constants
 import com.example.homeciti.data.model.GeneralList
@@ -12,32 +11,34 @@ import retrofit2.Response
 
 class GeneralRepo {
 
-    // Funcion devolver la lista de objetos de tipo general
-    fun getGeneralData(): MutableLiveData<MutableList<GeneralService>> {
+    // Funcion obtener la lista de objetos de tipo general
+    fun getGeneralData(): MutableLiveData<MutableList<GeneralService>>? {
 
-        var mutableDataGeneral = MutableLiveData<MutableList<GeneralService>>()
-        val listData = mutableListOf<GeneralService>()
+        val mutableDataGeneral = MutableLiveData<MutableList<GeneralService>>()
+        val generalApiInterface= GeneralApiInterface.create().getGenerals(Constants.GENERAL_SERVICE_QUERY)
 
-        val apiInterface= GeneralApiInterface.create().getGenerals(Constants.GENERAL_SERVICE_QUERY)
-
-        apiInterface.enqueue( object : Callback<GeneralList> {
+        // Consumo del servicio
+        generalApiInterface.enqueue( object : Callback<GeneralList> {
             override fun onResponse(
                 call: Call<GeneralList>,
                 response: Response<GeneralList>
             ) {
+                val listData = mutableListOf<GeneralService>()
                 val generalArray = response.body()
 
                 generalArray?.let { generals ->
 
-                    for (document in generals.data){
+                    generals.data?.let {
+                        for (document in it){
 
-                        val txtTitle = document.type
-                        val imgIcon = document.icon
-                        val txtLabel = document.promoIcon
-                        val bgColor = document.backgroundColor
+                            val txtTitle = document.type
+                            val imgIcon = document.icon
+                            val txtLabel = document.promoIcon
+                            val bgColor = document.backgroundColor
 
-                        val general = GeneralService(txtTitle,imgIcon,txtLabel, bgColor)
-                        listData.add(general)
+                            val general = GeneralService(txtTitle,imgIcon,txtLabel, bgColor)
+                            listData.add(general)
+                        }
                     }
 
                     mutableDataGeneral.value = listData
@@ -46,6 +47,8 @@ class GeneralRepo {
             }
 
             override fun onFailure(call: Call<GeneralList>, t: Throwable) {
+                println("------------ERROR-------------")
+                println("Error QuickAccess to call Repo")
                 mutableDataGeneral.value = mutableListOf()
 
             }

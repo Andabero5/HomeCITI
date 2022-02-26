@@ -24,48 +24,6 @@
                     layout="@layout/layout_header_home_partner">
                 </include>
 
-                <com.facebook.shimmer.ShimmerFrameLayout
-                    android:id="@+id/shimmer_layout_general"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    tools:visibility="visible">
-
-                    <include
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        layout="@layout/layout_shimmer_home_partner">
-                    </include>
-
-                </com.facebook.shimmer.ShimmerFrameLayout>
-
-                <com.facebook.shimmer.ShimmerFrameLayout
-                    android:id="@+id/shimmer_layout_banner"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    tools:visibility="visible">
-
-                    <include
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        layout="@layout/layout_shimmer_banner_partner">
-                    </include>
-
-                </com.facebook.shimmer.ShimmerFrameLayout>
-
-                <com.facebook.shimmer.ShimmerFrameLayout
-                    android:id="@+id/shimmer_layout_quick"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    tools:visibility="visible">
-
-                    <include
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        layout="@layout/layout_shimmer_quickaccess_partner">
-                    </include>
-
-                </com.facebook.shimmer.ShimmerFrameLayout>
-
                 <LinearLayout
                     android:id="@+id/ll_home"
                     android:layout_width="match_parent"
@@ -77,8 +35,44 @@
                     de cada uno de los widgets
                     -->
 
-
                 </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_uploadHome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ll_home">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txt_uploadStatusHome"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="Sorry, something went wrong on Home"
+                        app:layout_constraintBottom_toTopOf="@+id/btn_retryUploadHome"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_retryUploadHome"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Retry Upload"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txt_uploadStatusHome" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>
 </FrameLayout>

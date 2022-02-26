@@ -12,9 +12,9 @@ class GeneralViewModel:ViewModel() {
     private val repo = GeneralRepo()
 
     // funcion para devolver mi lista de datos
-    fun fetchGeneralData():LiveData<MutableList<GeneralService>> {
+    fun fetchGeneralData():LiveData<MutableList<GeneralService>>? {
         val mutableData = MutableLiveData<MutableList<GeneralService>>()
-        repo.getGeneralData().observeForever{
+        repo.getGeneralData()?.observeForever{
             mutableData.value = it
         }
 

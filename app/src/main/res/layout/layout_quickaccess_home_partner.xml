@@ -8,6 +8,25 @@
     android:paddingTop="8dp"
     android:paddingBottom="8dp">
 
+    <!-- Shimmer skeleton-->
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_layout_quick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible">
+
+        <include
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            layout="@layout/layout_shimmer_quickaccess_partner">
+        </include>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <!-- Contenido del widget-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl_contentWidget"
         android:layout_width="match_parent"

@@ -11,20 +11,21 @@ import retrofit2.Response
 
 class QuickAccessRepo {
 
-    // Funcion devolver la lista de objetos de tipo service de quickaccess
+    // Funcion obtener la lista de objetos de tipo quickaccess
     fun getServiceData(): MutableLiveData<MutableList<QuickAccessService>>? {
 
         var mutableDataService = MutableLiveData<MutableList<QuickAccessService>>()
+        var quickaccessApiInterface = ServiceApiInterface.create().getQuickAccess(Constants.QUICKACCESS_SERVICE_QUERY)
 
-        var serviceApiInterface = ServiceApiInterface.create().getQuickAccess(Constants.QUICKACCESS_SERVICE_QUERY)
-
-        serviceApiInterface.enqueue( object : Callback<QuickAccessList> {
+        // Consumo del servicio
+        quickaccessApiInterface.enqueue( object : Callback<QuickAccessList> {
             override fun onResponse(
                 call: Call<QuickAccessList>,
                 response: Response<QuickAccessList>
             ) {
                 val listData = mutableListOf<QuickAccessService>()
                 val serviceArray = response.body()
+
                 serviceArray?.let { services ->
 
                     services.data?.let {
@@ -39,21 +40,6 @@ class QuickAccessRepo {
                             listData.add(service)
                         }
                     }
-
-
-                    /*
-                    for (document in services){
-
-                        val txtTitle = document.type
-                        val imgIcon = document.icon
-                        val txtLabel = document.promoIcon
-                        val bgColor = document.backgroundColor
-
-                        val service = QuickAccessService(txtTitle,imgIcon,txtLabel, bgColor)
-                        listData.add(service)
-                    }
-
-                     */
 
                     mutableDataService.value = listData
 

@@ -11,40 +11,32 @@ import retrofit2.Response
 
 class BannerRepo {
 
-    fun getBannerData(): LiveData<MutableList<BannerService>> {
-        val mutableDataBanner = MutableLiveData<MutableList<BannerService>>()
-        val listData = mutableListOf<BannerService>()
+    // Funcion obtener la lista de objetos de tipo banner
+    fun getBannerData(): LiveData<MutableList<BannerService>>? {
 
-        /*
-        for (document in ServiceProvider.banners){
-            val imgIcon = document.icon
-            val txtLabel = document.promoIcon
-            val bgColorLabel = document.backgroundColor
+        var mutableDataBanner = MutableLiveData<MutableList<BannerService>>()
+        var bannerApiInterface= BannerApiInterface.create().getBanners(Constants.BANNER_SERVICE_QUERY)
 
-            val banner = BannerService(imgIcon, txtLabel, bgColorLabel)
-            listData.add(banner)
-        }
-
-         */
-
-        val apiInterface= BannerApiInterface.create().getBanners(Constants.BANNER_SERVICE_QUERY)
-
-        apiInterface.enqueue( object : Callback<BannerList> {
+        // Consumo del servicio
+        bannerApiInterface.enqueue( object : Callback<BannerList> {
             override fun onResponse(
                 call: Call<BannerList>,
                 response: Response<BannerList>
             ) {
+                val listData = mutableListOf<BannerService>()
                 val bannerArray = response.body()
 
                 bannerArray?.let { banners ->
 
-                    for (document in banners.data){
-                        val imgIcon = document.icon
-                        val txtLabel = document.promoIcon
-                        val bgColor = document.backgroundColor
+                    banners.data?.let {
+                        for (document in it){
+                            val imgIcon = document.icon
+                            val txtLabel = document.promoIcon
+                            val bgColor = document.backgroundColor
 
-                        val banner = BannerService(imgIcon,txtLabel, bgColor)
-                        listData.add(banner)
+                            val banner = BannerService(imgIcon,txtLabel, bgColor)
+                            listData.add(banner)
+                        }
                     }
 
                     mutableDataBanner.value = listData
@@ -53,6 +45,8 @@ class BannerRepo {
             }
 
             override fun onFailure(call: Call<BannerList>, t: Throwable) {
+                println("------------ERROR-------------")
+                println("Error Banner to call Repo")
                 mutableDataBanner.value = mutableListOf()
             }
         })

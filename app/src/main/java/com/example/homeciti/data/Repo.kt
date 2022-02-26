@@ -58,6 +58,7 @@ class Repo {
 
             override fun onFailure(call: Call<HomeList>, t: Throwable) {
                 println("Error Call Home Repo - JSON")
+                mutableDataHome.value = mutableListOf()
             }
         })
 

@@ -16,18 +16,24 @@ import com.example.homeciti.data.model.HomeService
 import com.example.homeciti.ui.adapters.QuickAccessAdapter
 import com.facebook.shimmer.ShimmerFrameLayout
 
-class WidgetQuickAccessView @JvmOverloads constructor(
-    context: Context, var item: HomeService
+class WidgetQuickAccessView @JvmOverloads constructor(context: Context, var item: HomeService
 ) : ConstraintLayout(context),
     MyViewModelAccessor by MyViewModelInjector(context) {
+
+    // Shimmer skeleton
+    private lateinit var shimmer : ShimmerFrameLayout
+
+    // Contenido del widget
+    private lateinit var constraintWidget: ConstraintLayout
     private lateinit var lblWidget: TextView
     private lateinit var btnWidget: Button
     private lateinit var rvWidget: RecyclerView
+    private lateinit var adapterQuickAccess: QuickAccessAdapter
+
+    // Upload recycler
     private lateinit var clUpdate: ConstraintLayout
     private lateinit var btnUpdate: Button
     private lateinit var lblUpdate: TextView
-
-    private lateinit var adapterQuickAccess: QuickAccessAdapter
 
     init {
         Log.d(TAG, "Kotlin init block called Quick Access.")
@@ -36,20 +42,28 @@ class WidgetQuickAccessView @JvmOverloads constructor(
     }
 
     private fun subscribe() {
+
+        // Shimmer skeleton
+        shimmer = findViewById(R.id.shimmer_layout_quick)
+
+        // Contenido del widget
+        constraintWidget = findViewById(R.id.cl_contentWidget)
         lblWidget = findViewById(R.id.lbl_quickaccess)
         btnWidget = findViewById(R.id.btn_quickaccess_seemore)
         rvWidget = findViewById(R.id.rv_quickaccess)
+
+        // Upload del recycler
         clUpdate = findViewById(R.id.cl_uploadRecycler)
         btnUpdate = findViewById(R.id.btn_retryUpload)
         lblUpdate = findViewById(R.id.txt_uploadStatus)
 
         // Lo colocamos invisible para mostrar el Shimmer
+        shimmer.visibility = View.VISIBLE
+        shimmer.startShimmer()
         rvWidget.visibility = View.INVISIBLE
 
-        btnUpdate.setOnClickListener() {
-            Toast.makeText(context, "Clicked method Widget", Toast.LENGTH_SHORT).show()
-            cargarRecycler()
-        }
+        // Hay contenido -> oculte el shimmer
+        item.let { shimmer.visibility = View.GONE }
 
         // Titulo del widget
         if (item.header == null) {
@@ -103,25 +117,27 @@ class WidgetQuickAccessView @JvmOverloads constructor(
         rvWidget.layoutManager = GridLayoutManager(context, item.columns)
         rvWidget.adapter = adapterQuickAccess
 
-        cargarRecycler()
+        loadRecycler()
     }
 
-    private fun cargarRecycler() {
-        println("llame a la funcion cargar QuickAccess")
+    private fun loadRecycler() {
 
-        quickAccessViewModel.fetchQuickAccessData()?.observe(activity) it@{
+        quickAccessViewModel.fetchQuickAccessData()?.observe(activity){ list ->
             Log.d(TAG, "Adapter QuickAccess")
 
-            if (it.isNullOrEmpty()) {
+            if (list.isNullOrEmpty()) {
                 clUpdate.visibility = View.VISIBLE
                 rvWidget.visibility = View.GONE
-                btnUpdate.setOnClickListener { cargarRecycler() }
+                btnUpdate.setOnClickListener {
+                    Toast.makeText(context, "Clicked method Widget QuickAccess", Toast.LENGTH_SHORT).show()
+                    loadRecycler()
+                }
 
             } else {
                 clUpdate.visibility = View.GONE
                 rvWidget.visibility = View.VISIBLE
 
-                adapterQuickAccess.setListData(it)
+                adapterQuickAccess.setListData(list)
                 adapterQuickAccess.notifyDataSetChanged()
             }
         }

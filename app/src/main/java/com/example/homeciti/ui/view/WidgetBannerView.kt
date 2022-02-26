@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.graphics.toColorInt
 import androidx.recyclerview.widget.*
@@ -12,22 +13,29 @@ import com.example.homeciti.R
 import com.example.homeciti.core.Constants
 import com.example.homeciti.data.model.HomeService
 import com.example.homeciti.ui.adapters.BannerAdapter
+import com.facebook.shimmer.ShimmerFrameLayout
 import me.relex.circleindicator.CircleIndicator2
 
 class WidgetBannerView @JvmOverloads constructor(context: Context, var item : HomeService
 ) : ConstraintLayout(context),
     MyViewModelAccessor by MyViewModelInjector(context){
 
+    // Shimmer skeleton
+    private lateinit var shimmer : ShimmerFrameLayout
+
+    // Contenido del widget
+    private lateinit var constraintWidget: ConstraintLayout
     private lateinit var lblWidget : TextView
     private lateinit var btnWidget : Button
     private lateinit var rvWidget : RecyclerView
     private lateinit var indicator2 : CircleIndicator2
-    private lateinit var constraintHeader : ConstraintLayout
     private lateinit var adapterBanner : BannerAdapter
 
+    // Upload recycler
     private lateinit var clUpdate: ConstraintLayout
     private lateinit var btnUpdate: Button
     private lateinit var lblUpdate: TextView
+
     init {
         Log.d(TAG, "Kotlin init block called WidgetBannerView.")
         View.inflate(context, R.layout.layout_banner_home_partner, this)
@@ -35,18 +43,29 @@ class WidgetBannerView @JvmOverloads constructor(context: Context, var item : Ho
     }
 
     private fun subscribe() {
+
+        // Shimmer skeleton
+        shimmer = findViewById(R.id.shimmer_layout_banner)
+
+        // Contenido del widget
+        constraintWidget = findViewById(R.id.cl_contentWidget)
         lblWidget = findViewById(R.id.lbl_banner)
         btnWidget = findViewById(R.id.btn_banner_seemore)
         rvWidget = findViewById(R.id.rv_banner)
         indicator2 = findViewById(R.id.ci_banner)
-        constraintHeader = findViewById(R.id.cl_header)
 
+        // Upload recycler
         clUpdate = findViewById(R.id.cl_uploadRecyclerBanner)
         btnUpdate = findViewById(R.id.btn_retryUploadBanner)
         lblUpdate = findViewById(R.id.txt_uploadStatusBanner)
 
         // Lo colocamos invisible para mostrar el Shimmer
+        shimmer.visibility = View.VISIBLE
+        shimmer.startShimmer()
         rvWidget.visibility = View.INVISIBLE
+
+        // Hay contenido -> oculte el shimmer
+        item.let { shimmer.visibility = View.GONE }
 
         // Titulo del widget
         if (item.header == null) {
@@ -102,15 +121,18 @@ class WidgetBannerView @JvmOverloads constructor(context: Context, var item : Ho
         adapterBanner = BannerAdapter(context)
         rvWidget.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         rvWidget.adapter = adapterBanner
-        loadRecycle()
+        loadRecycler()
     }
-    private fun loadRecycle() {
-        bannerViewModel.fetchBannerData().observe(activity) {list->
+    private fun loadRecycler() {
+        bannerViewModel.fetchBannerData()?.observe(activity) {list->
             Log.d(TAG, "Adapter Banner.")
             if (list.isNullOrEmpty()) {
                 clUpdate.visibility = View.VISIBLE
                 rvWidget.visibility = View.GONE
-                btnUpdate.setOnClickListener { loadRecycle() }
+                btnUpdate.setOnClickListener {
+                    Toast.makeText(context, "Clicked method Widget Banner", Toast.LENGTH_SHORT).show()
+                    loadRecycler()
+                }
             }else{
                 adapterBanner.setListData(list)
                 adapterBanner.notifyDataSetChanged()
