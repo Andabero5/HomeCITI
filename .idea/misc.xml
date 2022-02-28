@@ -4,21 +4,49 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/ID139/Desktop/principal/Android/HomeCITI/app/src/main/res/layout/activity_main.xml" value="0.3302083333333333" />
+        <entry key="..\:/Users/ID139/Desktop/principal/Android/HomeCITI/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/Users/ID139/Desktop/principal/Android/HomeCITI/app/src/main/res/layout/layout_banner_home_partner.xml" value="0.20925925925925926" />
+        <entry key="..\:/Users/ID139/Desktop/principal/Android/HomeCITI/app/src/main/res/layout/layout_general_home_partner.xml" value="0.18490374873353596" />
+        <entry key="..\:/Users/ID139/Desktop/principal/Android/HomeCITI/app/src/main/res/layout/layout_header_home_partner.xml" value="0.21875" />
+        <entry key="..\:/Users/ID139/Desktop/principal/Android/HomeCITI/app/src/main/res/layout/layout_quickaccess_home_partner.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/ID139/Desktop/principal/Android/HomeCITI/app/src/main/res/layout/layout_shimmer_banner_partner.xml" value="0.18490374873353596" />
+        <entry key="..\:/Users/ID139/Desktop/principal/Android/HomeCITI/app/src/main/res/layout/layout_shimmer_home_partner.xml" value="0.18490374873353596" />
+        <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/drawable-v24/ic_add_money_partner.xml" value="0.18425925925925926" />
+        <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/drawable-v24/ic_funding.xml" value="0.2203125" />
+        <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/drawable/background_btn_seemore.xml" value="0.11354166666666667" />
+        <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/drawable/background_item_label_tag.xml" value="0.11354166666666667" />
+        <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/drawable/background_item_labeltag.xml" value="0.14907407407407408" />
+        <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/drawable/background_item_labeltag_blue.xml" value="0.2169230769230769" />
         <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2169230769230769" />
+        <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/drawable/indicator_banner_selected.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/drawable/indicator_banner_unselected.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/drawable/item_label_tag.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/drawable/item_labeltag.xml" value="0.11018518518518519" />
-        <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/activity_main.xml" value="0.67" />
-        <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/item_home_general.xml" value="0.1" />
+        <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/fragment_home.xml" value="0.22" />
+        <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/item_banner_shimmer.xml" value="0.1105072463768116" />
+        <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/item_home_banner.xml" value="0.18" />
+        <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/item_home_general.xml" value="0.33" />
         <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/item_home_options.xml" value="0.12409420289855072" />
-        <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/item_home_quickaccess.xml" value="0.18" />
+        <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/item_home_quickaccess.xml" value="0.24316546762589927" />
+        <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/item_home_quickaccess_load.xml" value="0.22" />
         <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/item_home_today.xml" value="0.33" />
-        <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/layout_general_home_partner.xml" value="0.14175724637681159" />
-        <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/layout_quickaccess_home_partner.xml" value="0.25" />
+        <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/item_shimmer.xml" value="0.16" />
+        <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/item_shimmer_banner.xml" value="0.1105072463768116" />
+        <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/item_shimmer_general.xml" value="0.1" />
+        <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/item_shimmer_quickaccess.xml" value="0.1105072463768116" />
+        <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/layout_banner_home_partner.xml" value="0.15" />
+        <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/layout_general_home_partner.xml" value="0.25" />
+        <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/layout_header_home_partner.xml" value="0.3558139534883721" />
+        <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/layout_quickaccess_home_partner.xml" value="0.22" />
+        <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/layout_shimmer_banner_partner.xml" value="0.1105072463768116" />
+        <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/layout_shimmer_home_partner.xml" value="0.21" />
+        <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/layout_shimmer_quickaccess_partner.xml" value="0.21" />
       </map>
     </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

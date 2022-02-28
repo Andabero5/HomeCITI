@@ -1,0 +1,179 @@
+{
+  "home":[
+	{
+      "type": "WIDGET_GENERAL",
+	  "titleObj": {
+        "title": "¿Qué quieres hacer hoy?",
+	    "textColor": "#1D0071"
+	  },
+      "showMore": {
+	    "title": "Ver más",
+        "textColor": "#12345678",
+	    "visibility": true
+	  },
+	  "columns": 3,
+	  "order": 2
+	},
+
+	{
+      "type": "WIDGET_BANNER",
+      "titleObj": {
+        "title": "Banner",
+        "textColor": "#1D0071"
+      },
+      "showMore": {
+        "title": "Ver más",
+        "textColor": "#12345678",
+        "visibility": true
+      },
+	  "order": 3
+	},
+
+	{
+      "type": "WIDGET_QUICK_ACCESS",
+	  "titleObj": {
+	    "title": "Accesos rapidos",
+	    "textColor": "#1D0071"
+	  },
+      "showMore": {
+	    "title": "Ver mas",
+        "textColor": "#12345678",
+	    "visibility": true
+	  },
+	  "columns": 4,
+      "order": 1
+	}
+],
+
+"general":[
+    {
+      "type": "Enviar dinero",
+      "icon": "https://w7.pngwing.com/pngs/936/836/png-transparent-computer-icons-currency-money-bank-i-ll-send-you-the-money-thumbnail.png",
+      "promoIcon": "Nuevo",
+      "backgroundColor": "#e03333"
+    },
+  {
+    "type": "Recargar TAE",
+    "icon": "https://pngfree.io/upload/cache/upload/imgs/homepngwing/free-png-zzwmk-f350x360.png",
+    "promoIcon": "Favorito",
+    "backgroundColor": "#0012B5"
+  },
+  {
+    "type": "Pagar servicios",
+    "icon": "https://w7.pngwing.com/pngs/160/178/png-transparent-salary-payroll-payment-management-tax-pay-human-resource-management-service-people-thumbnail.png",
+    "promoIcon": "",
+    "backgroundColor": ""
+  },
+  {
+    "type": "Pago en comercios",
+    "icon": "https://w7.pngwing.com/pngs/753/261/png-transparent-mobile-payment-payment-gateway-computer-icons-payment-system-payment-gadget-electronics-service.png",
+    "promoIcon": "",
+    "backgroundColor": ""
+  },
+  {
+    "type": "Tarjeta Claro Pay",
+    "icon": "https://e7.pngegg.com/pngimages/954/306/png-clipart-computer-icons-credit-card-bank-payment-card-minimal-text-payment.png",
+    "promoIcon": "",
+    "backgroundColor": ""
+  },
+  {
+    "type": "Mi cuenta CLABE",
+    "icon": "https://images-na.ssl-images-amazon.com/images/I/41jkyotpKhL.png",
+    "promoIcon": "Nuevo",
+    "backgroundColor": "#e03333"
+  },
+  {
+    "type": "Retirar dinero",
+    "icon": "https://www.pngkit.com/png/detail/17-172892_this-page-contains-all-info-about-money-icon.png",
+    "promoIcon": "Favorito",
+    "backgroundColor": "#0012B5"
+  },
+  {
+    "type": "Movimientos",
+    "icon": "https://www.pngall.com/wp-content/uploads/1/Withdraw-PNG.png",
+    "promoIcon": "",
+    "backgroundColor": ""
+  },
+  {
+    "type": "Mi cartera",
+    "icon": "https://pngimg.com/uploads/wallet/wallet_PNG77049.png",
+    "promoIcon": "",
+    "backgroundColor": ""
+  }
+],
+  "services":[
+    {
+      "type": "Expedia",
+      "icon": "https://www.nicepng.com/png/full/395-3957278_expedia-png-get-started-expedia-logo-png.png",
+      "promoIcon": "",
+      "backgroundColor": "#0012B5"
+    },
+    {
+      "type": "Pase",
+      "icon": "https://pbs.twimg.com/profile_images/725759818267422720/hYsLwrGg_400x400.jpg",
+      "promoIcon": "",
+      "backgroundColor": "#0012B5"
+    },
+    {
+      "type": "Musica",
+      "icon": "https://w7.pngwing.com/pngs/727/579/png-transparent-app-store-music-itunes-computer-icons-apple-apple-purple-violet-text-thumbnail.png",
+      "promoIcon": "",
+      "backgroundColor": "#0012B5"
+    },
+    {
+      "type": "Noticias",
+      "icon": "https://cdn.pixabay.com/photo/2018/10/26/09/24/news-3774160_960_720.png",
+      "promoIcon": "",
+      "backgroundColor": "#0012B5"
+    },
+    {
+      "type": "Telcel",
+      "icon": "https://toppng.com/uploads/preview/telcel-digital-pcs-vector-logo-free-11574029807u5xja7ooh1.png",
+      "promoIcon": "",
+      "backgroundColor": "#0012B5"
+    },
+    {
+      "type": "Prestamo",
+      "icon": "https://e7.pngegg.com/pngimages/711/287/png-clipart-payday-loan-money-bank-financial-services-give-money-text-service.png",
+      "promoIcon": "",
+      "backgroundColor": "#0012B5"
+    },
+    {
+      "type": "Telmex",
+      "icon": "https://e7.pngegg.com/pngimages/347/142/png-clipart-logo-telmex-mobile-phones-font-aol-logo-text-logo.png",
+      "promoIcon": "",
+      "backgroundColor": "#0012B5"
+    },
+    {
+      "type": "Cerca de mi",
+      "icon": "https://flyclipart.com/thumb2/flat-location-logo-icons-png-934757.png",
+      "promoIcon": "",
+      "backgroundColor": "#0012B5"
+    },
+    {
+      "type": "Promos",
+      "icon": "https://e7.pngegg.com/pngimages/37/353/png-clipart-sales-promotion-discounts-and-allowances-computer-icons-marketing-public-relations-logo-thumbnail.png",
+      "promoIcon": "Favorite",
+      "backgroundColor": "#0012B5"
+    },
+    {
+      "type": "Sky",
+      "icon": "https://image.pngaaa.com/738/2524738-middle.png",
+      "promoIcon": "New",
+      "backgroundColor": "#0012B5"
+    },
+    {
+      "type": "CFE",
+      "icon": "https://noti-notisistema.netdna-ssl.com/noticias/wp-content/media/2017/08/cfe-610x389.jpg",
+      "promoIcon": "New",
+      "backgroundColor": "#e03333"
+    },
+    {
+      "type": "¿Que es Claro Pay?",
+      "icon": "https://play-lh.googleusercontent.com/5sTC1Sa7WI0SHwVK9dJo2hbq-JC-iUVW_ymmWnlinLlqZAf0yWqn_LJBC8p-scn03qk_",
+      "promoIcon": "",
+      "backgroundColor": "#0012B5"
+    }
+  ]
+}
+
