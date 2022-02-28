@@ -62,8 +62,6 @@ class WidgetGeneralView @JvmOverloads constructor(context: Context, var item: Ho
         shimmer.startShimmer()
         rvWidget.visibility = View.INVISIBLE
 
-        // Hay contenido -> oculte el shimmer
-        item.let { shimmer.visibility = View.GONE }
 
         // Titulo del widget
         if (item.header == null) {
@@ -125,17 +123,25 @@ class WidgetGeneralView @JvmOverloads constructor(context: Context, var item: Ho
             if (list.isNullOrEmpty()) {
                 clUpdate.visibility = View.VISIBLE
                 rvWidget.visibility = View.GONE
+                stopShimmer()
                 btnUpdate.setOnClickListener {
-                    Toast.makeText(context, "Clicked method Widget General", Toast.LENGTH_SHORT).show()
+                    shimmer.visibility=View.VISIBLE
+                    shimmer.startShimmer()
+                    clUpdate.visibility = View.GONE
                     loadRecycler()
                 }
             } else {
+                stopShimmer()
                 adapterGeneral.setListData(list)
                 adapterGeneral.notifyDataSetChanged()
                 rvWidget.visibility = View.VISIBLE
             }
         }
 
+    }
+    private fun stopShimmer(){
+        shimmer.visibility = View.GONE
+        shimmer.stopShimmer()
     }
 
     /** more code here **/

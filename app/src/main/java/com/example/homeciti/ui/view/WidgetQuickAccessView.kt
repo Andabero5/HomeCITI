@@ -62,9 +62,6 @@ class WidgetQuickAccessView @JvmOverloads constructor(context: Context, var item
         shimmer.startShimmer()
         rvWidget.visibility = View.INVISIBLE
 
-        // Hay contenido -> oculte el shimmer
-        item.let { shimmer.visibility = View.GONE }
-
         // Titulo del widget
         if (item.header == null) {
             lblWidget.visibility = View.GONE
@@ -128,12 +125,16 @@ class WidgetQuickAccessView @JvmOverloads constructor(context: Context, var item
             if (list.isNullOrEmpty()) {
                 clUpdate.visibility = View.VISIBLE
                 rvWidget.visibility = View.GONE
+                stopShimmer()
                 btnUpdate.setOnClickListener {
-                    Toast.makeText(context, "Clicked method Widget QuickAccess", Toast.LENGTH_SHORT).show()
+                    shimmer.visibility=View.VISIBLE
+                    shimmer.startShimmer()
+                    clUpdate.visibility = View.GONE
                     loadRecycler()
                 }
 
             } else {
+                stopShimmer()
                 clUpdate.visibility = View.GONE
                 rvWidget.visibility = View.VISIBLE
 
@@ -143,8 +144,12 @@ class WidgetQuickAccessView @JvmOverloads constructor(context: Context, var item
         }
     }
 
-    /** more code here **/
+    private fun stopShimmer(){
+        shimmer.visibility = View.GONE
+        shimmer.stopShimmer()
+    }
 
+    /** more code here **/
     companion object {
         private const val TAG = "Widget_View_Kotlin"
     }

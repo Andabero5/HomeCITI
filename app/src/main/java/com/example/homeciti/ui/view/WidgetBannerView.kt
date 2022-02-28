@@ -64,8 +64,7 @@ class WidgetBannerView @JvmOverloads constructor(context: Context, var item : Ho
         shimmer.startShimmer()
         rvWidget.visibility = View.INVISIBLE
 
-        // Hay contenido -> oculte el shimmer
-        item.let { shimmer.visibility = View.GONE }
+
 
         // Titulo del widget
         if (item.header == null) {
@@ -129,11 +128,15 @@ class WidgetBannerView @JvmOverloads constructor(context: Context, var item : Ho
             if (list.isNullOrEmpty()) {
                 clUpdate.visibility = View.VISIBLE
                 rvWidget.visibility = View.GONE
+                stopShimmer()
                 btnUpdate.setOnClickListener {
-                    Toast.makeText(context, "Clicked method Widget Banner", Toast.LENGTH_SHORT).show()
+                    shimmer.visibility=View.VISIBLE
+                    shimmer.startShimmer()
+                    clUpdate.visibility = View.GONE
                     loadRecycler()
                 }
             }else{
+                stopShimmer()
                 adapterBanner.setListData(list)
                 adapterBanner.notifyDataSetChanged()
                 indicatorBanner(adapterBanner.itemCount)
@@ -142,6 +145,10 @@ class WidgetBannerView @JvmOverloads constructor(context: Context, var item : Ho
         }
     }
 
+    private fun stopShimmer(){
+        shimmer.visibility = View.GONE
+        shimmer.stopShimmer()
+    }
 
 
     private fun indicatorBanner(totalItems : Int){

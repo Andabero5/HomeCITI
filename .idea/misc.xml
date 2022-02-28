@@ -4,6 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/ID139/Desktop/principal/Android/HomeCITI/app/src/main/res/layout/activity_main.xml" value="0.3302083333333333" />
+        <entry key="..\:/Users/ID139/Desktop/principal/Android/HomeCITI/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/Users/ID139/Desktop/principal/Android/HomeCITI/app/src/main/res/layout/layout_banner_home_partner.xml" value="0.20925925925925926" />
+        <entry key="..\:/Users/ID139/Desktop/principal/Android/HomeCITI/app/src/main/res/layout/layout_general_home_partner.xml" value="0.18490374873353596" />
+        <entry key="..\:/Users/ID139/Desktop/principal/Android/HomeCITI/app/src/main/res/layout/layout_header_home_partner.xml" value="0.21875" />
+        <entry key="..\:/Users/ID139/Desktop/principal/Android/HomeCITI/app/src/main/res/layout/layout_quickaccess_home_partner.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/ID139/Desktop/principal/Android/HomeCITI/app/src/main/res/layout/layout_shimmer_banner_partner.xml" value="0.18490374873353596" />
+        <entry key="..\:/Users/ID139/Desktop/principal/Android/HomeCITI/app/src/main/res/layout/layout_shimmer_home_partner.xml" value="0.18490374873353596" />
         <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/drawable-v24/ic_add_money_partner.xml" value="0.18425925925925926" />
         <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/drawable-v24/ic_funding.xml" value="0.2203125" />
         <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/drawable/background_btn_seemore.xml" value="0.11354166666666667" />
@@ -28,7 +35,7 @@
         <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/item_shimmer_banner.xml" value="0.1105072463768116" />
         <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/item_shimmer_general.xml" value="0.1" />
         <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/item_shimmer_quickaccess.xml" value="0.1105072463768116" />
-        <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/layout_banner_home_partner.xml" value="0.18" />
+        <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/layout_banner_home_partner.xml" value="0.15" />
         <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/layout_general_home_partner.xml" value="0.25" />
         <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/layout_header_home_partner.xml" value="0.3558139534883721" />
         <entry key="..\:/Users/otato/Documents/homeciti_prueba/HomeCITI/app/src/main/res/layout/layout_quickaccess_home_partner.xml" value="0.22" />
@@ -39,7 +46,7 @@
     </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

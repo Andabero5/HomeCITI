@@ -4,10 +4,10 @@ import com.example.homeciti.BuildConfig
 
 object Constants {
     // base url
-    const val BASE_HOME_SERVICE_URL = "http://192.168.1.4:3000/ClaroPay-WS/"
-    const val BASE_GENERAL_SERVICE_URL = "http://192.168.1.4:3000/ClaroPay-WS/"
-    const val BASE_BANNER_SERVICE_URL = "http://192.168.1.4:3000/ClaroPay-WS/"
-    const val BASE_QUICKACCESS_SERVICE_URL = "http://192.168.1.4:3000/ClaroPay-WS/"
+    const val BASE_HOME_SERVICE_URL = "http://10.20.193.13:3000/ClaroPay-WS/"
+    const val BASE_GENERAL_SERVICE_URL = "http://10.20.193.13:3000/ClaroPay-WS/"
+    const val BASE_BANNER_SERVICE_URL = "http://10.20.193.13:3000/ClaroPay-WS/"
+    const val BASE_QUICKACCESS_SERVICE_URL = "http://10.20.193.12:3000/ClaroPay-WS/"
 
     // complements url
     const val COMPLEMENT_HOME_SERVICE_URL = "home"
