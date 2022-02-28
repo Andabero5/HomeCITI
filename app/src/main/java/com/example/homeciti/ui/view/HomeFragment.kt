@@ -50,11 +50,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                 //binding.shimmerLayoutGeneral.stopShimmer()
                 //binding.shimmerLayoutBanner.stopShimmer()
 
-                binding.btnRetryUploadHome.setOnClickListener {
-                    Toast.makeText(context, "Clicked method Home", Toast.LENGTH_SHORT).show()
-                    loadDataHome()
-                }
-
             } else {
                 binding.clUploadHome.visibility = View.GONE
                 //binding.shimmerLayoutGeneral.visibility = View.VISIBLE

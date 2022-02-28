@@ -48,7 +48,7 @@ class GeneralRepo {
 
             override fun onFailure(call: Call<GeneralList>, t: Throwable) {
                 println("------------ERROR-------------")
-                println("Error QuickAccess to call Repo")
+                println("Error General to call Repo")
                 mutableDataGeneral.value = mutableListOf()
 
             }

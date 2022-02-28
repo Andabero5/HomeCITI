@@ -64,8 +64,6 @@ class WidgetBannerView @JvmOverloads constructor(context: Context, var item : Ho
         shimmer.startShimmer()
         rvWidget.visibility = View.INVISIBLE
 
-
-
         // Titulo del widget
         if (item.header == null) {
             lblWidget.visibility = View.GONE
