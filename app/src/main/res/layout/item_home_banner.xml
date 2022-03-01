@@ -28,7 +28,7 @@
                 android:layout_height="0dp"
                 android:contentDescription="@null"
                 android:scaleType="fitXY"
-                android:src="@mipmap/ic_micro_app_recharge"
+                android:src="@drawable/ic_micro_app_recharge"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

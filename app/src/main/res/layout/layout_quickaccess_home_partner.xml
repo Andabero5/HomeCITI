@@ -112,7 +112,6 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </androidx.recyclerview.widget.RecyclerView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!-- Shimmer skeleton-->

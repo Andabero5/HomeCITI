@@ -38,9 +38,9 @@ class GeneralAdapter(val context : Context): RecyclerView.Adapter<GeneralAdapter
     inner class GeneralViewHolder(binding:ItemHomeGeneralBinding):RecyclerView.ViewHolder(binding.root){
 
         // Defino los elementos de la vista a traves del binding
-        private val itemText = binding.itemLabel
+        private val itemText = binding.itemText
         private val itemIcon = binding.itemIcon
-        private val promoIcon = binding.itemLabelTag
+        private val promoIcon = binding.itemLabeltag
 
         // Metodo para bindear la vista
         fun render(general: GeneralService){

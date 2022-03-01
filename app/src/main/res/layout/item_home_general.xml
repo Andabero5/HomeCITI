@@ -29,8 +29,8 @@
                 android:layout_marginEnd="8dp"
                 android:contentDescription="@null"
                 android:scaleType="fitCenter"
-                android:src="@mipmap/ic_micro_app_recharge"
-                app:layout_constraintBottom_toTopOf="@id/item_label"
+                android:src="@drawable/ic_micro_app_recharge"
+                app:layout_constraintBottom_toTopOf="@id/item_text"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
